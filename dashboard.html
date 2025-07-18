@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin: 50px 0;
+        }
+
+        .error {
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .chart-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .chart-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+
+        .stats-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .filter-controls {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-controls label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .filter-controls select,
+        .filter-controls input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-container {
+                padding: 15px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌤️ Weather Data Dashboard</h1>
+        
+        <div class="loading" id="loading">Loading weather data...</div>
+        <div class="error" id="error" style="display: none;"></div>
+        
+        <div class="filter-controls" id="controls" style="display: none;">
+            <label for="dateRange">Date Range:</label>
+            <select id="dateRange">
+                <option value="all">All Data</option>
+                <option value="7">Last 7 Days</option>
+                <option value="30">Last 30 Days</option>
+                <option value="90">Last 90 Days</option>
+            </select>
+            
+            <label for="sampleRate">Sample Rate:</label>
+            <select id="sampleRate">
+                <option value="1">Every Point</option>
+                <option value="6">Every 6 Hours</option>
+                <option value="24">Daily</option>
+            </select>
+        </div>
+        
+        <div class="stats-summary" id="stats" style="display: none;"></div>
+        <div class="charts-grid" id="charts"></div>
+    </div>
+
+    <script>
+        let weatherData = [];
+        let charts = [];
+
+        // Color schemes for different chart groups
+        const colorSchemes = {
+            wind_speed: ['#3498db', '#2980b9', '#1abc9c', '#16a085'],
+            wind_direction: ['#e74c3c', '#c0392b', '#f39c12', '#d35400'],
+            cloud_cover: ['#9b59b6', '#8e44ad', '#6c5ce7', '#a55eea'],
+            pressure: ['#27ae60', '#229954', '#58d68d', '#52c41a'],
+            temperature: ['#ff6b6b', '#ee5a6f', '#ff9ff3', '#feca57'],
+            humidity: ['#54a0ff', '#2e86de', '#0abde3', '#006ba6'],
+            precipitation: ['#5f27cd', '#341f97', '#00d2d3', '#ff9ff3'],
+            default: ['#3498db', '#e74c3c', '#f39c12', '#27ae60', '#9b59b6', '#1abc9c']
+        };
+
+        // Define chart groups with their columns and configurations
+        const chartGroups = {
+            'Temperature Metrics': {
+                columns: ['temperature_2m', 'apparent_temperature', 'dew_point_2m'],
+                type: 'line',
+                colors: colorSchemes.temperature,
+                unit: '°C'
+            },
+            'Wind Speed at Different Heights': {
+                columns: ['wind_speed_10m', 'wind_speed_80m', 'wind_speed_120m', 'wind_speed_180m'],
+                type: 'line',
+                colors: colorSchemes.wind_speed,
+                unit: 'm/s'
+            },
+            'Wind Direction at Different Heights': {
+                columns: ['wind_direction_10m', 'wind_direction_80m', 'wind_direction_120m', 'wind_direction_180m'],
+                type: 'line',
+                colors: colorSchemes.wind_direction,
+                unit: '°'
+            },
+            'Cloud Cover Levels': {
+                columns: ['cloud_cover', 'cloud_cover_low', 'cloud_cover_mid', 'cloud_cover_high'],
+                type: 'line',
+                colors: colorSchemes.cloud_cover,
+                unit: '%'
+            },
+            'Pressure Measurements': {
+                columns: ['pressure_msl', 'surface_pressure'],
+                type: 'line',
+                colors: colorSchemes.pressure,
+                unit: 'hPa'
+            },
+            'Humidity & Precipitation': {
+                columns: ['relative_humidity_2m', 'precipitation_probability'],
+                type: 'line',
+                colors: colorSchemes.humidity,
+                unit: '%'
+            },
+            'Precipitation & Rain': {
+                columns: ['precipitation', 'rain', 'showers', 'snowfall'],
+                type: 'bar',
+                colors: colorSchemes.precipitation,
+                unit: 'mm'
+            },
+            'Wind Conditions': {
+                columns: ['wind_speed_10m', 'wind_gusts_10m'],
+                type: 'line',
+                colors: colorSchemes.wind_speed,
+                unit: 'm/s'
+            }
+        };
+
+        async function loadWeatherData() {
+            try {
+                const response = await fetch('weather_hourly.csv');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const csvText = await response.text();
+                
+                const parsed = Papa.parse(csvText, {
+                    header: true,
+                    dynamicTyping: true,
+                    skipEmptyLines: true
+                });
+
+                if (parsed.errors.length > 0) {
+                    console.warn('CSV parsing warnings:', parsed.errors);
+                }
+
+                weatherData = parsed.data.filter(row => row.date); // Filter out empty rows
+                
+                if (weatherData.length === 0) {
+                    throw new Error('No valid data found in CSV file');
+                }
+
+                console.log(`Loaded ${weatherData.length} weather records`);
+                
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('controls').style.display = 'flex';
+                document.getElementById('stats').style.display = 'grid';
+                
+                displayStats();
+                createAllCharts();
+                
+            } catch (error) {
+                console.error('Error loading weather data:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent = `Error loading data: ${error.message}`;
+            }
+        }
+
+        function displayStats() {
+            const statsContainer = document.getElementById('stats');
+            const totalRecords = weatherData.length;
+            const dateRange = getDateRange();
+            const avgTemp = calculateAverage('temperature_2m');
+            const maxWind = calculateMax('wind_speed_10m');
+
+            statsContainer.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value">${totalRecords}</div>
+                    <div class="stat-label">Total Records</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${dateRange}</div>
+                    <div class="stat-label">Date Range</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${avgTemp.toFixed(1)}°C</div>
+                    <div class="stat-label">Avg Temperature</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${maxWind.toFixed(1)} m/s</div>
+                    <div class="stat-label">Max Wind Speed</div>
+                </div>
+            `;
+        }
+
+        function getDateRange() {
+            if (weatherData.length === 0) return 'No data';
+            const dates = weatherData.map(row => new Date(row.date)).sort((a, b) => a - b);
+            const start = dates[0].toLocaleDateString();
+            const end = dates[dates.length - 1].toLocaleDateString();
+            return `${start} - ${end}`;
+        }
+
+        function calculateAverage(column) {
+            const values = weatherData.map(row => row[column]).filter(val => val !== null && val !== undefined && !isNaN(val));
+            return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0;
+        }
+
+        function calculateMax(column) {
+            const values = weatherData.map(row => row[column]).filter(val => val !== null && val !== undefined && !isNaN(val));
+            return values.length > 0 ? Math.max(...values) : 0;
+        }
+
+        function getFilteredData() {
+            const dateRange = document.getElementById('dateRange').value;
+            const sampleRate = parseInt(document.getElementById('sampleRate').value);
+            
+            let filteredData = [...weatherData];
+            
+            // Apply date filter
+            if (dateRange !== 'all') {
+                const days = parseInt(dateRange);
+                const cutoffDate = new Date();
+                cutoffDate.setDate(cutoffDate.getDate() - days);
+                filteredData = filteredData.filter(row => new Date(row.date) >= cutoffDate);
+            }
+            
+            // Apply sample rate filter
+            if (sampleRate > 1) {
+                filteredData = filteredData.filter((_, index) => index % sampleRate === 0);
+            }
+            
+            return filteredData;
+        }
+
+        function createAllCharts() {
+            const chartsContainer = document.getElementById('charts');
+            chartsContainer.innerHTML = '';
+            
+            // Destroy existing charts
+            charts.forEach(chart => chart.destroy());
+            charts = [];
+
+            const data = getFilteredData();
+            
+            Object.entries(chartGroups).forEach(([groupName, config]) => {
+                const availableColumns = config.columns.filter(col => 
+                    data.some(row => row[col] !== null && row[col] !== undefined && !isNaN(row[col]))
+                );
+                
+                if (availableColumns.length > 0) {
+                    createChart(groupName, availableColumns, config, data);
+                }
+            });
+        }
+
+        function createChart(title, columns, config, data) {
+            const chartContainer = document.createElement('div');
+            chartContainer.className = 'chart-container';
+            
+            const chartTitle = document.createElement('h3');
+            chartTitle.className = 'chart-title';
+            chartTitle.textContent = title;
+            
+            const chartWrapper = document.createElement('div');
+            chartWrapper.className = 'chart-wrapper';
+            
+            const canvas = document.createElement('canvas');
+            chartWrapper.appendChild(canvas);
+            
+            chartContainer.appendChild(chartTitle);
+            chartContainer.appendChild(chartWrapper);
+            document.getElementById('charts').appendChild(chartContainer);
+
+            const ctx = canvas.getContext('2d');
+            
+            const labels = data.map(row => new Date(row.date).toLocaleDateString());
+            const datasets = columns.map((column, index) => ({
+                label: formatColumnName(column),
+                data: data.map(row => row[column]),
+                borderColor: config.colors[index % config.colors.length],
+                backgroundColor: config.type === 'bar' ? 
+                    config.colors[index % config.colors.length] + '80' : 
+                    config.colors[index % config.colors.length] + '20',
+                borderWidth: 2,
+                fill: false,
+                tension: 0.4,
+                pointRadius: 1,
+                pointHoverRadius: 5
+            }));
+
+            const chartConfig = {
+                type: config.type,
+                data: { labels, datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: ${context.parsed.y?.toFixed(2) || 'N/A'} ${config.unit}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            },
+                            ticks: {
+                                maxTicksLimit: 10
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: config.unit
+                            },
+                            beginAtZero: config.type === 'bar'
+                        }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                }
+            };
+
+            const chart = new Chart(ctx, chartConfig);
+            charts.push(chart);
+        }
+
+        function formatColumnName(column) {
+            return column
+                .replace(/_/g, ' ')
+                .replace(/\b\w/g, l => l.toUpperCase())
+                .replace(/(\d+)m/g, ' ($1m)')
+                .replace(/2m/g, '(2m)')
+                .replace(/Msl/g, 'MSL');
+        }
+
+        // Event listeners
+        document.getElementById('dateRange').addEventListener('change', createAllCharts);
+        document.getElementById('sampleRate').addEventListener('change', createAllCharts);
+
+        // Initialize
+        loadWeatherData();
+    </script>
+</body>
+</html>
