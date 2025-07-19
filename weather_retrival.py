@@ -16,7 +16,8 @@ def get_weather_data(client, latitude, longitude, hourly_vars):
     params = {
         "latitude": latitude,
         "longitude": longitude,
-        "hourly": ",".join(hourly_vars)
+        "hourly": ",".join(hourly_vars),
+        "timezone": "Asia/Kolkata"
     }
     responses = client.weather_api(url, params=params)
     return responses[0]
@@ -62,7 +63,7 @@ def main():
         "weather_code", "wind_speed_80m", "wind_speed_120m", "wind_speed_180m",
         "wind_direction_80m", "wind_direction_120m", "wind_direction_180m", "rain", "showers"
     ]
-    latitude, longitude = 25.5941, 85.1376
+    latitude, longitude = 25.5941, 85.1356
     client = initialize_session()
     response = get_weather_data(client, latitude, longitude, hourly_vars)
 
