@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    <title>Suraksha - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="firebase-config.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Suraksha</h1>
+        <p>Please sign in to continue</p>
+        <button id="googleSignIn" class="google-btn">
+            <span id="buttonText">Sign in with Google</span>
+            <div id="spinner" class="spinner hidden"></div>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const auth = firebase.auth();
+            const googleBtn = document.getElementById('googleSignIn');
+            const buttonText = document.getElementById('buttonText');
+            const spinner = document.getElementById('spinner');
+
+            // Check if user is already logged in
+            auth.onAuthStateChanged((user) => {
+                if (user) {
+                    // User is already logged in, redirect to dashboard
+                    window.location.href = 'dashboard.html';
+                }
+            });
+
+            // Google Sign-In handler
+            googleBtn.addEventListener('click', () => {
+                const provider = new firebase.auth.GoogleAuthProvider();
+
+                // Show loading state
+                buttonText.textContent = 'Signing in...';
+                spinner.classList.remove('hidden');
+                googleBtn.disabled = true;
+
+                auth.signInWithPopup(provider)
+                    .then((result) => {
+                        // Successful login, redirect to dashboard
+                        window.location.href = 'dashboard.html';
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        buttonText.textContent = 'Sign in with Google';
+                        spinner.classList.add('hidden');
+                        googleBtn.disabled = false;
+
+                        if (error.code === 'auth/popup-closed-by-user') {
+                            alert('Sign in was canceled. Please try again.');
+                        } else {
+                            alert(`Sign in failed: ${error.message}`);
+                        }
+                    });
+            });
+            function requestLocationAndNotifications() {
+                // First request location
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            // Location granted, now request notifications
+                            requestNotificationPermission();
+                        },
+                        (error) => {
+                            // Location denied
+                            alert('Location access is required to use this application.');
+                            firebase.auth().signOut();
+                        },
+                        { enableHighAccuracy: true }
+                    );
+                } else {
+                    alert('Geolocation is not supported by your browser. This application requires location access.');
+                    firebase.auth().signOut();
+                }
+            }
+
+            function requestNotificationPermission() {
+                if ('Notification' in window) {
+                    Notification.requestPermission().then((permission) => {
+                        if (permission === 'granted') {
+                            // Both location and notifications granted, proceed to dashboard
+                            window.location.href = 'dashboard.html';
+                        } else {
+                            // Notifications denied (but location was granted)
+                            window.location.href = 'dashboard.html';
+                        }
+                    });
+                } else {
+                    // Notifications not supported (but location was granted)
+                    window.location.href = 'dashboard.html';
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,44 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Data Dashboard</title>
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    <title>Suraksha - Weather Dashboard</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="firebase-config.js"></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <div class="container">
-        <h1>🌤️ Weather Data Dashboard</h1>
-        
-        <div class="loading" id="loading">Loading weather data...</div>
-        <div class="error" id="error" style="display: none;"></div>
-        
-        <div class="filter-controls" id="controls" style="display: none;">
-            <label for="dateRange">Date Range:</label>
-            <select id="dateRange">
-                <option value="all">All Data</option>
-                <option value="7">Last 7 Days</option>
-                <option value="30">Last 30 Days</option>
-                <option value="90">Last 90 Days</option>
-            </select>
-            
-            <label for="sampleRate">Sample Rate:</label>
-            <select id="sampleRate">
-                <option value="1">Every Point</option>
-                <option value="6">Every 6 Hours</option>
-                <option value="24">Daily</option>
-            </select>
+    <div class="header">
+        <h1>🌤️ Suraksha Weather Dashboard</h1>
+        <div class="location-display" id="locationInfo">
+            <span>📍</span>
+            <span id="locationCoordinates">Detecting your location...</span>
         </div>
-        
-        <div class="stats-summary" id="stats" style="display: none;"></div>
+        <div>
+            <button id="refreshBtn" class="refresh-btn">🔄 Refresh</button>
+            <button id="signOutBtn" class="sign-out-btn">Sign Out</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="loading" id="loading">Loading weather data...</div>
+        <div class="error" id="error"></div>
+        <div class="chart-loading" id="chartLoading">
+            <div class="spinner"></div>
+            <p>Updating charts...</p>
+        </div>
+
+        <div class="filter-controls" id="controls">
+            <div class="filter-group">
+                <label for="dateRange">Date Range:</label>
+                <select id="dateRange">
+                    <option value="all">All Data</option>
+                    <option value="7">Last 7 Days</option>
+                    <option value="30">Last 30 Days</option>
+                    <option value="90">Last 90 Days</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="sampleRate">Sample Rate:</label>
+                <select id="sampleRate">
+                    <option value="1">Every Point</option>
+                    <option value="6">Every 6 Hours</option>
+                    <option value="24">Daily</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="stats-summary" id="stats"></div>
         <div class="charts-grid" id="charts"></div>
     </div>
 
     <script>
+        // Global variables
         let weatherData = [];
         let charts = [];
+        let userLocation = null;
+        let notificationPermission = false;
+
+        // Firebase Authentication State
+        firebase.auth().onAuthStateChanged((user) => {
+            if (!user) {
+                // No user signed in, redirect to login page
+                window.location.href = 'index.html';
+            } else {
+                // User is authenticated, verify location access
+                verifyLocationAccess().then(() => {
+                    // Location verified, now load data
+                    loadWeatherData().catch(error => {
+                        console.error('Failed to load data:', error);
+                        showError(`Failed to load data: ${error.message}`);
+                    });
+                }).catch(error => {
+                    console.error('Location access error:', error);
+                    showError('Location access is required for this application. Please enable location services and refresh.');
+                });
+            }
+        });
+
+        // Verify location access
+        function verifyLocationAccess() {
+            return new Promise((resolve, reject) => {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            userLocation = {
+                                latitude: position.coords.latitude,
+                                longitude: position.coords.longitude,
+                                accuracy: position.coords.accuracy
+                            };
+                            updateLocationInfo();
+                            requestNotificationPermission().then(resolve).catch(resolve);
+                        },
+                        (error) => {
+                            reject(new Error('Location access denied'));
+                        },
+                        { enableHighAccuracy: true, timeout: 10000 }
+                    );
+                } else {
+                    reject(new Error('Geolocation not supported'));
+                }
+            });
+        }
+
+        // Update location information display
+        function updateLocationInfo() {
+            if (userLocation) {
+                const locationElement = document.getElementById('locationInfo');
+                locationElement.textContent = `Location: ${userLocation.latitude.toFixed(4)}, ${userLocation.longitude.toFixed(4)}`;
+                locationElement.title = `Accuracy: ±${userLocation.accuracy.toFixed(0)} meters`;
+            }
+        }
+
+        // Request notification permission
+        function requestNotificationPermission() {
+            return new Promise((resolve) => {
+                if ('Notification' in window) {
+                    if (Notification.permission === 'granted') {
+                        notificationPermission = true;
+                        showWelcomeNotification();
+                        resolve();
+                    } else if (Notification.permission !== 'denied') {
+                        Notification.requestPermission().then(permission => {
+                            notificationPermission = permission === 'granted';
+                            if (notificationPermission) {
+                                showWelcomeNotification();
+                            }
+                            resolve();
+                        });
+                    } else {
+                        resolve();
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+
+        // Show welcome notification
+        function showWelcomeNotification() {
+            if (notificationPermission) {
+                new Notification('Welcome to Suraksha Dashboard', {
+                    body: 'You will receive important weather alerts for your location',
+                    icon: 'https://img.icons8.com/color/48/000000/cloud.png'
+                });
+            }
+        }
+
+        // Setup weather alerts
+        function setupWeatherAlerts() {
+            if (!notificationPermission) return;
+
+            // Check for extreme temperature
+            const extremeTemp = weatherData.find(data => data.temperature_2m > 35 || data.temperature_2m < 0);
+            if (extremeTemp) {
+                const tempType = extremeTemp.temperature_2m > 35 ? 'high' : 'low';
+                new Notification(`Extreme Temperature Alert`, {
+                    body: `${tempType === 'high' ? 'High' : 'Low'} temperature (${extremeTemp.temperature_2m}°C) detected in your area`,
+                    icon: tempType === 'high' ?
+                        'https://img.icons8.com/color/48/000000/hot.png' :
+                        'https://img.icons8.com/color/48/000000/snow.png'
+                });
+            }
+
+            // Check for precipitation
+            const precipitation = weatherData.find(data => data.precipitation > 10);
+            if (precipitation) {
+                new Notification('Heavy Precipitation Alert', {
+                    body: `Heavy precipitation (${precipitation.precipitation}mm) expected in your area`,
+                    icon: 'https://img.icons8.com/color/48/000000/rain.png'
+                });
+            }
+
+            // Check for strong winds
+            const strongWind = weatherData.find(data => data.wind_speed_10m > 10);
+            if (strongWind) {
+                new Notification('Strong Wind Alert', {
+                    body: `Strong winds (${strongWind.wind_speed_10m}m/s) expected in your area`,
+                    icon: 'https://img.icons8.com/color/48/000000/wind.png'
+                });
+            }
+        }
+
+        // Refresh handler
+        document.getElementById('refreshBtn').addEventListener('click', () => {
+            showLoading(true, 'Refreshing data...');
+            verifyLocationAccess().then(() => {
+                window.location.reload();
+            }).catch(error => {
+                showError('Could not refresh: ' + error.message);
+                showLoading(false);
+            });
+        });
+
+        // Sign out handler
+        document.getElementById('signOutBtn').addEventListener('click', () => {
+            showLoading(true, 'Signing out...');
+            firebase.auth().signOut().then(() => {
+                window.location.href = 'index.html';
+            }).catch((error) => {
+                console.error('Sign out error:', error);
+                showError('Sign out failed. Please try again.');
+                showLoading(false);
+            });
+        });
 
         // Color schemes for different chart groups
         const colorSchemes = {
@@ -84,7 +260,7 @@
                 colors: colorSchemes.pressure,
                 unit: 'hPa'
             },
-            'Humidity & Precipitation': {
+            'Humidity & Precipitation Probability': {
                 columns: ['relative_humidity_2m', 'precipitation_probability'],
                 type: 'line',
                 colors: colorSchemes.humidity,
@@ -104,14 +280,59 @@
             }
         };
 
+        // UI Helper Functions
+        function showLoading(show, message = '') {
+            const loadingEl = document.getElementById('loading');
+            if (show) {
+                loadingEl.style.display = 'block';
+                if (message) loadingEl.textContent = message;
+            } else {
+                loadingEl.style.display = 'none';
+            }
+        }
+
+        function showError(message) {
+            const errorEl = document.getElementById('error');
+            errorEl.textContent = message;
+            errorEl.style.display = 'block';
+            showLoading(false);
+        }
+
+        function hideError() {
+            document.getElementById('error').style.display = 'none';
+        }
+
+        function showChartLoading(show) {
+            document.getElementById('chartLoading').style.display = show ? 'flex' : 'none';
+        }
+
+        // Data Loading and Processing
         async function loadWeatherData() {
             try {
-                const response = await fetch('weather_hourly.csv');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                showLoading(true, 'Loading weather data...');
+                hideError();
+
+                // First try to load location-specific data if available
+                let dataUrl = 'weather_hourly.csv';
+                if (userLocation) {
+                    try {
+                        // Try to load location-specific data
+                        const locationDataUrl = `weather_${userLocation.latitude.toFixed(2)}_${userLocation.longitude.toFixed(2)}.csv`;
+                        const testResponse = await fetch(locationDataUrl);
+                        if (testResponse.ok) {
+                            dataUrl = locationDataUrl;
+                        }
+                    } catch (e) {
+                        console.log('Using default weather data');
+                    }
                 }
+
+                const response = await fetch(dataUrl);
+                if (!response.ok) {
+                    throw new Error(`Failed to load data: HTTP ${response.status}`);
+                }
+
                 const csvText = await response.text();
-                
                 const parsed = Papa.parse(csvText, {
                     header: true,
                     dynamicTyping: true,
@@ -122,26 +343,33 @@
                     console.warn('CSV parsing warnings:', parsed.errors);
                 }
 
-                weatherData = parsed.data.filter(row => row.date); // Filter out empty rows
-                
+                weatherData = parsed.data.filter(row => row.date && !isNaN(new Date(row.date).getTime()));
+
                 if (weatherData.length === 0) {
-                    throw new Error('No valid data found in CSV file');
+                    throw new Error('No valid weather data found in CSV file');
                 }
 
                 console.log(`Loaded ${weatherData.length} weather records`);
-                
-                document.getElementById('loading').style.display = 'none';
+
+                // Sort data by date
+                weatherData.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+                // Initialize UI
                 document.getElementById('controls').style.display = 'flex';
                 document.getElementById('stats').style.display = 'grid';
-                
+                showLoading(false);
+
                 displayStats();
                 createAllCharts();
-                
+
+                // Setup weather alerts if notifications are enabled
+                if (notificationPermission) {
+                    setupWeatherAlerts();
+                }
+
             } catch (error) {
                 console.error('Error loading weather data:', error);
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('error').style.display = 'block';
-                document.getElementById('error').textContent = `Error loading data: ${error.message}`;
+                showError(`Error loading data: ${error.message}`);
             }
         }
 
@@ -151,6 +379,8 @@
             const dateRange = getDateRange();
             const avgTemp = calculateAverage('temperature_2m');
             const maxWind = calculateMax('wind_speed_10m');
+            const totalPrecip = calculateSum('precipitation');
+            const avgHumidity = calculateAverage('relative_humidity_2m');
 
             statsContainer.innerHTML = `
                 <div class="stat-card">
@@ -169,33 +399,53 @@
                     <div class="stat-value">${maxWind.toFixed(1)} m/s</div>
                     <div class="stat-label">Max Wind Speed</div>
                 </div>
+                <div class="stat-card">
+                    <div class="stat-value">${totalPrecip.toFixed(1)} mm</div>
+                    <div class="stat-label">Total Precipitation</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${avgHumidity.toFixed(1)}%</div>
+                    <div class="stat-label">Avg Humidity</div>
+                </div>
             `;
         }
 
         function getDateRange() {
             if (weatherData.length === 0) return 'No data';
-            const dates = weatherData.map(row => new Date(row.date)).sort((a, b) => a - b);
-            const start = dates[0].toLocaleDateString();
-            const end = dates[dates.length - 1].toLocaleDateString();
-            return `${start} - ${end}`;
+            const dates = weatherData.map(row => new Date(row.date));
+            const startDate = new Date(Math.min(...dates));
+            const endDate = new Date(Math.max(...dates));
+
+            return `${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}`;
         }
 
         function calculateAverage(column) {
-            const values = weatherData.map(row => row[column]).filter(val => val !== null && val !== undefined && !isNaN(val));
+            const values = getValidValues(column);
             return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0;
         }
 
         function calculateMax(column) {
-            const values = weatherData.map(row => row[column]).filter(val => val !== null && val !== undefined && !isNaN(val));
+            const values = getValidValues(column);
             return values.length > 0 ? Math.max(...values) : 0;
+        }
+
+        function calculateSum(column) {
+            const values = getValidValues(column);
+            return values.length > 0 ? values.reduce((a, b) => a + b, 0) : 0;
+        }
+
+        function getValidValues(column) {
+            return weatherData
+                .map(row => row[column])
+                .filter(val => val !== null && val !== undefined && !isNaN(val));
         }
 
         function getFilteredData() {
             const dateRange = document.getElementById('dateRange').value;
             const sampleRate = parseInt(document.getElementById('sampleRate').value);
-            
+
             let filteredData = [...weatherData];
-            
+
             // Apply date filter
             if (dateRange !== 'all') {
                 const days = parseInt(dateRange);
@@ -203,71 +453,97 @@
                 cutoffDate.setDate(cutoffDate.getDate() - days);
                 filteredData = filteredData.filter(row => new Date(row.date) >= cutoffDate);
             }
-            
+
             // Apply sample rate filter
             if (sampleRate > 1) {
                 filteredData = filteredData.filter((_, index) => index % sampleRate === 0);
             }
-            
+
             return filteredData;
         }
 
+        // Chart Functions
         function createAllCharts() {
+            showChartLoading(true);
+
+            // Clear existing charts
             const chartsContainer = document.getElementById('charts');
             chartsContainer.innerHTML = '';
-            
-            // Destroy existing charts
-            charts.forEach(chart => chart.destroy());
-            charts = [];
 
-            const data = getFilteredData();
-            
-            Object.entries(chartGroups).forEach(([groupName, config]) => {
-                const availableColumns = config.columns.filter(col => 
-                    data.some(row => row[col] !== null && row[col] !== undefined && !isNaN(row[col]))
-                );
-                
-                if (availableColumns.length > 0) {
-                    createChart(groupName, availableColumns, config, data);
-                }
-            });
+            // Destroy existing chart instances
+            if (charts && charts.length > 0) {
+                charts.forEach(chart => {
+                    if (chart.canvas) {
+                        chart.canvas.remove();
+                    }
+                    chart.destroy();
+                });
+                charts = [];
+            }
+
+            try {
+                const data = getFilteredData();
+
+                // Create charts for each group
+                Object.entries(chartGroups).forEach(([groupName, config]) => {
+                    const availableColumns = config.columns.filter(col =>
+                        data.some(row => row[col] !== null && row[col] !== undefined && !isNaN(row[col]))
+                    );
+
+                    if (availableColumns.length > 0) {
+                        createChart(groupName, availableColumns, config, data);
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error creating charts:', error);
+                showError(`Error displaying charts: ${error.message}`);
+            } finally {
+                showChartLoading(false);
+            }
         }
 
         function createChart(title, columns, config, data) {
             const chartContainer = document.createElement('div');
             chartContainer.className = 'chart-container';
-            
+
             const chartTitle = document.createElement('h3');
             chartTitle.className = 'chart-title';
             chartTitle.textContent = title;
-            
+
             const chartWrapper = document.createElement('div');
             chartWrapper.className = 'chart-wrapper';
-            
+
             const canvas = document.createElement('canvas');
             chartWrapper.appendChild(canvas);
-            
+
             chartContainer.appendChild(chartTitle);
             chartContainer.appendChild(chartWrapper);
             document.getElementById('charts').appendChild(chartContainer);
 
             const ctx = canvas.getContext('2d');
-            
-            const labels = data.map(row => new Date(row.date).toLocaleDateString());
+
+            // Prepare labels and datasets
+            const labels = data.map(row => {
+                const date = new Date(row.date);
+                return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            });
+
             const datasets = columns.map((column, index) => ({
                 label: formatColumnName(column),
                 data: data.map(row => row[column]),
                 borderColor: config.colors[index % config.colors.length],
-                backgroundColor: config.type === 'bar' ? 
-                    config.colors[index % config.colors.length] + '80' : 
+                backgroundColor: config.type === 'bar' ?
+                    config.colors[index % config.colors.length] + '80' :
                     config.colors[index % config.colors.length] + '20',
                 borderWidth: 2,
-                fill: false,
-                tension: 0.4,
-                pointRadius: 1,
+                fill: config.type === 'line',
+                tension: 0.1,
+                pointRadius: config.type === 'line' ? 1 : 0,
                 pointHoverRadius: 5
             }));
 
+            // Chart configuration
             const chartConfig = {
                 type: config.type,
                 data: { labels, datasets },
@@ -286,7 +562,7 @@
                             mode: 'index',
                             intersect: false,
                             callbacks: {
-                                label: function(context) {
+                                label: function (context) {
                                     return `${context.dataset.label}: ${context.parsed.y?.toFixed(2) || 'N/A'} ${config.unit}`;
                                 }
                             }
@@ -297,10 +573,15 @@
                             display: true,
                             title: {
                                 display: true,
-                                text: 'Date'
+                                text: 'Date/Time'
                             },
                             ticks: {
-                                maxTicksLimit: 10
+                                maxTicksLimit: 10,
+                                callback: function (value, index, values) {
+                                    // Show fewer labels for better readability
+                                    if (values.length > 15 && index % Math.ceil(values.length / 8) !== 0) return '';
+                                    return this.getLabelForValue(value);
+                                }
                             }
                         },
                         y: {
@@ -329,15 +610,18 @@
                 .replace(/\b\w/g, l => l.toUpperCase())
                 .replace(/(\d+)m/g, ' ($1m)')
                 .replace(/2m/g, '(2m)')
-                .replace(/Msl/g, 'MSL');
+                .replace(/Msl/g, 'MSL')
+                .replace('Apparent', 'Feels Like');
         }
 
-        // Event listeners
-        document.getElementById('dateRange').addEventListener('change', createAllCharts);
-        document.getElementById('sampleRate').addEventListener('change', createAllCharts);
+        // Event Listeners
+        document.getElementById('dateRange').addEventListener('change', () => {
+            displayStats();
+            createAllCharts();
+        });
 
-        // Initialize
-        loadWeatherData();
+        document.getElementById('sampleRate').addEventListener('change', createAllCharts);
     </script>
 </body>
+
 </html>
