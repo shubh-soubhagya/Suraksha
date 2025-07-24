@@ -31,31 +31,23 @@
 
     <div class="container">
         <div class="loading" id="loading">Loading weather data...</div>
-        <div class="error" id="error"></div>
-        <div class="chart-loading" id="chartLoading">
-            <div class="spinner"></div>
-            <p>Updating charts...</p>
-        </div>
-
-        <div class="filter-controls" id="controls">
-            <div class="filter-group">
-                <label for="dateRange">Date Range:</label>
-                <select id="dateRange">
-                    <option value="all">All Data</option>
-                    <option value="7">Last 7 Days</option>
-                    <option value="30">Last 30 Days</option>
-                    <option value="90">Last 90 Days</option>
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label for="sampleRate">Sample Rate:</label>
-                <select id="sampleRate">
-                    <option value="1">Every Point</option>
-                    <option value="6">Every 6 Hours</option>
-                    <option value="24">Daily</option>
-                </select>
-            </div>
+        <div class="error" id="error" style="display: none;"></div>
+        
+        <div class="filter-controls" id="controls" style="display: none;">
+            <label for="dateRange">Date Range:</label>
+            <select id="dateRange">
+                <option value="all">All Data</option>
+                <option value="7">Last 7 Days</option>
+                <option value="30">Last 30 Days</option>
+                <option value="90">Last 90 Days</option>
+            </select>
+            
+            <label for="sampleRate">Sample Rate:</label>
+            <select id="sampleRate">
+                <option value="1">Every Point</option>
+                <option value="6">Every 6 Hours</option>
+                <option value="24">Daily</option>
+            </select>
         </div>
 
         <div class="stats-summary" id="stats"></div>
@@ -240,7 +232,7 @@
                 columns: ['wind_speed_10m', 'wind_speed_80m', 'wind_speed_120m', 'wind_speed_180m'],
                 type: 'line',
                 colors: colorSchemes.wind_speed,
-                unit: 'm/s'
+                unit: 'km/h'
             },
             'Wind Direction at Different Heights': {
                 columns: ['wind_direction_10m', 'wind_direction_80m', 'wind_direction_120m', 'wind_direction_180m'],
