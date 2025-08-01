@@ -13,7 +13,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="firebase-config.js"></script>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -44,7 +43,6 @@
                     <option value="all">All Data</option>
                     <option value="7">Last 7 Days</option>
                     <option value="30">Last 30 Days</option>
-                    <option value="90">Last 90 Days</option>
                 </select>
             </div>
 
@@ -64,7 +62,8 @@
 
     <script>
         // Global variables
-        let weatherData = [];
+        let fullWeatherData = []; // Stores all loaded weather data
+        let filteredWeatherData = []; // Stores currently filtered data
         let charts = [];
         let userLocation = null;
         let notificationPermission = false;
@@ -72,12 +71,9 @@
         // Firebase Authentication State
         firebase.auth().onAuthStateChanged((user) => {
             if (!user) {
-                // No user signed in, redirect to login page
                 window.location.href = 'index.html';
             } else {
-                // User is authenticated, verify location access
                 verifyLocationAccess().then(() => {
-                    // Location verified, now load data
                     loadWeatherData().catch(error => {
                         console.error('Failed to load data:', error);
                         showError(`Failed to load data: ${error.message}`);
@@ -163,7 +159,7 @@
             if (!notificationPermission) return;
 
             // Check for extreme temperature
-            const extremeTemp = weatherData.find(data => data.temperature_2m > 35 || data.temperature_2m < 0);
+            const extremeTemp = filteredWeatherData.find(data => data.temperature_2m > 35 || data.temperature_2m < 0);
             if (extremeTemp) {
                 const tempType = extremeTemp.temperature_2m > 35 ? 'high' : 'low';
                 new Notification(`Extreme Temperature Alert`, {
@@ -175,7 +171,7 @@
             }
 
             // Check for precipitation
-            const precipitation = weatherData.find(data => data.precipitation > 10);
+            const precipitation = filteredWeatherData.find(data => data.precipitation > 10);
             if (precipitation) {
                 new Notification('Heavy Precipitation Alert', {
                     body: `Heavy precipitation (${precipitation.precipitation}mm) expected in your area`,
@@ -184,7 +180,7 @@
             }
 
             // Check for strong winds
-            const strongWind = weatherData.find(data => data.wind_speed_10m > 10);
+            const strongWind = filteredWeatherData.find(data => data.wind_speed_10m > 10);
             if (strongWind) {
                 new Notification('Strong Wind Alert', {
                     body: `Strong winds (${strongWind.wind_speed_10m}m/s) expected in your area`,
@@ -316,7 +312,6 @@
                 let dataUrl = 'weather_hourly.csv';
                 if (userLocation) {
                     try {
-                        // Try to load location-specific data
                         const locationDataUrl = `weather_${userLocation.latitude.toFixed(2)}_${userLocation.longitude.toFixed(2)}.csv`;
                         const testResponse = await fetch(locationDataUrl);
                         if (testResponse.ok) {
@@ -343,18 +338,12 @@
                     console.warn('CSV parsing warnings:', parsed.errors);
                 }
 
-                weatherData = parsed.data.filter(row => row.date && !isNaN(new Date(row.date).getTime()));
+                fullWeatherData = parsed.data.filter(row => row.date && !isNaN(new Date(row.date).getTime()));
+                fullWeatherData.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-                if (weatherData.length === 0) {
-                    throw new Error('No valid weather data found in CSV file');
-                }
+                // Apply initial filtering
+                applyDateFilter();
 
-                console.log(`Loaded ${weatherData.length} weather records`);
-
-                // Sort data by date
-                weatherData.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-                // Initialize UI
                 document.getElementById('controls').style.display = 'flex';
                 document.getElementById('stats').style.display = 'grid';
                 showLoading(false);
@@ -362,7 +351,6 @@
                 displayStats();
                 createAllCharts();
 
-                // Setup weather alerts if notifications are enabled
                 if (notificationPermission) {
                     setupWeatherAlerts();
                 }
@@ -373,22 +361,74 @@
             }
         }
 
-        function displayStats() {
-            const statsContainer = document.getElementById('stats');
-            const totalRecords = weatherData.length;
-            const dateRange = getDateRange();
-            const avgTemp = calculateAverage('temperature_2m');
-            const maxWind = calculateMax('wind_speed_10m');
-            const totalPrecip = calculateSum('precipitation');
-            const avgHumidity = calculateAverage('relative_humidity_2m');
+        // Apply date filter based on selected range
+        function applyDateFilter() {
+            const dateRange = document.getElementById('dateRange').value;
 
-            statsContainer.innerHTML = `
+            if (dateRange === 'all') {
+                filteredWeatherData = [...fullWeatherData];
+                return;
+            }
+
+            const days = parseInt(dateRange);
+            const endDate = new Date();
+            const startDate = new Date();
+            startDate.setDate(endDate.getDate() - days);
+
+            // Set time components to ensure we get full days
+            startDate.setHours(0, 0, 0, 0);
+            endDate.setHours(23, 59, 59, 999);
+
+            filteredWeatherData = fullWeatherData.filter(row => {
+                const rowDate = new Date(row.date);
+                return rowDate >= startDate && rowDate <= endDate;
+            });
+
+            // Update the date range display
+            updateDateRangeDisplay(startDate, endDate);
+        }
+        function updateDateRangeDisplay(startDate, endDate) {
+            const dateRangeElement = document.querySelector('.date-range-display');
+            if (!dateRangeElement) return;
+
+            const formatDate = (date) => {
+                return date.toLocaleDateString('en-US', {
+                    month: 'numeric',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+            };
+
+            dateRangeElement.textContent = `${formatDate(startDate)} - ${formatDate(endDate)}`;
+        }
+
+        // Get data with both date and sample rate filters applied
+        function getFilteredData() {
+            const sampleRate = parseInt(document.getElementById('sampleRate').value);
+
+            if (sampleRate === 1) {
+                return [...filteredWeatherData];
+            }
+
+            return filteredWeatherData.filter((_, index) => index % sampleRate === 0);
+        }
+
+        function displayStats() {
+            const data = getFilteredData();
+            const totalRecords = data.length;
+            const dateRangeText = document.querySelector('.date-range-display')?.textContent || getDateRange(data);
+            const avgTemp = calculateAverage('temperature_2m', data);
+            const maxWind = calculateMax('wind_speed_10m', data);
+            const totalPrecip = calculateSum('precipitation', data);
+            const avgHumidity = calculateAverage('relative_humidity_2m', data);
+
+            document.getElementById('stats').innerHTML = `
                 <div class="stat-card">
                     <div class="stat-value">${totalRecords}</div>
                     <div class="stat-label">Total Records</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">${dateRange}</div>
+                    <div class="stat-value">${dateRangeText}</div>
                     <div class="stat-label">Date Range</div>
                 </div>
                 <div class="stat-card">
@@ -410,67 +450,43 @@
             `;
         }
 
-        function getDateRange() {
-            if (weatherData.length === 0) return 'No data';
-            const dates = weatherData.map(row => new Date(row.date));
+        function getDateRange(data) {
+            if (data.length === 0) return 'No data';
+            const dates = data.map(row => new Date(row.date));
             const startDate = new Date(Math.min(...dates));
             const endDate = new Date(Math.max(...dates));
 
             return `${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}`;
         }
 
-        function calculateAverage(column) {
-            const values = getValidValues(column);
+        function calculateAverage(column, data = filteredWeatherData) {
+            const values = getValidValues(column, data);
             return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0;
         }
 
-        function calculateMax(column) {
-            const values = getValidValues(column);
+        function calculateMax(column, data = filteredWeatherData) {
+            const values = getValidValues(column, data);
             return values.length > 0 ? Math.max(...values) : 0;
         }
 
-        function calculateSum(column) {
-            const values = getValidValues(column);
+        function calculateSum(column, data = filteredWeatherData) {
+            const values = getValidValues(column, data);
             return values.length > 0 ? values.reduce((a, b) => a + b, 0) : 0;
         }
 
-        function getValidValues(column) {
-            return weatherData
+        function getValidValues(column, data = filteredWeatherData) {
+            return data
                 .map(row => row[column])
                 .filter(val => val !== null && val !== undefined && !isNaN(val));
-        }
-
-        function getFilteredData() {
-            const dateRange = document.getElementById('dateRange').value;
-            const sampleRate = parseInt(document.getElementById('sampleRate').value);
-
-            let filteredData = [...weatherData];
-
-            // Apply date filter
-            if (dateRange !== 'all') {
-                const days = parseInt(dateRange);
-                const cutoffDate = new Date();
-                cutoffDate.setDate(cutoffDate.getDate() - days);
-                filteredData = filteredData.filter(row => new Date(row.date) >= cutoffDate);
-            }
-
-            // Apply sample rate filter
-            if (sampleRate > 1) {
-                filteredData = filteredData.filter((_, index) => index % sampleRate === 0);
-            }
-
-            return filteredData;
         }
 
         // Chart Functions
         function createAllCharts() {
             showChartLoading(true);
 
-            // Clear existing charts
             const chartsContainer = document.getElementById('charts');
             chartsContainer.innerHTML = '';
 
-            // Destroy existing chart instances
             if (charts && charts.length > 0) {
                 charts.forEach(chart => {
                     if (chart.canvas) {
@@ -484,7 +500,6 @@
             try {
                 const data = getFilteredData();
 
-                // Create charts for each group
                 Object.entries(chartGroups).forEach(([groupName, config]) => {
                     const availableColumns = config.columns.filter(col =>
                         data.some(row => row[col] !== null && row[col] !== undefined && !isNaN(row[col]))
@@ -523,7 +538,6 @@
 
             const ctx = canvas.getContext('2d');
 
-            // Prepare labels and datasets
             const labels = data.map(row => {
                 const date = new Date(row.date);
                 return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -543,7 +557,6 @@
                 pointHoverRadius: 5
             }));
 
-            // Chart configuration
             const chartConfig = {
                 type: config.type,
                 data: { labels, datasets },
@@ -578,7 +591,6 @@
                             ticks: {
                                 maxTicksLimit: 10,
                                 callback: function (value, index, values) {
-                                    // Show fewer labels for better readability
                                     if (values.length > 15 && index % Math.ceil(values.length / 8) !== 0) return '';
                                     return this.getLabelForValue(value);
                                 }
@@ -616,11 +628,15 @@
 
         // Event Listeners
         document.getElementById('dateRange').addEventListener('change', () => {
+            applyDateFilter();
             displayStats();
             createAllCharts();
         });
 
-        document.getElementById('sampleRate').addEventListener('change', createAllCharts);
+        document.getElementById('sampleRate').addEventListener('change', () => {
+            displayStats();
+            createAllCharts();
+        });
     </script>
 </body>
 
