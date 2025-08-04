@@ -23,6 +23,7 @@
             <span id="locationCoordinates">Detecting your location...</span>
         </div>
         <div>
+            <button id="newsBtn" class="news-btn">📰 News</button>
             <button id="refreshBtn" class="refresh-btn">🔄 Refresh</button>
             <button id="signOutBtn" class="sign-out-btn">Sign Out</button>
         </div>
@@ -188,6 +189,16 @@
                 });
             }
         }
+        // News handler
+        document.getElementById('newsBtn').addEventListener('click', () => {
+            showLoading(true, 'Fetching News data...');
+            verifyLocationAccess().then(() => {
+                window.location.reload();
+            }).catch(error => {
+                showError('Could not refresh: ' + error.message);
+                showLoading(false);
+            });
+        });
 
         // Refresh handler
         document.getElementById('refreshBtn').addEventListener('click', () => {

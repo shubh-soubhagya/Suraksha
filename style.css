@@ -60,6 +60,21 @@
         background-color: #2980b9;
     }
 
+    .news-btn {
+        background-color: var(--dark-color);
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+    }
+
+    .news-btn:hover {
+        background-color: #2980b9;
+    }
+
     .sign-out-btn:hover {
         background-color: #c0392b;
     }

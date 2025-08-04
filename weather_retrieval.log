@@ -1,18 +1,26 @@
-2025-07-29 00:28:29,064 - INFO - Starting weather data retrieval...
-2025-07-29 00:28:29,644 - INFO - Location detected via IP: 25.5941, 85.1356 near Patna
-2025-07-29 00:28:29,660 - INFO - Coordinates: 25.625°N 85.125°E
-2025-07-29 00:28:43,346 - INFO - Starting weather data retrieval...
-2025-07-29 00:28:43,760 - INFO - Location detected via IP: 25.5941, 85.1356 near Patna
-2025-07-29 00:28:43,768 - INFO - Coordinates: 25.625°N 85.125°E
-2025-07-29 00:31:55,187 - INFO - Starting weather data retrieval...
-2025-07-29 00:31:55,628 - INFO - Location detected via IP: 25.5941, 85.1356 near Patna
-2025-07-29 00:31:55,638 - INFO - Coordinates: 25.625°N 85.125°E
-2025-07-29 00:33:03,334 - INFO - Starting weather data retrieval...
-2025-07-29 00:33:03,763 - INFO - Location detected via IP: 25.5941, 85.1356 near Patna
-2025-07-29 00:33:03,776 - INFO - Coordinates: 25.625°N 85.125°E
-2025-07-29 00:33:27,496 - INFO - Starting weather data retrieval...
-2025-07-29 00:33:27,946 - INFO - Location detected via IP: 25.5941, 85.1356 near Patna
-2025-07-29 00:33:27,960 - INFO - Coordinates: 25.625°N 85.125°E
-2025-08-01 18:18:01,227 - INFO - Starting weather data retrieval...
-2025-08-01 18:18:02,368 - INFO - Location detected via IP: 25.5941, 85.1356 near Patna
-2025-08-01 18:18:03,587 - INFO - Coordinates: 25.625°N 85.125°E
+2025-08-04 00:09:14,634 - INFO - Starting weather data retrieval...
+2025-08-04 00:09:15,062 - INFO - Location detected via IP: 25.5941, 85.1356 near Patna
+2025-08-04 00:09:15,786 - INFO - Coordinates: 25.625°N 85.125°E
+2025-08-04 12:03:24,414 - INFO - Data is up-to-date. No need to refresh.
+2025-08-04 12:04:39,481 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-04 12:04:39,482 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-04 12:04:39,644 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 12:04:40,670 - WARNING -  * Debugger is active!
+2025-08-04 12:04:40,728 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 12:04:45,624 - INFO - 127.0.0.1 - - [04/Aug/2025 12:04:45] "[33mGET / HTTP/1.1[0m" 404 -
+2025-08-04 12:04:45,699 - INFO - 127.0.0.1 - - [04/Aug/2025 12:04:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-04 12:04:50,688 - INFO - 127.0.0.1 - - [04/Aug/2025 12:04:50] "[33mGET / HTTP/1.1[0m" 404 -
+2025-08-04 12:20:45,079 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-04 12:20:45,079 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-04 12:20:45,087 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 12:20:46,551 - WARNING -  * Debugger is active!
+2025-08-04 12:20:46,571 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 12:20:57,759 - INFO - 127.0.0.1 - - [04/Aug/2025 12:20:57] "[33mGET / HTTP/1.1[0m" 404 -
+2025-08-04 12:21:09,615 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 12:21:10,445 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 12:21:11,709 - WARNING -  * Debugger is active!
+2025-08-04 12:21:11,720 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 12:21:12,847 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 12:21:13,965 - INFO -  * Restarting with watchdog (windowsapi)
