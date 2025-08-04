@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
     <title>Suraksha - Login</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Correct CSS reference using Flask's url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
     <!-- Add Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="firebase-config.js"></script>
-    <link rel="stylesheet" href="index.css">
+    <!-- Correct firebase-config reference -->
+    <script src="{{ url_for('static', filename='firebase-config.js') }}"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
             auth.onAuthStateChanged((user) => {
                 if (user) {
                     // User is already logged in, redirect to dashboard
-                    window.location.href = 'dashboard.html';
+                    window.location.href = "{{ url_for('dashboard') }}";
                 }
             });
 
@@ -50,8 +51,8 @@
 
                 auth.signInWithPopup(provider)
                     .then((result) => {
-                        // Successful login, redirect to dashboard
-                        window.location.href = 'dashboard.html';
+                        // Successful login, check permissions
+                        requestLocationAndNotifications();
                     })
                     .catch((error) => {
                         console.error('Error:', error);
@@ -66,46 +67,38 @@
                         }
                     });
             });
+
             function requestLocationAndNotifications() {
-                // First request location
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(
-                        (position) => {
-                            // Location granted, now request notifications
+                        () => {
+                            // Location granted, request notifications
                             requestNotificationPermission();
                         },
                         (error) => {
-                            // Location denied
-                            alert('Location access is required to use this application.');
-                            firebase.auth().signOut();
+                            // Location denied - still allow access but show warning
+                            console.warn('Location access denied:', error);
+                            requestNotificationPermission();
                         },
                         { enableHighAccuracy: true }
                     );
                 } else {
-                    alert('Geolocation is not supported by your browser. This application requires location access.');
-                    firebase.auth().signOut();
+                    console.warn('Geolocation not supported');
+                    requestNotificationPermission();
                 }
             }
 
             function requestNotificationPermission() {
                 if ('Notification' in window) {
-                    Notification.requestPermission().then((permission) => {
-                        if (permission === 'granted') {
-                            // Both location and notifications granted, proceed to dashboard
-                            window.location.href = 'dashboard.html';
-                        } else {
-                            // Notifications denied (but location was granted)
-                            window.location.href = 'dashboard.html';
-                        }
+                    Notification.requestPermission().finally(() => {
+                        // Redirect to dashboard
+                        window.location.href = "{{ url_for('dashboard') }}";
                     });
                 } else {
-                    // Notifications not supported (but location was granted)
-                    window.location.href = 'dashboard.html';
+                    window.location.href = "{{ url_for('dashboard') }}";
                 }
             }
         });
-
     </script>
 </body>
-
 </html>

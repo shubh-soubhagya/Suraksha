@@ -24,3 +24,609 @@
 2025-08-04 12:21:11,720 - INFO -  * Debugger PIN: 537-754-139
 2025-08-04 12:21:12,847 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
 2025-08-04 12:21:13,965 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:04:48,816 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.26:5000
+2025-08-04 22:04:48,816 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-04 22:04:48,900 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:04:49,823 - WARNING -  * Debugger is active!
+2025-08-04 22:04:49,852 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:04:56,054 - INFO - Fetching new weather data...
+2025-08-04 22:04:56,137 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\urllib3\\connection.py', reloading
+2025-08-04 22:04:56,154 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\urllib3\\connectionpool.py', reloading
+2025-08-04 22:04:56,166 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\app.py', reloading
+2025-08-04 22:04:56,178 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\debug\\__init__.py', reloading
+2025-08-04 22:04:56,187 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\serving.py', reloading
+2025-08-04 22:04:56,982 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\session.py', reloading
+2025-08-04 22:04:56,983 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\openmeteo_requests\\Client.py', reloading
+2025-08-04 22:04:57,260 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:04:58,229 - WARNING -  * Debugger is active!
+2025-08-04 22:04:58,239 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:04:58,285 - INFO - Fetching new weather data...
+2025-08-04 22:04:59,596 - INFO - Weather data updated.
+2025-08-04 22:04:59,618 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\templating.py', reloading
+2025-08-04 22:04:59,631 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\jinja2\\environment.py', reloading
+2025-08-04 22:04:59,641 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\jinja2\\loaders.py', reloading
+2025-08-04 22:04:59,652 - INFO - 127.0.0.1 - - [04/Aug/2025 22:04:59] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:04:59,678 - INFO - 127.0.0.1 - - [04/Aug/2025 22:04:59] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:04:59,681 - INFO - 127.0.0.1 - - [04/Aug/2025 22:04:59] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:04:59,689 - INFO - 127.0.0.1 - - [04/Aug/2025 22:04:59] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=mxfgCJeKZI3FzIXgUwpq HTTP/1.1" 200 -
+2025-08-04 22:04:59,720 - INFO - 127.0.0.1 - - [04/Aug/2025 22:04:59] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:05:00,452 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:05:01,386 - WARNING -  * Debugger is active!
+2025-08-04 22:05:01,396 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:05:43,925 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\typing.py', reloading
+2025-08-04 22:05:43,937 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-08-04 22:05:44,097 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:05:45,059 - WARNING -  * Debugger is active!
+2025-08-04 22:05:45,068 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:05:51,843 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:05:52,457 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:05:53,450 - WARNING -  * Debugger is active!
+2025-08-04 22:05:53,458 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:05:56,726 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:05:56,726 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:05:57,741 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:05:58,758 - WARNING -  * Debugger is active!
+2025-08-04 22:05:58,768 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:06:18,005 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:06:18,006 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:06:18,616 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:06:19,659 - WARNING -  * Debugger is active!
+2025-08-04 22:06:19,669 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:06:22,041 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:06:22,042 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:06:22,043 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:06:22,878 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:06:23,879 - WARNING -  * Debugger is active!
+2025-08-04 22:06:23,888 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:06:25,775 - INFO - Weather data is fresh.
+2025-08-04 22:06:25,800 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:25] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:06:25,812 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:25] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:06:25,816 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:25] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:06:25,834 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:25] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=gErw0eqWVHd6UxJpMvzR HTTP/1.1" 200 -
+2025-08-04 22:06:25,845 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:25] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,313 - INFO - Weather data is fresh.
+2025-08-04 22:06:26,339 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:06:26,352 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,354 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,367 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=gErw0eqWVHd6UxJpMvzR HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,379 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,715 - INFO - Weather data is fresh.
+2025-08-04 22:06:26,736 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:06:26,753 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,754 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,780 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=gErw0eqWVHd6UxJpMvzR HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,793 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,921 - INFO - Weather data is fresh.
+2025-08-04 22:06:26,943 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:06:26,953 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,953 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,965 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=gErw0eqWVHd6UxJpMvzR HTTP/1.1[0m" 304 -
+2025-08-04 22:06:26,970 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:26] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,145 - INFO - Weather data is fresh.
+2025-08-04 22:06:27,165 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:06:27,177 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,179 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,189 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=gErw0eqWVHd6UxJpMvzR HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,199 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,353 - INFO - Weather data is fresh.
+2025-08-04 22:06:27,375 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:06:27,385 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,386 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,396 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=gErw0eqWVHd6UxJpMvzR HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,400 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,530 - INFO - Weather data is fresh.
+2025-08-04 22:06:27,549 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:06:27,563 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,565 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,576 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=gErw0eqWVHd6UxJpMvzR HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,582 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,722 - INFO - Weather data is fresh.
+2025-08-04 22:06:27,740 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:06:27,753 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,754 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,769 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=gErw0eqWVHd6UxJpMvzR HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,780 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,907 - INFO - Weather data is fresh.
+2025-08-04 22:06:27,925 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:06:27,935 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,954 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,965 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=gErw0eqWVHd6UxJpMvzR HTTP/1.1[0m" 304 -
+2025-08-04 22:06:27,970 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:06:28,087 - INFO - Weather data is fresh.
+2025-08-04 22:06:28,123 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:28] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:06:28,133 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:28] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:06:28,134 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:28] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:06:28,138 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:28] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=gErw0eqWVHd6UxJpMvzR HTTP/1.1[0m" 304 -
+2025-08-04 22:06:28,147 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:28] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:06:28,289 - INFO - Weather data is fresh.
+2025-08-04 22:06:28,318 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:28] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:06:28,331 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:28] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:06:28,334 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:28] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:06:28,344 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:28] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=gErw0eqWVHd6UxJpMvzR HTTP/1.1[0m" 304 -
+2025-08-04 22:06:28,353 - INFO - 127.0.0.1 - - [04/Aug/2025 22:06:28] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:07:16,794 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\_pytest\\cacheprovider.py', reloading
+2025-08-04 22:07:16,830 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\_pytest\\fixtures.py', reloading
+2025-08-04 22:07:16,865 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\_pytest\\config\\__init__.py', reloading
+2025-08-04 22:07:17,101 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:07:18,098 - WARNING -  * Debugger is active!
+2025-08-04 22:07:18,107 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:07:38,718 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:07:38,720 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:07:39,027 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:07:40,013 - WARNING -  * Debugger is active!
+2025-08-04 22:07:40,023 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:28:00,848 - INFO - Weather data is fresh.
+2025-08-04 22:28:00,871 - INFO - 127.0.0.1 - - [04/Aug/2025 22:28:00] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:28:00,889 - INFO - 127.0.0.1 - - [04/Aug/2025 22:28:00] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:28:00,893 - INFO - 127.0.0.1 - - [04/Aug/2025 22:28:00] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:28:00,902 - INFO - 127.0.0.1 - - [04/Aug/2025 22:28:00] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=se5V1VYwwXRIoRIGqliu HTTP/1.1" 200 -
+2025-08-04 22:28:00,907 - INFO - 127.0.0.1 - - [04/Aug/2025 22:28:00] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:31:31,761 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\json\\__init__.py', reloading
+2025-08-04 22:31:31,869 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:31:32,899 - WARNING -  * Debugger is active!
+2025-08-04 22:31:32,909 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:31:49,383 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:31:49,386 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:31:49,669 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:31:50,667 - WARNING -  * Debugger is active!
+2025-08-04 22:31:50,677 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:36:00,306 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.26:5000
+2025-08-04 22:36:00,307 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-04 22:36:00,312 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:36:01,260 - WARNING -  * Debugger is active!
+2025-08-04 22:36:01,269 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:36:08,163 - INFO - Weather data is fresh.
+2025-08-04 22:36:08,185 - INFO - 127.0.0.1 - - [04/Aug/2025 22:36:08] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-04 22:36:08,199 - INFO - 127.0.0.1 - - [04/Aug/2025 22:36:08] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:36:08,200 - INFO - 127.0.0.1 - - [04/Aug/2025 22:36:08] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:36:08,235 - INFO - 127.0.0.1 - - [04/Aug/2025 22:36:08] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=dbHCwdCY7OcRxO2advbt HTTP/1.1" 200 -
+2025-08-04 22:36:28,095 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:36:28,097 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 22:36:28,486 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:37:02,810 - WARNING -  * Debugger is active!
+2025-08-04 22:37:02,820 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:39:14,439 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.26:5000
+2025-08-04 22:39:14,439 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-04 22:39:14,444 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:39:15,445 - WARNING -  * Debugger is active!
+2025-08-04 22:39:15,454 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:39:18,721 - INFO - 127.0.0.1 - - [04/Aug/2025 22:39:18] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-04 22:39:18,725 - INFO - Weather data is fresh.
+2025-08-04 22:39:18,742 - INFO - 127.0.0.1 - - [04/Aug/2025 22:39:18] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-08-04 22:39:18,755 - INFO - 127.0.0.1 - - [04/Aug/2025 22:39:18] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-08-04 22:39:18,755 - INFO - 127.0.0.1 - - [04/Aug/2025 22:39:18] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-08-04 22:39:18,791 - INFO - 127.0.0.1 - - [04/Aug/2025 22:39:18] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=QAy1f8g54h0sSAbBAOxA HTTP/1.1" 200 -
+2025-08-04 22:39:18,800 - INFO - 127.0.0.1 - - [04/Aug/2025 22:39:18] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-08-04 22:47:43,702 - INFO - Weather data is fresh.
+2025-08-04 22:47:43,732 - INFO - 127.0.0.1 - - [04/Aug/2025 22:47:43] "GET /dashboard HTTP/1.1" 200 -
+2025-08-04 22:47:43,775 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\ctx.py', reloading
+2025-08-04 22:47:43,788 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\routing\\map.py', reloading
+2025-08-04 22:47:43,797 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\routing\\matcher.py', reloading
+2025-08-04 22:47:43,814 - INFO - 127.0.0.1 - - [04/Aug/2025 22:47:43] "[35m[1mGET /style.css HTTP/1.1[0m" 500 -
+2025-08-04 22:47:43,846 - INFO - 127.0.0.1 - - [04/Aug/2025 22:47:43] "[35m[1mGET /firebase-config.js HTTP/1.1[0m" 500 -
+2025-08-04 22:47:44,553 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 22:47:45,540 - WARNING -  * Debugger is active!
+2025-08-04 22:47:45,550 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 22:48:39,067 - INFO - Weather data is fresh.
+2025-08-04 22:48:39,073 - INFO - 127.0.0.1 - - [04/Aug/2025 22:48:39] "GET /dashboard HTTP/1.1" 200 -
+2025-08-04 22:48:39,106 - INFO - 127.0.0.1 - - [04/Aug/2025 22:48:39] "[35m[1mGET /style.css HTTP/1.1[0m" 500 -
+2025-08-04 22:48:39,128 - INFO - 127.0.0.1 - - [04/Aug/2025 22:48:39] "[35m[1mGET /firebase-config.js HTTP/1.1[0m" 500 -
+2025-08-04 22:48:39,595 - INFO - Weather data is fresh.
+2025-08-04 22:48:39,596 - INFO - 127.0.0.1 - - [04/Aug/2025 22:48:39] "GET /dashboard HTTP/1.1" 200 -
+2025-08-04 22:48:39,631 - INFO - 127.0.0.1 - - [04/Aug/2025 22:48:39] "[35m[1mGET /style.css HTTP/1.1[0m" 500 -
+2025-08-04 22:48:39,654 - INFO - 127.0.0.1 - - [04/Aug/2025 22:48:39] "[35m[1mGET /firebase-config.js HTTP/1.1[0m" 500 -
+2025-08-04 22:48:39,771 - INFO - Weather data is fresh.
+2025-08-04 22:48:39,771 - INFO - 127.0.0.1 - - [04/Aug/2025 22:48:39] "GET /dashboard HTTP/1.1" 200 -
+2025-08-04 22:48:39,802 - INFO - 127.0.0.1 - - [04/Aug/2025 22:48:39] "[35m[1mGET /style.css HTTP/1.1[0m" 500 -
+2025-08-04 22:48:39,825 - INFO - 127.0.0.1 - - [04/Aug/2025 22:48:39] "[35m[1mGET /firebase-config.js HTTP/1.1[0m" 500 -
+2025-08-04 22:49:13,388 - INFO - Weather data is fresh.
+2025-08-04 22:49:13,419 - INFO - 127.0.0.1 - - [04/Aug/2025 22:49:13] "GET /dashboard HTTP/1.1" 200 -
+2025-08-04 22:49:13,442 - INFO - 127.0.0.1 - - [04/Aug/2025 22:49:13] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-04 22:49:13,471 - INFO - 127.0.0.1 - - [04/Aug/2025 22:49:13] "[35m[1mGET /firebase-config.js HTTP/1.1[0m" 500 -
+2025-08-04 22:51:03,020 - INFO - Weather data is fresh.
+2025-08-04 22:51:03,021 - INFO - 127.0.0.1 - - [04/Aug/2025 22:51:03] "GET /dashboard HTTP/1.1" 200 -
+2025-08-04 22:51:03,039 - INFO - 127.0.0.1 - - [04/Aug/2025 22:51:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:51:03,065 - INFO - 127.0.0.1 - - [04/Aug/2025 22:51:03] "[35m[1mGET /firebase-config.js HTTP/1.1[0m" 500 -
+2025-08-04 22:51:21,231 - INFO - Fetching new weather data...
+2025-08-04 22:51:22,483 - INFO - Weather data updated.
+2025-08-04 22:51:22,484 - INFO - 127.0.0.1 - - [04/Aug/2025 22:51:22] "GET /dashboard HTTP/1.1" 200 -
+2025-08-04 22:51:22,501 - INFO - 127.0.0.1 - - [04/Aug/2025 22:51:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:51:22,521 - INFO - 127.0.0.1 - - [04/Aug/2025 22:51:22] "[35m[1mGET /firebase-config.js HTTP/1.1[0m" 500 -
+2025-08-04 22:56:38,186 - INFO - Fetching new weather data...
+2025-08-04 22:56:38,653 - INFO - Weather data updated.
+2025-08-04 22:56:38,680 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:38] "GET /dashboard HTTP/1.1" 200 -
+2025-08-04 22:56:38,703 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:38,713 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:38] "GET /static/firebase-config.js HTTP/1.1" 200 -
+2025-08-04 22:56:38,768 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:38] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:38,784 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:38] "GET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-08-04 22:56:38,788 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:38] "GET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-08-04 22:56:38,795 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:38] "GET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1" 200 -
+2025-08-04 22:56:38,804 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:38] "GET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-08-04 22:56:41,245 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:41] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:41,259 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:41] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:41,262 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:41] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:41,275 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:41] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:41,285 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:41] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:45,487 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:45] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:45,502 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:45] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:45,502 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:45] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:45,508 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:45] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:45,520 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:45] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:45,960 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:45] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:45,975 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:45] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:45,976 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:45] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:45,984 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:45] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:45,990 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:45] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,146 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:46,159 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,164 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,174 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,184 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,315 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:46,328 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,331 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,340 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,349 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,485 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:46,498 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,499 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,511 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,518 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,667 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:46,682 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,682 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,691 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,697 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,866 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:46,878 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,881 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,892 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:46,900 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:46] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,041 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:47,054 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,054 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,070 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,078 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,222 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:47,237 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,239 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,251 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,257 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,388 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:47,401 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,401 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,407 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,414 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,579 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:47,591 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,595 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,605 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,614 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,743 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:47,757 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,757 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,771 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,780 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,907 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:47,922 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,922 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,933 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:47,939 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:47] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,094 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:48,109 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,112 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,121 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,128 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,282 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:48,294 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,296 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,306 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,313 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,495 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 22:56:48,507 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,512 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,520 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=FdvI4VSkD5iIadcEHGlB HTTP/1.1[0m" 304 -
+2025-08-04 22:56:48,529 - INFO - 127.0.0.1 - - [04/Aug/2025 22:56:48] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:01:28,837 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:01:28,838 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:01:29,610 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:01:30,648 - WARNING -  * Debugger is active!
+2025-08-04 23:01:30,658 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:01:49,018 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:01:49,019 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:01:49,483 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:01:50,484 - WARNING -  * Debugger is active!
+2025-08-04 23:01:50,494 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:01:53,300 - INFO - 127.0.0.1 - - [04/Aug/2025 23:01:53] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:01:53,316 - INFO - 127.0.0.1 - - [04/Aug/2025 23:01:53] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:01:53,317 - INFO - 127.0.0.1 - - [04/Aug/2025 23:01:53] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:01:53,330 - INFO - 127.0.0.1 - - [04/Aug/2025 23:01:53] "GET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=1ZooNkg5rS3wqPUwavXi HTTP/1.1" 200 -
+2025-08-04 23:01:53,336 - INFO - 127.0.0.1 - - [04/Aug/2025 23:01:53] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:02:06,186 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:02:06,188 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:02:07,264 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:02:08,241 - WARNING -  * Debugger is active!
+2025-08-04 23:02:08,250 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:02:12,898 - INFO - 127.0.0.1 - - [04/Aug/2025 23:02:12] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:02:12,916 - INFO - 127.0.0.1 - - [04/Aug/2025 23:02:12] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:02:12,916 - INFO - 127.0.0.1 - - [04/Aug/2025 23:02:12] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:02:12,929 - INFO - 127.0.0.1 - - [04/Aug/2025 23:02:12] "GET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=NkGdBojerwVZ1GXLTaCv HTTP/1.1" 200 -
+2025-08-04 23:02:12,935 - INFO - 127.0.0.1 - - [04/Aug/2025 23:02:12] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:04:24,131 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:04:24,132 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:04:24,133 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:04:24,735 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:04:25,673 - WARNING -  * Debugger is active!
+2025-08-04 23:04:25,683 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:04:29,699 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:04:29,700 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:04:29,958 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:04:30,942 - WARNING -  * Debugger is active!
+2025-08-04 23:04:30,952 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:04:40,479 - INFO - 127.0.0.1 - - [04/Aug/2025 23:04:40] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:04:40,493 - INFO - 127.0.0.1 - - [04/Aug/2025 23:04:40] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:04:40,499 - INFO - 127.0.0.1 - - [04/Aug/2025 23:04:40] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:04:40,513 - INFO - 127.0.0.1 - - [04/Aug/2025 23:04:40] "GET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=rQWgFywpM4tkoq6l0w10 HTTP/1.1" 200 -
+2025-08-04 23:04:40,524 - INFO - 127.0.0.1 - - [04/Aug/2025 23:04:40] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:05:07,183 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:07] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:05:07,195 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:07] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:05:07,195 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:07] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:05:07,206 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:07] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=rQWgFywpM4tkoq6l0w10 HTTP/1.1[0m" 304 -
+2025-08-04 23:05:07,213 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:07] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:05:15,545 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.26:5000
+2025-08-04 23:05:15,545 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-04 23:05:15,550 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:05:16,481 - WARNING -  * Debugger is active!
+2025-08-04 23:05:16,491 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:05:17,613 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:17] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-04 23:05:17,620 - INFO - Weather data is fresh.
+2025-08-04 23:05:17,653 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:17] "GET /dashboard HTTP/1.1" 200 -
+2025-08-04 23:05:17,688 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:05:17,704 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:17] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-04 23:05:17,816 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\app.py', reloading
+2025-08-04 23:05:17,816 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\templating.py', reloading
+2025-08-04 23:05:17,816 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\jinja2\\environment.py', reloading
+2025-08-04 23:05:17,817 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\jinja2\\loaders.py', reloading
+2025-08-04 23:05:17,836 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:17] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:05:17,852 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:05:17,852 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:05:17,862 - INFO - 127.0.0.1 - - [04/Aug/2025 23:05:17] "GET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=CQt3PyvQPb78qWADhNYG HTTP/1.1" 200 -
+2025-08-04 23:05:18,664 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:05:19,591 - WARNING -  * Debugger is active!
+2025-08-04 23:05:19,601 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:06:13,517 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.26:5000
+2025-08-04 23:06:13,518 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-04 23:06:13,523 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:06:14,439 - WARNING -  * Debugger is active!
+2025-08-04 23:06:14,448 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:06:15,555 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:15] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-04 23:06:15,561 - INFO - Weather data is fresh.
+2025-08-04 23:06:15,566 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:15] "GET /dashboard HTTP/1.1" 200 -
+2025-08-04 23:06:15,592 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:15,601 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:15] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:15,694 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:15] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:15,710 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:15] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:15,711 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:15] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:15,758 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:15] "GET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1" 200 -
+2025-08-04 23:06:17,402 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:17,416 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:17,416 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:17,427 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:17,433 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:06:17,758 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:17,770 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:17,770 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:17,781 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:17,787 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:06:17,957 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:17,968 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:17,969 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:17,978 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:17,984 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:17] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,149 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:18,162 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,166 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,177 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,186 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,313 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:18,325 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,326 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,334 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,339 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,495 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:18,511 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,513 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,528 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,538 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,669 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:18,689 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,691 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,703 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,711 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,833 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:18,846 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,847 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,856 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,864 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:06:18,993 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:18] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:19,005 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,006 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,016 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,021 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,152 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:19,167 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,168 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,175 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,187 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,302 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:19,335 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,335 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,344 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,351 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,458 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:06:19,471 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,471 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,481 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=WKVm3UOnV6mzm93ZvXkC HTTP/1.1[0m" 304 -
+2025-08-04 23:06:19,486 - INFO - 127.0.0.1 - - [04/Aug/2025 23:06:19] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:07:09,604 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:07:09,605 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:07:09,812 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:07:10,734 - WARNING -  * Debugger is active!
+2025-08-04 23:07:10,744 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:07:12,270 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:12] "[33mGET /index.html HTTP/1.1[0m" 404 -
+2025-08-04 23:07:12,286 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:12] "[33mGET /style.css HTTP/1.1[0m" 404 -
+2025-08-04 23:07:12,296 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:12] "[33mGET /firebase-config.js HTTP/1.1[0m" 404 -
+2025-08-04 23:07:12,300 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:12] "[33mGET /index.css HTTP/1.1[0m" 404 -
+2025-08-04 23:07:26,631 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:07:26,632 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:07:26,632 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:07:26,633 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:07:27,517 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:07:49,625 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:07:50,598 - WARNING -  * Debugger is active!
+2025-08-04 23:07:50,611 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:07:53,341 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:53] "[33mGET /index.html HTTP/1.1[0m" 404 -
+2025-08-04 23:07:53,354 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:53] "[33mGET /style.css HTTP/1.1[0m" 404 -
+2025-08-04 23:07:53,362 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:53] "[33mGET /firebase-config.js HTTP/1.1[0m" 404 -
+2025-08-04 23:07:53,364 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:53] "[33mGET /index.css HTTP/1.1[0m" 404 -
+2025-08-04 23:07:53,811 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:53] "[33mGET /index.html HTTP/1.1[0m" 404 -
+2025-08-04 23:07:53,822 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:53] "[33mGET /style.css HTTP/1.1[0m" 404 -
+2025-08-04 23:07:53,829 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:53] "[33mGET /firebase-config.js HTTP/1.1[0m" 404 -
+2025-08-04 23:07:53,829 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:53] "[33mGET /index.css HTTP/1.1[0m" 404 -
+2025-08-04 23:07:56,396 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:07:56,396 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:07:56,979 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:07:57,949 - WARNING -  * Debugger is active!
+2025-08-04 23:07:57,959 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:07:58,034 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:58] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-04 23:07:58,048 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:58] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-04 23:07:58,049 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:58] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-04 23:07:58,059 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:58] "GET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=KAgwehKZMguZb1hpsjEe HTTP/1.1" 200 -
+2025-08-04 23:07:58,066 - INFO - 127.0.0.1 - - [04/Aug/2025 23:07:58] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-04 23:08:02,307 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:08:02,308 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:08:02,308 - INFO -  * Detected change in 'D:\\01_SKILL_SET\\python class\\Suraksha\\app.py', reloading
+2025-08-04 23:08:03,308 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:08:04,255 - WARNING -  * Debugger is active!
+2025-08-04 23:08:04,264 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:08:06,230 - INFO - 127.0.0.1 - - [04/Aug/2025 23:08:06] "[33mGET /index.html HTTP/1.1[0m" 404 -
+2025-08-04 23:08:06,243 - INFO - 127.0.0.1 - - [04/Aug/2025 23:08:06] "[33mGET /style.css HTTP/1.1[0m" 404 -
+2025-08-04 23:08:06,248 - INFO - 127.0.0.1 - - [04/Aug/2025 23:08:06] "[33mGET /firebase-config.js HTTP/1.1[0m" 404 -
+2025-08-04 23:08:06,251 - INFO - 127.0.0.1 - - [04/Aug/2025 23:08:06] "[33mGET /index.css HTTP/1.1[0m" 404 -
+2025-08-04 23:13:21,820 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\base64_codec.py', reloading
+2025-08-04 23:13:22,433 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:13:23,473 - WARNING -  * Debugger is active!
+2025-08-04 23:13:23,482 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:13:27,048 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\formatter.py', reloading
+2025-08-04 23:13:27,743 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:13:28,720 - WARNING -  * Debugger is active!
+2025-08-04 23:13:28,731 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:13:28,888 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\cp1140.py', reloading
+2025-08-04 23:13:29,890 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:13:30,864 - WARNING -  * Debugger is active!
+2025-08-04 23:13:30,874 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:13:31,218 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\unittest\\loader.py', reloading
+2025-08-04 23:13:32,017 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:13:33,053 - WARNING -  * Debugger is active!
+2025-08-04 23:13:33,062 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:13:40,486 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\site-packages\\pip\\_vendor\\requests\\utils.py', reloading
+2025-08-04 23:13:41,072 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\distutils\\bcppcompiler.py', reloading
+2025-08-04 23:13:41,511 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:13:42,530 - WARNING -  * Debugger is active!
+2025-08-04 23:13:42,540 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:13:44,039 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\cp857.py', reloading
+2025-08-04 23:13:44,735 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:13:45,649 - WARNING -  * Debugger is active!
+2025-08-04 23:13:45,658 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:13:46,365 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\distutils\\command\\__init__.py', reloading
+2025-08-04 23:13:46,460 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\pipes.py', reloading
+2025-08-04 23:13:46,800 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:13:47,753 - WARNING -  * Debugger is active!
+2025-08-04 23:13:47,762 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:13:48,863 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\big5.py', reloading
+2025-08-04 23:13:49,095 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\curses\\ascii.py', reloading
+2025-08-04 23:13:49,236 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\cp863.py', reloading
+2025-08-04 23:13:49,965 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:13:50,891 - WARNING -  * Debugger is active!
+2025-08-04 23:13:50,900 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:13:51,478 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\email\\mime\\application.py', reloading
+2025-08-04 23:13:52,040 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:14:01,411 - WARNING -  * Debugger is active!
+2025-08-04 23:14:01,437 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:14:02,084 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\iso8859_3.py', reloading
+2025-08-04 23:14:02,273 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\koi8_u.py', reloading
+2025-08-04 23:14:02,663 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:14:05,561 - WARNING -  * Debugger is active!
+2025-08-04 23:14:05,572 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:14:07,914 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\xml\\dom\\__init__.py', reloading
+2025-08-04 23:14:07,934 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\xml\\sax\\_exceptions.py', reloading
+2025-08-04 23:14:08,082 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\xml\\sax\\handler.py', reloading
+2025-08-04 23:14:08,790 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:14:09,757 - WARNING -  * Debugger is active!
+2025-08-04 23:14:09,766 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:14:10,852 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\cp273.py', reloading
+2025-08-04 23:14:11,947 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:14:12,921 - WARNING -  * Debugger is active!
+2025-08-04 23:14:12,931 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:14:13,804 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\big5hkscs.py', reloading
+2025-08-04 23:14:14,502 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:14:15,436 - WARNING -  * Debugger is active!
+2025-08-04 23:14:15,446 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:14:16,814 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\distutils\\command\\register.py', reloading
+2025-08-04 23:14:17,618 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:14:18,525 - WARNING -  * Debugger is active!
+2025-08-04 23:14:18,534 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:14:19,230 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\iso8859_4.py', reloading
+2025-08-04 23:14:19,686 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:14:20,614 - WARNING -  * Debugger is active!
+2025-08-04 23:14:20,623 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:14:23,957 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\getopt.py', reloading
+2025-08-04 23:14:24,578 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\distutils\\dep_util.py', reloading
+2025-08-04 23:14:24,701 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\johab.py', reloading
+2025-08-04 23:14:24,871 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:14:25,800 - WARNING -  * Debugger is active!
+2025-08-04 23:14:25,810 - INFO -  * Debugger PIN: 537-754-139
+2025-08-04 23:14:27,980 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\distutils\\_msvccompiler.py', reloading
+2025-08-04 23:14:29,009 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-04 23:14:29,946 - WARNING -  * Debugger is active!
+2025-08-04 23:14:29,956 - INFO -  * Debugger PIN: 537-754-139
+2025-08-05 00:38:21,734 - INFO - 127.0.0.1 - - [05/Aug/2025 00:38:21] "[33mGET /index.html HTTP/1.1[0m" 404 -
+2025-08-05 00:38:21,753 - INFO - 127.0.0.1 - - [05/Aug/2025 00:38:21] "[33mGET /style.css HTTP/1.1[0m" 404 -
+2025-08-05 00:38:21,767 - INFO - 127.0.0.1 - - [05/Aug/2025 00:38:21] "[33mGET /firebase-config.js HTTP/1.1[0m" 404 -
+2025-08-05 00:38:21,771 - INFO - 127.0.0.1 - - [05/Aug/2025 00:38:21] "[33mGET /index.css HTTP/1.1[0m" 404 -
+2025-08-05 00:39:37,576 - INFO - 127.0.0.1 - - [05/Aug/2025 00:39:37] "[33mGET /index.html HTTP/1.1[0m" 404 -
+2025-08-05 00:39:37,594 - INFO - 127.0.0.1 - - [05/Aug/2025 00:39:37] "[33mGET /style.css HTTP/1.1[0m" 404 -
+2025-08-05 00:39:37,602 - INFO - 127.0.0.1 - - [05/Aug/2025 00:39:37] "[33mGET /firebase-config.js HTTP/1.1[0m" 404 -
+2025-08-05 00:39:37,605 - INFO - 127.0.0.1 - - [05/Aug/2025 00:39:37] "[33mGET /index.css HTTP/1.1[0m" 404 -
+2025-08-05 00:46:57,529 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\unicode_escape.py', reloading
+2025-08-05 00:46:57,549 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\app.py', reloading
+2025-08-05 00:46:57,557 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\templating.py', reloading
+2025-08-05 00:46:57,569 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\jinja2\\environment.py', reloading
+2025-08-05 00:46:57,585 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\routing\\map.py', reloading
+2025-08-05 00:46:57,595 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\ctx.py', reloading
+2025-08-05 00:46:57,597 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\routing\\matcher.py', reloading
+2025-08-05 00:46:57,613 - INFO - 127.0.0.1 - - [05/Aug/2025 00:46:57] "[35m[1mGET /index.html HTTP/1.1[0m" 500 -
+2025-08-05 00:46:57,625 - INFO - 127.0.0.1 - - [05/Aug/2025 00:46:57] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-05 00:46:57,689 - INFO - 127.0.0.1 - - [05/Aug/2025 00:46:57] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-05 00:46:57,703 - INFO - 127.0.0.1 - - [05/Aug/2025 00:46:57] "GET /index.html?__debugger__=yes&cmd=resource&f=console.png&s=UTtciBISGgFPh5Qv08wc HTTP/1.1" 200 -
+2025-08-05 00:46:57,794 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-05 00:46:58,830 - WARNING -  * Debugger is active!
+2025-08-05 00:46:58,841 - INFO -  * Debugger PIN: 537-754-139
+2025-08-05 00:46:58,880 - INFO - 127.0.0.1 - - [05/Aug/2025 00:46:58] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-05 00:55:02,358 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\sessions.py', reloading
+2025-08-05 00:55:03,103 - INFO -  * Restarting with watchdog (windowsapi)

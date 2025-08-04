@@ -8,11 +8,118 @@
     <title>Suraksha - Weather Dashboard</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="firebase-config.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="static/firebase-config.js"></script>
+    <style>
+        /* News Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-source {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .news-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+        }
+
+        .news-card a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .news-card a:hover {
+            text-decoration: underline;
+        }
+
+        .news-description {
+            color: #555;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            font-size: 0.8em;
+            color: #3498db;
+        }
+
+        .search-container {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .search-container input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-container button {
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 
 <body>
@@ -59,6 +166,19 @@
 
         <div class="stats-summary" id="stats"></div>
         <div class="charts-grid" id="charts"></div>
+    </div>
+
+    <!-- News Modal -->
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Weather News</h2>
+            <div class="search-container">
+                <input type="text" id="newsCity" placeholder="Enter a city name">
+                <button id="searchNewsBtn">Search</button>
+            </div>
+            <div id="newsResults" class="news-container"></div>
+        </div>
     </div>
 
     <script>
@@ -189,39 +309,6 @@
                 });
             }
         }
-        // News handler
-        document.getElementById('newsBtn').addEventListener('click', () => {
-            showLoading(true, 'Fetching News data...');
-            verifyLocationAccess().then(() => {
-                window.location.reload();
-            }).catch(error => {
-                showError('Could not refresh: ' + error.message);
-                showLoading(false);
-            });
-        });
-
-        // Refresh handler
-        document.getElementById('refreshBtn').addEventListener('click', () => {
-            showLoading(true, 'Refreshing data...');
-            verifyLocationAccess().then(() => {
-                window.location.reload();
-            }).catch(error => {
-                showError('Could not refresh: ' + error.message);
-                showLoading(false);
-            });
-        });
-
-        // Sign out handler
-        document.getElementById('signOutBtn').addEventListener('click', () => {
-            showLoading(true, 'Signing out...');
-            firebase.auth().signOut().then(() => {
-                window.location.href = 'index.html';
-            }).catch((error) => {
-                console.error('Sign out error:', error);
-                showError('Sign out failed. Please try again.');
-                showLoading(false);
-            });
-        });
 
         // Color schemes for different chart groups
         const colorSchemes = {
@@ -319,37 +406,29 @@
                 showLoading(true, 'Loading weather data...');
                 hideError();
 
-                // First try to load location-specific data if available
-                let dataUrl = 'weather_hourly.csv';
-                if (userLocation) {
-                    try {
-                        const locationDataUrl = `weather_${userLocation.latitude.toFixed(2)}_${userLocation.longitude.toFixed(2)}.csv`;
-                        const testResponse = await fetch(locationDataUrl);
-                        if (testResponse.ok) {
-                            dataUrl = locationDataUrl;
-                        }
-                    } catch (e) {
-                        console.log('Using default weather data');
-                    }
-                }
-
-                const response = await fetch(dataUrl);
+                // Fetch data from Flask backend
+                const response = await fetch('/api/weather');
                 if (!response.ok) {
                     throw new Error(`Failed to load data: HTTP ${response.status}`);
                 }
 
-                const csvText = await response.text();
-                const parsed = Papa.parse(csvText, {
-                    header: true,
-                    dynamicTyping: true,
-                    skipEmptyLines: true
+                const weatherData = await response.json();
+
+                // Process the data to match expected format
+                fullWeatherData = weatherData.map(item => {
+                    // Convert temperature from Kelvin to Celsius if needed
+                    const temp = item.temperature_2m;
+                    return {
+                        ...item,
+                        date: item.date,
+                        temperature_2m: typeof temp === 'number' ? temp : parseFloat(temp)
+                    };
                 });
 
                 if (parsed.errors.length > 0) {
                     console.warn('CSV parsing warnings:', parsed.errors);
                 }
 
-                fullWeatherData = parsed.data.filter(row => row.date && !isNaN(new Date(row.date).getTime()));
                 fullWeatherData.sort((a, b) => new Date(a.date) - new Date(b.date));
 
                 // Apply initial filtering
@@ -398,6 +477,7 @@
             // Update the date range display
             updateDateRangeDisplay(startDate, endDate);
         }
+
         function updateDateRangeDisplay(startDate, endDate) {
             const dateRangeElement = document.querySelector('.date-range-display');
             if (!dateRangeElement) return;
@@ -637,6 +717,52 @@
                 .replace('Apparent', 'Feels Like');
         }
 
+        // News Functions
+        async function fetchWeatherNews() {
+            const city = document.getElementById('newsCity').value.trim();
+            if (!city) {
+                alert('Please enter a city name');
+                return;
+            }
+
+            const newsResults = document.getElementById('newsResults');
+            newsResults.innerHTML = '<p>Loading news...</p>';
+
+            try {
+                const response = await fetch(`/api/news?city=${encodeURIComponent(city)}`);
+                if (!response.ok) {
+                    throw new Error(`News API error: ${response.status}`);
+                }
+
+                const headlines = await response.json();
+                displayNewsResults(headlines);
+            } catch (error) {
+                console.error('Error fetching news:', error);
+                newsResults.innerHTML = `<p class="error-message">Failed to load news: ${error.message}</p>`;
+            }
+        }
+
+        function displayNewsResults(articles) {
+            const newsResults = document.getElementById('newsResults');
+
+            if (!articles || articles.length === 0) {
+                newsResults.innerHTML = '<p>No weather news found for this location.</p>';
+                return;
+            }
+
+            newsResults.innerHTML = articles.map(article => `
+                <div class="news-card">
+                    <div class="news-source">
+                        <span>${article.source}</span>
+                        <span class="published-date">${article.publishedAt.slice(0, 10)}</span>
+                    </div>
+                    <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
+                    <p class="news-description">${article.description}</p>
+                    <a href="${article.url}" target="_blank" class="read-more">Read more →</a>
+                </div>
+            `).join('');
+        }
+
         // Event Listeners
         document.getElementById('dateRange').addEventListener('change', () => {
             applyDateFilter();
@@ -647,6 +773,52 @@
         document.getElementById('sampleRate').addEventListener('change', () => {
             displayStats();
             createAllCharts();
+        });
+
+        document.getElementById('newsBtn').addEventListener('click', () => {
+            const modal = document.getElementById('newsModal');
+            modal.style.display = 'block';
+
+            // Pre-fill with current location if available
+            if (userLocation) {
+                // In a real app, you would reverse geocode to get city name
+                document.getElementById('newsCity').placeholder = "Current Location (enter city name)";
+            }
+        });
+
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('newsModal').style.display = 'none';
+        });
+
+        document.getElementById('searchNewsBtn').addEventListener('click', fetchWeatherNews);
+
+        document.getElementById('refreshBtn').addEventListener('click', () => {
+            showLoading(true, 'Refreshing data...');
+            verifyLocationAccess().then(() => {
+                window.location.reload();
+            }).catch(error => {
+                showError('Could not refresh: ' + error.message);
+                showLoading(false);
+            });
+        });
+
+        document.getElementById('signOutBtn').addEventListener('click', () => {
+            showLoading(true, 'Signing out...');
+            firebase.auth().signOut().then(() => {
+                window.location.href = 'index.html';
+            }).catch((error) => {
+                console.error('Sign out error:', error);
+                showError('Sign out failed. Please try again.');
+                showLoading(false);
+            });
+        });
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', (event) => {
+            const modal = document.getElementById('newsModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
         });
     </script>
 </body>
