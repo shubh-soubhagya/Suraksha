@@ -630,3 +630,44 @@
 2025-08-05 00:46:58,880 - INFO - 127.0.0.1 - - [05/Aug/2025 00:46:58] "[36mGET /index.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
 2025-08-05 00:55:02,358 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\sessions.py', reloading
 2025-08-05 00:55:03,103 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-05 12:10:13,633 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.64.51.217:5000
+2025-08-05 12:10:13,634 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-05 12:10:13,670 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-05 12:10:17,748 - WARNING -  * Debugger is active!
+2025-08-05 12:10:17,754 - INFO -  * Debugger PIN: 120-941-535
+2025-08-05 12:10:43,323 - INFO - 127.0.0.1 - - [05/Aug/2025 12:10:43] "GET / HTTP/1.1" 200 -
+2025-08-05 12:10:43,532 - INFO - 127.0.0.1 - - [05/Aug/2025 12:10:43] "GET /static/index.css HTTP/1.1" 200 -
+2025-08-05 12:10:43,621 - INFO - 127.0.0.1 - - [05/Aug/2025 12:10:43] "GET /static/firebase-config.js HTTP/1.1" 200 -
+2025-08-05 12:10:44,184 - INFO - 127.0.0.1 - - [05/Aug/2025 12:10:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-05 12:14:43,467 - INFO - Weather data is fresh.
+2025-08-05 12:14:43,598 - INFO - 127.0.0.1 - - [05/Aug/2025 12:14:43] "GET /dashboard HTTP/1.1" 200 -
+2025-08-05 12:14:44,972 - INFO - 127.0.0.1 - - [05/Aug/2025 12:14:44] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-05 12:14:44,989 - INFO - 127.0.0.1 - - [05/Aug/2025 12:14:44] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-05 12:14:56,513 - INFO - 127.0.0.1 - - [05/Aug/2025 12:14:56] "GET /api/weather HTTP/1.1" 200 -
+2025-08-05 12:15:19,444 - INFO -  * Detected change in 'C:\\Users\\hp\\AppData\\Roaming\\Python\\Python312\\site-packages\\urllib3\\connection.py', reloading
+2025-08-05 12:15:19,485 - INFO -  * Detected change in 'C:\\Users\\hp\\AppData\\Roaming\\Python\\Python312\\site-packages\\urllib3\\connectionpool.py', reloading
+2025-08-05 12:15:19,556 - INFO -  * Detected change in 'C:\\Users\\hp\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\debug\\__init__.py', reloading
+2025-08-05 12:15:19,599 - INFO -  * Detected change in 'C:\\Users\\hp\\AppData\\Roaming\\Python\\Python312\\site-packages\\werkzeug\\serving.py', reloading
+2025-08-05 12:15:19,649 - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\http\\server.py', reloading
+2025-08-05 12:15:20,218 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-05 12:15:24,858 - WARNING -  * Debugger is active!
+2025-08-05 12:15:24,864 - INFO -  * Debugger PIN: 120-941-535
+2025-08-05 12:15:28,035 - INFO - Weather data is fresh.
+2025-08-05 12:15:28,174 - INFO - 127.0.0.1 - - [05/Aug/2025 12:15:28] "GET /news HTTP/1.1" 200 -
+2025-08-05 12:15:28,372 - INFO - 127.0.0.1 - - [05/Aug/2025 12:15:28] "GET /static/styles.css HTTP/1.1" 200 -
+2025-08-05 12:15:33,184 - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\socketserver.py', reloading
+2025-08-05 12:15:33,234 - INFO -  * Detected change in 'C:\\Program Files\\Python312\\Lib\\threading.py', reloading
+2025-08-05 12:15:33,771 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-05 12:15:38,123 - WARNING -  * Debugger is active!
+2025-08-05 12:15:38,130 - INFO -  * Debugger PIN: 120-941-535
+2025-08-05 12:15:52,229 - INFO - Weather data is fresh.
+2025-08-05 12:15:52,277 - INFO - 127.0.0.1 - - [05/Aug/2025 12:15:52] "POST /news HTTP/1.1" 200 -
+2025-08-05 12:15:52,444 - INFO - 127.0.0.1 - - [05/Aug/2025 12:15:52] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-05 12:16:15,463 - INFO - Weather data is fresh.
+2025-08-05 12:16:15,477 - INFO - 127.0.0.1 - - [05/Aug/2025 12:16:15] "GET /dashboard HTTP/1.1" 200 -
+2025-08-05 12:16:15,576 - INFO - 127.0.0.1 - - [05/Aug/2025 12:16:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-05 12:16:15,601 - INFO - 127.0.0.1 - - [05/Aug/2025 12:16:15] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-05 12:16:17,229 - INFO - 127.0.0.1 - - [05/Aug/2025 12:16:17] "GET /api/weather HTTP/1.1" 200 -

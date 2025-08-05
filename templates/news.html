@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suraksha - Weather News</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .header {
+            background-color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #3498db;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            background-color: #ecf0f1;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            background-color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌤️ Suraksha - Weather News</h1>
+        <div class="nav-links">
+            <a href="/dashboard">📊 Dashboard</a>
+            <a href="/">🏠 Home</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Weather News Search</h1>
+        <p class="subtitle">Get the latest weather news for any city around the world</p>
+        
+        <form method="POST" class="search-container">
+            <input type="text" name="city" placeholder="Enter city name (e.g., London, New York, Tokyo)" 
+                   value="{{ city }}" required>
+            <button type="submit">Search News</button>
+        </form>
+
+        {% if error_message %}
+        <div class="error-message">{{ error_message }}</div>
+        {% endif %}
+
+        {% if headlines %}
+        <div class="results-header">
+            <h2>Weather News for {{ city }}</h2>
+            <p>{{ headlines|length }} articles found</p>
+        </div>
+
+        <div class="news-container">
+            {% for article in headlines %}
+            <div class="news-card">
+                <div class="news-source">
+                    <span>{{ article.source }}</span>
+                    <span>{{ article.publishedAt[:10] }}</span>
+                </div>
+                <h3><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h3>
+                <p class="news-description">{{ article.description }}</p>
+                <a href="{{ article.url }}" target="_blank" class="read-more">Read more →</a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if weather %}
+        <div class="weather-summary">
+            <h2>Today's Weather Summary</h2>
+            <div class="weather-cards">
+                {% for data in weather[:6] %}
+                <div class="weather-card">
+                    <div class="weather-time">{{ data.date[11:16] if data.date|length > 10 else data.hour }}:00</div>
+                    <div class="weather-temp">{{ "%.1f"|format(data.temperature_2m) }}°C</div>
+                    <div class="weather-details">
+                        <div>Humidity: {{ "%.0f"|format(data.relative_humidity_2m) }}%</div>
+                        <div>Wind: {{ "%.1f"|format(data.wind_speed_10m) }} m/s</div>
+                        {% if data.precipitation > 0 %}
+                        <div>Rain: {{ "%.1f"|format(data.precipitation) }}mm</div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Suraksha Weather Dashboard. Data provided by Open-Meteo and NewsAPI.</p>
+    </footer>
+
+    <style>
+        .weather-summary {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .weather-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .weather-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .weather-time {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .weather-temp {
+            font-size: 1.5rem;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .weather-details {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .weather-details div {
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</body>
+</html>

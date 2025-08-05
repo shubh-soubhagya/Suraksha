@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 import requests
 import os
 import pandas as pd
@@ -46,7 +46,7 @@ def get_weather_data(client, latitude, longitude, hourly_vars):
         "longitude": longitude,
         "hourly": ",".join(hourly_vars),
         "timezone": "Asia/Kolkata",
-        "forecast_days": 2
+        "forecast_days": 7  # Extended for dashboard
     }
     responses = client.weather_api(url, params=params)
     return responses[0]
@@ -77,7 +77,7 @@ def should_update_data():
     if not os.path.exists(WEATHER_CSV_FILE):
         return True
     last_update = datetime.fromtimestamp(os.path.getmtime(WEATHER_CSV_FILE))
-    return datetime.now() - last_update > timedelta(hours=6)
+    return datetime.now() - last_update > timedelta(hours=1)
 
 def fetch_weather_if_needed():
     if not should_update_data():
@@ -85,9 +85,16 @@ def fetch_weather_if_needed():
         return
     logging.info("Fetching new weather data...")
     try:
+        # Extended variables for dashboard
         hourly_vars = [
-            "temperature_2m", "relative_humidity_2m", "cloud_cover",
-            "precipitation", "wind_speed_10m", "weather_code"
+            "temperature_2m", "apparent_temperature", "relative_humidity_2m", 
+            "dew_point_2m", "precipitation", "rain", "showers", "snowfall",
+            "precipitation_probability", "cloud_cover", "cloud_cover_low", 
+            "cloud_cover_mid", "cloud_cover_high", "wind_speed_10m", 
+            "wind_speed_80m", "wind_speed_120m", "wind_speed_180m",
+            "wind_direction_10m", "wind_direction_80m", "wind_direction_120m",
+            "wind_direction_180m", "wind_gusts_10m", "pressure_msl", 
+            "surface_pressure", "weather_code"
         ]
         lat, lon = get_user_location()
         client = initialize_session()
@@ -122,8 +129,58 @@ def fetch_weather_news(city):
         return []
 
 # -------------- FLASK ROUTES ---------------------
-@app.route("/", methods=["GET", "POST"])
-def home():
+
+# Login page - serves the index.html
+@app.route("/")
+def index():
+    """Login page"""
+    return render_template("index.html")
+
+# Dashboard page - serves the dashboard.html
+@app.route("/dashboard")
+def dashboard():
+    """Dashboard page - requires authentication via JavaScript"""
+    fetch_weather_if_needed()
+    return render_template("dashboard.html")
+
+# API endpoint for weather data (used by dashboard)
+@app.route("/api/weather")
+def api_weather():
+    """API endpoint to get weather data as JSON"""
+    try:
+        if not os.path.exists(WEATHER_CSV_FILE):
+            fetch_weather_if_needed()
+        
+        if os.path.exists(WEATHER_CSV_FILE):
+            df = pd.read_csv(WEATHER_CSV_FILE)
+            # Convert datetime column to string for JSON serialization
+            df['date'] = df['date'].astype(str)
+            weather_data = df.to_dict(orient="records")
+            return jsonify(weather_data)
+        else:
+            return jsonify({"error": "No weather data available"}), 404
+    except Exception as e:
+        logging.error(f"Error in weather API: {e}")
+        return jsonify({"error": str(e)}), 500
+
+# API endpoint for news data (used by dashboard)
+@app.route("/api/news")
+def api_news():
+    """API endpoint to get news data as JSON"""
+    city = request.args.get('city', '')
+    if not city:
+        return jsonify({"error": "City parameter is required"}), 400
+    
+    if not NEWS_API_KEY or NEWS_API_KEY == "your_news_api_key_here":
+        return jsonify({"error": "News API key not configured"}), 500
+    
+    headlines = fetch_weather_news(city)
+    return jsonify(headlines)
+
+# Original home page functionality (kept for backward compatibility)
+@app.route("/news", methods=["GET", "POST"])
+def news():
+    """News search page"""
     city = ""
     headlines = []
     error_message = ""
@@ -151,7 +208,7 @@ def home():
         except Exception as e:
             logging.error(f"Error loading weather data: {e}")
 
-    return render_template("index.html",
+    return render_template("news.html",
                            city=city,
                            headlines=headlines,
                            weather=weather_data,
@@ -159,11 +216,11 @@ def home():
 
 @app.errorhandler(404)
 def not_found(error):
-    return render_template("index.html", error_message="Page not found."), 404
+    return render_template("index.html"), 404
 
 @app.errorhandler(500)
 def internal_error(error):
-    return render_template("index.html", error_message="Internal server error."), 500
+    return jsonify({"error": "Internal server error"}), 500
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

@@ -6,27 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
     <title>Suraksha - Login</title>
-    <!-- Correct CSS reference using Flask's url_for -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <!-- CSS reference using Flask's url_for -->
+    <link rel="stylesheet" href="/static/index.css">
     <!-- Add Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <!-- Correct firebase-config reference -->
-    <script src="{{ url_for('static', filename='firebase-config.js') }}"></script>
+    <!-- Firebase config reference -->
+    <script src="/static/firebase-config.js"></script>
 </head>
 
 <body>
     <div class="login-container">
-        <h1>Suraksha</h1>
+        <h1>🌤️ Suraksha</h1>
+        <p>Weather Dashboard & News</p>
         <p>Please sign in to continue</p>
         <button id="googleSignIn" class="google-btn">
             <span id="buttonText">Sign in with Google</span>
             <div id="spinner" class="spinner hidden"></div>
         </button>
+        
+        <!-- Alternative access without authentication -->
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p style="font-size: 14px; color: #666;">Or access without signing in:</p>
+            <a href="/dashboard" style="color: #4285F4; text-decoration: none;">Go to Dashboard</a> | 
+            <a href="/news" style="color: #4285F4; text-decoration: none;">Search News</a>
+        </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Check if Firebase is loaded
+            if (typeof firebase === 'undefined') {
+                console.warn('Firebase not loaded, authentication disabled');
+                return;
+            }
+
             const auth = firebase.auth();
             const googleBtn = document.getElementById('googleSignIn');
             const buttonText = document.getElementById('buttonText');
@@ -36,7 +50,7 @@
             auth.onAuthStateChanged((user) => {
                 if (user) {
                     // User is already logged in, redirect to dashboard
-                    window.location.href = "{{ url_for('dashboard') }}";
+                    window.location.href = "/dashboard";
                 }
             });
 
@@ -92,10 +106,10 @@
                 if ('Notification' in window) {
                     Notification.requestPermission().finally(() => {
                         // Redirect to dashboard
-                        window.location.href = "{{ url_for('dashboard') }}";
+                        window.location.href = "/dashboard";
                     });
                 } else {
-                    window.location.href = "{{ url_for('dashboard') }}";
+                    window.location.href = "/dashboard";
                 }
             }
         });
