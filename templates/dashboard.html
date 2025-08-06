@@ -138,6 +138,22 @@
         .nav-links a:hover {
             background-color: #bdc3c7;
         }
+
+        /* Button styles for refresh and sign out buttons */
+        .refresh-btn, .sign-out-btn {
+            color: #3498db;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            background-color: #ecf0f1;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .refresh-btn:hover, .sign-out-btn:hover {
+            background-color: #bdc3c7;
+        }
     </style>
 </head>
 
@@ -202,8 +218,8 @@
 
     <script>
         // Global variables
-        let fullWeatherData = []; // Stores all loaded weather data
-        let filteredWeatherData = []; // Stores currently filtered data
+        let fullWeatherData = [];
+        let filteredWeatherData = [];
         let charts = [];
         let userLocation = null;
         let notificationPermission = false;
@@ -214,11 +230,9 @@
                 if (!user) {
                     console.log('User not authenticated, but allowing access to dashboard');
                 }
-                // Initialize dashboard regardless of auth state
                 initializeDashboard();
             });
         } else {
-            // Firebase not loaded, proceed without authentication
             console.log('Firebase not loaded, proceeding without authentication');
             initializeDashboard();
         }
@@ -231,7 +245,6 @@
                 });
             }).catch(error => {
                 console.error('Location access error:', error);
-                // Proceed without location for demo purposes
                 loadWeatherData().catch(error => {
                     console.error('Failed to load data:', error);
                     showError(`Failed to load data: ${error.message}`);
@@ -239,7 +252,6 @@
             });
         }
 
-        // Verify location access
         function verifyLocationAccess() {
             return new Promise((resolve, reject) => {
                 if (navigator.geolocation) {
@@ -254,7 +266,6 @@
                             requestNotificationPermission().then(resolve).catch(resolve);
                         },
                         (error) => {
-                            // Don't reject, just resolve without location
                             console.warn('Location access denied, proceeding without location');
                             updateLocationInfo();
                             resolve();
@@ -269,7 +280,6 @@
             });
         }
 
-        // Update location information display
         function updateLocationInfo() {
             const locationElement = document.getElementById('locationCoordinates');
             if (userLocation) {
@@ -280,7 +290,6 @@
             }
         }
 
-        // Request notification permission
         function requestNotificationPermission() {
             return new Promise((resolve) => {
                 if ('Notification' in window) {
@@ -305,7 +314,6 @@
             });
         }
 
-        // Show welcome notification
         function showWelcomeNotification() {
             if (notificationPermission) {
                 new Notification('Welcome to Suraksha Dashboard', {
@@ -315,11 +323,9 @@
             }
         }
 
-        // Setup weather alerts
         function setupWeatherAlerts() {
             if (!notificationPermission) return;
 
-            // Check for extreme temperature
             const extremeTemp = filteredWeatherData.find(data => data.temperature_2m > 35 || data.temperature_2m < 0);
             if (extremeTemp) {
                 const tempType = extremeTemp.temperature_2m > 35 ? 'high' : 'low';
@@ -331,7 +337,6 @@
                 });
             }
 
-            // Check for precipitation
             const precipitation = filteredWeatherData.find(data => data.precipitation > 10);
             if (precipitation) {
                 new Notification('Heavy Precipitation Alert', {
@@ -340,7 +345,6 @@
                 });
             }
 
-            // Check for strong winds
             const strongWind = filteredWeatherData.find(data => data.wind_speed_10m > 10);
             if (strongWind) {
                 new Notification('Strong Wind Alert', {
@@ -350,7 +354,6 @@
             }
         }
 
-        // Color schemes for different chart groups
         const colorSchemes = {
             wind_speed: ['#3498db', '#2980b9', '#1abc9c', '#16a085'],
             wind_direction: ['#e74c3c', '#c0392b', '#f39c12', '#d35400'],
@@ -362,7 +365,6 @@
             default: ['#3498db', '#e74c3c', '#f39c12', '#27ae60', '#9b59b6', '#1abc9c']
         };
 
-        // Define chart groups with their columns and configurations
         const chartGroups = {
             'Temperature Metrics': {
                 columns: ['temperature_2m', 'apparent_temperature', 'dew_point_2m'],
@@ -414,7 +416,6 @@
             }
         };
 
-        // UI Helper Functions
         function showLoading(show, message = '') {
             const loadingEl = document.getElementById('loading');
             if (show) {
@@ -440,13 +441,11 @@
             document.getElementById('chartLoading').style.display = show ? 'flex' : 'none';
         }
 
-        // Data Loading and Processing
         async function loadWeatherData() {
             try {
                 showLoading(true, 'Loading weather data...');
                 hideError();
 
-                // Fetch data from Flask backend
                 const response = await fetch('/api/weather');
                 if (!response.ok) {
                     throw new Error(`Failed to load data: HTTP ${response.status}`);
@@ -454,9 +453,7 @@
 
                 const weatherData = await response.json();
 
-                // Process the data to match expected format
                 fullWeatherData = weatherData.map(item => {
-                    // Convert temperature from Kelvin to Celsius if needed
                     const temp = item.temperature_2m;
                     return {
                         ...item,
@@ -467,7 +464,6 @@
 
                 fullWeatherData.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-                // Apply initial filtering
                 applyDateFilter();
 
                 document.getElementById('controls').style.display = 'flex';
@@ -487,7 +483,6 @@
             }
         }
 
-        // Apply date filter based on selected range
         function applyDateFilter() {
             const dateRange = document.getElementById('dateRange').value;
 
@@ -501,7 +496,6 @@
             const startDate = new Date();
             startDate.setDate(endDate.getDate() - days);
 
-            // Set time components to ensure we get full days
             startDate.setHours(0, 0, 0, 0);
             endDate.setHours(23, 59, 59, 999);
 
@@ -510,7 +504,6 @@
                 return rowDate >= startDate && rowDate <= endDate;
             });
 
-            // Update the date range display
             updateDateRangeDisplay(startDate, endDate);
         }
 
@@ -529,7 +522,6 @@
             dateRangeElement.textContent = `${formatDate(startDate)} - ${formatDate(endDate)}`;
         }
 
-        // Get data with both date and sample rate filters applied
         function getFilteredData() {
             const sampleRate = parseInt(document.getElementById('sampleRate').value);
 
@@ -607,7 +599,6 @@
                 .filter(val => val !== null && val !== undefined && !isNaN(val));
         }
 
-        // Chart Functions
         function createAllCharts() {
             showChartLoading(true);
 
@@ -753,7 +744,6 @@
                 .replace('Apparent', 'Feels Like');
         }
 
-        // News Functions
         async function fetchWeatherNews() {
             const city = document.getElementById('newsCity').value.trim();
             if (!city) {
@@ -799,63 +789,136 @@
             `).join('');
         }
 
-        // Event Listeners
-        document.getElementById('dateRange').addEventListener('change', () => {
-            applyDateFilter();
-            displayStats();
-            createAllCharts();
-        });
+        // ===== FIXED EVENT LISTENERS =====
+        // Wait for DOM to be fully loaded before setting up event listeners
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', setupEventListeners);
+        } else {
+            setupEventListeners();
+        }
 
-        document.getElementById('sampleRate').addEventListener('change', () => {
-            displayStats();
-            createAllCharts();
-        });
+        function setupEventListeners() {
+            console.log('Setting up event listeners...');
 
-        document.getElementById('newsBtn').addEventListener('click', () => {
-            const modal = document.getElementById('newsModal');
-            modal.style.display = 'block';
-
-            // Pre-fill with current location if available
-            if (userLocation) {
-                // In a real app, you would reverse geocode to get city name
-                document.getElementById('newsCity').placeholder = "Current Location (enter city name)";
+            // Date Range Filter
+            const dateRangeEl = document.getElementById('dateRange');
+            if (dateRangeEl) {
+                dateRangeEl.addEventListener('change', () => {
+                    applyDateFilter();
+                    displayStats();
+                    createAllCharts();
+                });
             }
-        });
 
-        document.querySelector('.close').addEventListener('click', () => {
-            document.getElementById('newsModal').style.display = 'none';
-        });
+            // Sample Rate Filter
+            const sampleRateEl = document.getElementById('sampleRate');
+            if (sampleRateEl) {
+                sampleRateEl.addEventListener('change', () => {
+                    displayStats();
+                    createAllCharts();
+                });
+            }
 
-        document.getElementById('searchNewsBtn').addEventListener('click', fetchWeatherNews);
+            // News Modal - keeping original functionality
+            const newsBtnEl = document.getElementById('newsBtn');
+            if (newsBtnEl) {
+                newsBtnEl.addEventListener('click', () => {
+                    const modal = document.getElementById('newsModal');
+                    modal.style.display = 'block';
 
-        document.getElementById('refreshBtn').addEventListener('click', () => {
-            showLoading(true, 'Refreshing data...');
-            window.location.reload();
-        });
+                    if (userLocation) {
+                        document.getElementById('newsCity').placeholder = "Current Location (enter city name)";
+                    }
+                });
+            }
 
-        document.getElementById('signOutBtn').addEventListener('click', () => {
-            if (typeof firebase !== 'undefined' && firebase.auth().currentUser) {
-                showLoading(true, 'Signing out...');
-                firebase.auth().signOut().then(() => {
-                    window.location.href = '/';
-                }).catch((error) => {
-                    console.error('Sign out error:', error);
-                    showError('Sign out failed. Please try again.');
-                    showLoading(false);
+            // Close Modal
+            const closeEl = document.querySelector('.close');
+            if (closeEl) {
+                closeEl.addEventListener('click', () => {
+                    document.getElementById('newsModal').style.display = 'none';
+                });
+            }
+
+            // Search News Button
+            const searchNewsBtnEl = document.getElementById('searchNewsBtn');
+            if (searchNewsBtnEl) {
+                searchNewsBtnEl.addEventListener('click', fetchWeatherNews);
+            }
+
+            // REFRESH BUTTON - FIXED
+            const refreshBtnEl = document.getElementById('refreshBtn');
+            if (refreshBtnEl) {
+                console.log('Refresh button found, attaching listener');
+                refreshBtnEl.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Refresh button clicked!');
+                    
+                    showLoading(true, 'Refreshing data...');
+                    
+                    // Clear existing data
+                    fullWeatherData = [];
+                    filteredWeatherData = [];
+                    
+                    // Destroy existing charts
+                    if (charts && charts.length > 0) {
+                        charts.forEach(chart => {
+                            if (chart && chart.destroy) {
+                                chart.destroy();
+                            }
+                        });
+                        charts = [];
+                    }
+                    
+                    // Reload the page
+                    setTimeout(() => {
+                        location.reload();
+                    }, 300);
                 });
             } else {
-                // No authentication, just go to home page
-                window.location.href = '/';
+                console.error('Refresh button not found!');
             }
-        });
 
-        // Close modal when clicking outside of it
-        window.addEventListener('click', (event) => {
-            const modal = document.getElementById('newsModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
+            // SIGN OUT BUTTON - FIXED
+            const signOutBtnEl = document.getElementById('signOutBtn');
+            if (signOutBtnEl) {
+                console.log('Sign out button found, attaching listener');
+                signOutBtnEl.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Sign out button clicked!');
+                    
+                    showLoading(true, 'Signing out...');
+                    
+                    if (typeof firebase !== 'undefined' && firebase.auth && firebase.auth().currentUser) {
+                        firebase.auth().signOut().then(() => {
+                            console.log('Firebase sign out successful');
+                            window.location.href = '/';
+                        }).catch((error) => {
+                            console.error('Sign out error:', error);
+                            showError('Sign out failed. Please try again.');
+                            showLoading(false);
+                        });
+                    } else {
+                        console.log('No Firebase auth, redirecting to home');
+                        setTimeout(() => {
+                            window.location.href = '/';
+                        }, 300);
+                    }
+                });
+            } else {
+                console.error('Sign out button not found!');
             }
-        });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', (event) => {
+                const modal = document.getElementById('newsModal');
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            console.log('Event listeners setup complete');
+        }
     </script>
 </body>
 
