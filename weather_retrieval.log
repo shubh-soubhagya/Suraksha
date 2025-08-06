@@ -889,3 +889,205 @@
 2025-08-06 12:27:10,953 - INFO - Weather data is fresh.
 2025-08-06 12:27:10,959 - INFO - 127.0.0.1 - - [06/Aug/2025 12:27:10] "GET /news HTTP/1.1" 200 -
 2025-08-06 12:27:10,983 - INFO - 127.0.0.1 - - [06/Aug/2025 12:27:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:27:36,523 - INFO - Weather data is fresh.
+2025-08-06 12:27:36,552 - INFO - 127.0.0.1 - - [06/Aug/2025 12:27:36] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:27:36,564 - INFO - 127.0.0.1 - - [06/Aug/2025 12:27:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:27:36,573 - INFO - 127.0.0.1 - - [06/Aug/2025 12:27:36] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:27:37,088 - INFO - 127.0.0.1 - - [06/Aug/2025 12:27:37] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:27:38,676 - INFO - Weather data is fresh.
+2025-08-06 12:27:38,680 - INFO - 127.0.0.1 - - [06/Aug/2025 12:27:38] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:27:38,700 - INFO - 127.0.0.1 - - [06/Aug/2025 12:27:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:29:01,388 - INFO - Weather data is fresh.
+2025-08-06 12:29:01,392 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:01] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:29:01,415 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:29:03,801 - INFO - Weather data is fresh.
+2025-08-06 12:29:03,805 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:03] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:29:03,823 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:29:05,744 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:05] "GET / HTTP/1.1" 200 -
+2025-08-06 12:29:05,760 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:05] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-06 12:29:05,767 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:05] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:29:07,253 - INFO - Weather data is fresh.
+2025-08-06 12:29:07,254 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:07] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:29:07,269 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:29:07,273 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:07] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:29:07,678 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:07] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:29:10,743 - INFO - Weather data is fresh.
+2025-08-06 12:29:10,744 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:10] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:29:10,765 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:29:10,773 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:10] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:29:11,159 - INFO - 127.0.0.1 - - [06/Aug/2025 12:29:11] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:32:16,843 - INFO - Weather data is fresh.
+2025-08-06 12:32:16,963 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:16] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:32:16,987 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:32:16,997 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:16] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:32:21,392 - INFO - Weather data is fresh.
+2025-08-06 12:32:21,400 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:21] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:32:21,428 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:21] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:32:24,870 - INFO - Weather data is fresh.
+2025-08-06 12:32:24,876 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:24] "POST /news HTTP/1.1" 200 -
+2025-08-06 12:32:24,890 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:24] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:32:26,587 - INFO - Weather data is fresh.
+2025-08-06 12:32:26,594 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:26] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:32:27,752 - INFO - Weather data is fresh.
+2025-08-06 12:32:27,753 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:27] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:32:27,777 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:32:27,787 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:27] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:32:33,004 - INFO - Weather data is fresh.
+2025-08-06 12:32:33,005 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:33] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:32:33,019 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:32:33,024 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:33] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:32:33,393 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:33] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:32:35,407 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:35] "GET / HTTP/1.1" 200 -
+2025-08-06 12:32:35,430 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:35] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:32:35,443 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:35] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-06 12:32:35,454 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:35] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:32:47,978 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:47] "GET / HTTP/1.1" 200 -
+2025-08-06 12:32:47,990 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:47] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-06 12:32:47,999 - INFO - 127.0.0.1 - - [06/Aug/2025 12:32:47] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:33:07,067 - INFO - Weather data is fresh.
+2025-08-06 12:33:07,068 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:07] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:33:07,123 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:33:07,131 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:07] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:33:07,517 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:07] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:33:10,933 - INFO - Weather data is fresh.
+2025-08-06 12:33:10,933 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:10] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:33:10,948 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:33:10,954 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:10] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:33:11,336 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:11] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:33:30,297 - INFO - Weather data is fresh.
+2025-08-06 12:33:30,298 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:30] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:33:30,317 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:33:30,328 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:30] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:33:32,489 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:32] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:33:35,098 - INFO - Weather data is fresh.
+2025-08-06 12:33:35,100 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:35] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:33:35,116 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:33:35,124 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:35] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:33:43,101 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:43] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:33:52,989 - INFO - Weather data is fresh.
+2025-08-06 12:33:52,995 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:52] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:33:53,023 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:33:57,977 - INFO - Weather data is fresh.
+2025-08-06 12:33:57,985 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:57] "POST /news HTTP/1.1" 200 -
+2025-08-06 12:33:58,012 - INFO - 127.0.0.1 - - [06/Aug/2025 12:33:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:34:10,250 - INFO - Weather data is fresh.
+2025-08-06 12:34:10,251 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:10] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:34:10,269 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:34:10,274 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:10] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:34:10,778 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:10] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:34:12,483 - INFO - Weather data is fresh.
+2025-08-06 12:34:12,486 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:12] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:34:12,501 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:34:12,507 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:12] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:34:12,885 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:12] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:34:14,534 - INFO - Weather data is fresh.
+2025-08-06 12:34:14,536 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:14] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:34:14,548 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:34:14,554 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:14] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:34:14,941 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:14] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:34:15,944 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:15] "GET / HTTP/1.1" 200 -
+2025-08-06 12:34:15,957 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:15] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:34:15,965 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:15] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-06 12:34:16,031 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:16] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:34:24,322 - INFO - Weather data is fresh.
+2025-08-06 12:34:24,322 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:24] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:34:24,373 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:34:24,378 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:24] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:34:24,758 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:24] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:34:28,119 - INFO - Weather data is fresh.
+2025-08-06 12:34:28,120 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:28] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:34:28,137 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:34:28,143 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:28] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:34:28,520 - INFO - 127.0.0.1 - - [06/Aug/2025 12:34:28] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:35:32,935 - INFO - Weather data is fresh.
+2025-08-06 12:35:32,956 - INFO - 127.0.0.1 - - [06/Aug/2025 12:35:32] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:35:33,016 - INFO - 127.0.0.1 - - [06/Aug/2025 12:35:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:43:56,196 - INFO - Weather data is fresh.
+2025-08-06 12:43:56,196 - INFO - 127.0.0.1 - - [06/Aug/2025 12:43:56] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:43:56,272 - INFO - 127.0.0.1 - - [06/Aug/2025 12:43:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:43:56,305 - INFO - 127.0.0.1 - - [06/Aug/2025 12:43:56] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:44:00,035 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:00] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:44:02,230 - INFO - Weather data is fresh.
+2025-08-06 12:44:02,232 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:02] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:44:02,256 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:02,271 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:02] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:44:02,693 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:02] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:44:08,518 - INFO - Weather data is fresh.
+2025-08-06 12:44:08,535 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:08] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:44:08,577 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:08] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:10,715 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:10] "GET / HTTP/1.1" 200 -
+2025-08-06 12:44:10,751 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:10] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:10,767 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:10] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:44:11,174 - INFO - Weather data is fresh.
+2025-08-06 12:44:11,176 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:11] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:44:11,196 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:11,203 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:11] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:44:11,765 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:11] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:44:13,467 - INFO - Weather data is fresh.
+2025-08-06 12:44:13,474 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:13] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:44:13,521 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:14,252 - INFO - Weather data is fresh.
+2025-08-06 12:44:14,252 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:14] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:44:14,288 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:14,305 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:14] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:44:14,752 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:14] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:44:17,022 - INFO - Weather data is fresh.
+2025-08-06 12:44:17,030 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:17] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:44:17,057 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:29,365 - INFO - Weather data is fresh.
+2025-08-06 12:44:29,366 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:29] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:44:29,414 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:29,438 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:29] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:44:29,919 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:29] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:44:31,136 - INFO - Weather data is fresh.
+2025-08-06 12:44:31,164 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:31] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:44:31,203 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:40,861 - INFO - Weather data is fresh.
+2025-08-06 12:44:40,906 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:40] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:44:40,931 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:42,261 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:42] "GET / HTTP/1.1" 200 -
+2025-08-06 12:44:42,310 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:42] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:42,329 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:42] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:44:42,732 - INFO - Weather data is fresh.
+2025-08-06 12:44:42,734 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:42] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:44:42,769 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:42,793 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:42] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:44:43,247 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:43] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:44:47,845 - INFO - Weather data is fresh.
+2025-08-06 12:44:47,858 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:47] "GET /news HTTP/1.1" 200 -
+2025-08-06 12:44:47,903 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:51,242 - INFO - Weather data is fresh.
+2025-08-06 12:44:51,243 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:51] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:44:51,285 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:51,305 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:51] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:44:51,730 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:51] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:44:54,466 - INFO - Weather data is fresh.
+2025-08-06 12:44:54,468 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:54] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:44:54,504 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:44:54,513 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:54] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:44:54,982 - INFO - 127.0.0.1 - - [06/Aug/2025 12:44:54] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:45:01,786 - INFO - Weather data is fresh.
+2025-08-06 12:45:01,789 - INFO - 127.0.0.1 - - [06/Aug/2025 12:45:01] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:45:01,808 - INFO - 127.0.0.1 - - [06/Aug/2025 12:45:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:45:01,816 - INFO - 127.0.0.1 - - [06/Aug/2025 12:45:01] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:45:02,222 - INFO - 127.0.0.1 - - [06/Aug/2025 12:45:02] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:45:39,358 - INFO - Weather data is fresh.
+2025-08-06 12:45:39,365 - INFO - 127.0.0.1 - - [06/Aug/2025 12:45:39] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:45:39,393 - INFO - 127.0.0.1 - - [06/Aug/2025 12:45:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:45:39,401 - INFO - 127.0.0.1 - - [06/Aug/2025 12:45:39] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:45:39,954 - INFO - 127.0.0.1 - - [06/Aug/2025 12:45:39] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:45:46,640 - INFO - Weather data is fresh.
+2025-08-06 12:45:46,641 - INFO - 127.0.0.1 - - [06/Aug/2025 12:45:46] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:45:46,663 - INFO - 127.0.0.1 - - [06/Aug/2025 12:45:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:45:46,670 - INFO - 127.0.0.1 - - [06/Aug/2025 12:45:46] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:46:08,076 - INFO - 127.0.0.1 - - [06/Aug/2025 12:46:08] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:46:10,794 - INFO - Weather data is fresh.
+2025-08-06 12:46:10,795 - INFO - 127.0.0.1 - - [06/Aug/2025 12:46:10] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:46:10,816 - INFO - 127.0.0.1 - - [06/Aug/2025 12:46:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:46:10,825 - INFO - 127.0.0.1 - - [06/Aug/2025 12:46:10] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:46:11,222 - INFO - 127.0.0.1 - - [06/Aug/2025 12:46:11] "GET /api/weather HTTP/1.1" 200 -
+2025-08-06 12:46:21,164 - INFO - Weather data is fresh.
+2025-08-06 12:46:21,164 - INFO - 127.0.0.1 - - [06/Aug/2025 12:46:21] "GET /dashboard HTTP/1.1" 200 -
+2025-08-06 12:46:21,190 - INFO - 127.0.0.1 - - [06/Aug/2025 12:46:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-06 12:46:21,200 - INFO - 127.0.0.1 - - [06/Aug/2025 12:46:21] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-06 12:46:21,684 - INFO - 127.0.0.1 - - [06/Aug/2025 12:46:21] "GET /api/weather HTTP/1.1" 200 -
