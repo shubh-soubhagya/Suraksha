@@ -791,9 +791,9 @@
             <div class="filter-group">
                 <label for="dateRange">Date Range:</label>
                 <select id="dateRange">
-                    <option value="all">All Data</option>
-                    <option value="7">Last 7 Days</option>
-                    <option value="30">Last 30 Days</option>
+                    <option value="all">Next 5 Days</option>
+                    <option value="7">Today's Data</option>
+                    <!-- <option value="30">Last 30 Days</option> -->
                 </select>
             </div>
 
@@ -932,7 +932,7 @@
                             <span class="specialization-badge">${getSpecializationIcon(rescuer.specialization)} ${formatSpecialization(rescuer.specialization)}</span>
                         </h4>
                         <div class="rescuer-details">
-                            <span class="distance-badge">📍 ${rescuer.distance} km away</span>
+                            <span class="distance-badge">📍 ${rescuer.distance} m away</span>
                             <strong>🆔 Dept:</strong> ${rescuer.deptId} | 
                             <strong>📞 Phone:</strong> ${rescuer.phone}
                             ${rescuer.email ? ` | <strong>📧 Email:</strong> ${rescuer.email}` : ''}
