@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Rescue Team Registration</title>
+    <link rel="stylesheet" href="/static/rescue.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚨 Emergency Rescue Team Portal</h1>
+            <p>Connect with nearby rescue team members</p>
+            <!-- Add navigation back to dashboard -->
+            <div style="margin-top: 15px;">
+                <a href="/dashboard" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">
+                    ← Back to Dashboard
+                </a>
+            </div>
+        </header>
+
+        <!-- Registration Form -->
+        <div class="registration-section" id="registrationSection">
+            <h2>Register as Rescue Team Member</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="deptId">Department ID *</label>
+                    <input type="text" id="deptId" name="deptId" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="specialization">Specialization</label>
+                    <select id="specialization" name="specialization">
+                        <option value="">Select Specialization</option>
+                        <option value="medical">Medical Emergency</option>
+                        <option value="fire">Fire Rescue</option>
+                        <option value="water">Water Rescue</option>
+                        <option value="mountain">Mountain Rescue</option>
+                        <option value="disaster">Disaster Relief</option>
+                        <option value="general">General Rescue</option>
+                    </select>
+                </div>
+                
+                <div class="location-group">
+                    <button type="button" id="getLocationBtn" class="location-btn">
+                        📍 Get Current Location
+                    </button>
+                    <div id="locationStatus" class="location-status"></div>
+                </div>
+                
+                <button type="submit" class="register-btn">Register as Rescue Member</button>
+            </form>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="toggle-section">
+            <button id="toggleViewBtn" class="toggle-btn">View Rescue Team Members</button>
+        </div>
+
+        <!-- Rescue Members List -->
+        <div class="members-section" id="membersSection" style="display: none;">
+            <h2>Registered Rescue Team Members</h2>
+            <div class="search-filter">
+                <input type="text" id="searchInput" placeholder="Search by name or specialization...">
+                <select id="filterSpecialization">
+                    <option value="">All Specializations</option>
+                    <option value="medical">Medical Emergency</option>
+                    <option value="fire">Fire Rescue</option>
+                    <option value="water">Water Rescue</option>
+                    <option value="mountain">Mountain Rescue</option>
+                    <option value="disaster">Disaster Relief</option>
+                    <option value="general">General Rescue</option>
+                </select>
+            </div>
+            <div id="membersList" class="members-list">
+                <!-- Members will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/rescue.js"></script>
+</body>
+</html>

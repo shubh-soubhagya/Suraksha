@@ -154,6 +154,465 @@
         .refresh-btn:hover, .sign-out-btn:hover {
             background-color: #bdc3c7;
         }
+
+        /* RESCUE TEAM STYLES */
+        .rescue-widget {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rescue-widget::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.1) 75%);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+
+        .rescue-widget h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .rescue-widget p {
+            margin: 0 0 20px 0;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .rescue-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .rescue-link-btn {
+            background: white;
+            color: #ff6b6b;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .rescue-link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            color: #ee5a24;
+        }
+
+        .emergency-alert-btn {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+        }
+
+        @keyframes pulse {
+            0% { 
+                box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4), 0 0 0 0 rgba(255, 71, 87, 0.7); 
+            }
+            70% { 
+                box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4), 0 0 0 10px rgba(255, 71, 87, 0); 
+            }
+            100% { 
+                box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4), 0 0 0 0 rgba(255, 71, 87, 0); 
+            }
+        }
+
+        .emergency-alert-btn:hover {
+            background: #ff3838;
+            transform: translateY(-3px);
+            animation: none;
+        }
+
+        .nearby-rescuers {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nearby-rescuers h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.4rem;
+        }
+
+        .rescuer-count {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+        }
+
+        .rescuer-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rescuer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(40, 167, 69, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .rescuer-card:hover::before {
+            left: 100%;
+        }
+
+        .rescuer-card:hover {
+            background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            border-left-color: #20c997;
+        }
+
+        .rescuer-info {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .rescuer-info h4 {
+            margin: 0 0 8px 0;
+            color: #2c3e50;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rescuer-details {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .distance-badge {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 12px;
+            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+        }
+
+        .specialization-badge {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+        }
+
+        .call-btn {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .call-btn:hover {
+            background: linear-gradient(135deg, #c82333, #bd2130);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+        }
+
+        .call-btn:active {
+            transform: translateY(0);
+        }
+
+        /* VIEW MORE FUNCTIONALITY STYLES */
+        .rescuer-actions {
+            text-align: center;
+            margin: 25px 0 15px 0;
+            padding: 20px 0;
+            border-top: 2px solid #e9ecef;
+            position: relative;
+        }
+
+        .rescuer-actions::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+
+        .view-more-btn, .view-less-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            margin-bottom: 15px;
+            min-width: 220px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .view-more-btn::before, .view-less-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .view-more-btn:hover::before, .view-less-btn:hover::before {
+            left: 100%;
+        }
+
+        .view-more-btn:hover, .view-less-btn:hover {
+            background: linear-gradient(135deg, #218838, #1ea080);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        .view-more-btn:disabled {
+            background: linear-gradient(135deg, #6c757d, #5a6268);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 2px 8px rgba(108, 117, 125, 0.2);
+        }
+
+        .view-more-btn:disabled::before {
+            display: none;
+        }
+
+        .view-all-link {
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .view-all-link a {
+            color: #007bff;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .view-all-link a:hover {
+            background: rgba(0, 123, 255, 0.1);
+            text-decoration: none;
+            color: #0056b3;
+        }
+
+        .no-rescuers {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            margin: 15px 0;
+            border: 2px dashed #dee2e6;
+        }
+
+        .no-rescuers::before {
+            content: "🚫";
+            display: block;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        .rescue-loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .rescue-loading::before {
+            content: "⚕️";
+            display: block;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: rescueLoading 2s infinite;
+        }
+
+        @keyframes rescueLoading {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 0.7;
+            }
+            50% { 
+                transform: scale(1.1) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        /* Enhanced animations for new rescuer cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rescuer-card.newly-loaded {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Loading state for view more button */
+        @keyframes buttonLoading {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .view-more-btn.loading {
+            animation: buttonLoading 1s infinite;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .rescue-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .rescue-link-btn, .emergency-alert-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .rescuer-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                padding: 18px;
+            }
+            
+            .call-btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .view-more-btn, .view-less-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .rescuer-info h4 {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .nearby-rescuers h3 {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rescue-widget {
+                padding: 20px 15px;
+                margin: 15px 0;
+            }
+
+            .nearby-rescuers {
+                padding: 20px 15px;
+                margin: 15px 0;
+            }
+
+            .rescuer-card {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 
@@ -165,13 +624,35 @@
             <span id="locationCoordinates">Detecting your location...</span>
         </div>
         <div class="nav-links">
-            <a href="/news">📰 News Search</a>      
+            <a href="/news">📰 News Search</a>
+            <a href="/rescue">🚨 Rescue Portal</a>
             <button id="refreshBtn" class="refresh-btn">🔄 Refresh</button>
             <button id="signOutBtn" class="sign-out-btn">Sign Out</button>
         </div>
     </div>
 
     <div class="container">
+        <!-- Emergency Rescue Widget -->
+        <div class="rescue-widget">
+            <h3>🚨 Emergency Rescue Team</h3>
+            <p>Access rescue team members and emergency services in your area</p>
+            <div class="rescue-buttons">
+                <a href="/rescue" class="rescue-link-btn">🏥 Open Rescue Portal</a>
+                <button class="emergency-alert-btn" onclick="sendQuickEmergencyAlert()">🚨 EMERGENCY ALERT</button>
+            </div>
+        </div>
+
+        <!-- Nearby Rescuers Section with View More Functionality -->
+        <div class="nearby-rescuers">
+            <h3>
+                📍 Nearby Rescue Team Members
+                <span id="rescuerCount" class="rescuer-count" style="display: none;">0</span>
+            </h3>
+            <div id="nearbyRescuers">
+                <div class="rescue-loading">Loading nearby rescue team members...</div>
+            </div>
+        </div>
+
         <div class="loading" id="loading">Loading weather data...</div>
         <div class="error" id="error"></div>
         <div class="chart-loading" id="chartLoading">
@@ -224,6 +705,12 @@
         let userLocation = null;
         let notificationPermission = false;
 
+        // RESCUE FUNCTIONALITY GLOBAL VARIABLES
+        let allRescuers = []; // Store all rescue members
+        let displayedRescuersCount = 3; // Number of rescuers currently displayed
+        const initialDisplayCount = 3; // Initial number to show
+        const loadMoreCount = 5; // Number to load when "View More" is clicked
+
         // Firebase Authentication State
         if (typeof firebase !== 'undefined') {
             firebase.auth().onAuthStateChanged((user) => {
@@ -243,15 +730,254 @@
                     console.error('Failed to load data:', error);
                     showError(`Failed to load data: ${error.message}`);
                 });
+                // Load rescue team members after location is obtained
+                loadNearbyRescuers();
             }).catch(error => {
                 console.error('Location access error:', error);
                 loadWeatherData().catch(error => {
                     console.error('Failed to load data:', error);
                     showError(`Failed to load data: ${error.message}`);
                 });
+                // Try to load rescue members without location
+                loadNearbyRescuers();
             });
         }
 
+        // ENHANCED RESCUE TEAM FUNCTIONALITY WITH VIEW MORE
+        function loadNearbyRescuers() {
+            const nearbyRescuersEl = document.getElementById('nearbyRescuers');
+            
+            // Show enhanced loading state
+            nearbyRescuersEl.innerHTML = '<div class="rescue-loading">Loading nearby rescue team members...</div>';
+            
+            fetch('/api/rescue/members?max_distance=50') // Increased radius for more results
+                .then(response => response.json())
+                .then(data => {
+                    displayNearbyRescuers(data.members || []);
+                })
+                .catch(error => {
+                    console.error('Error loading nearby rescuers:', error);
+                    nearbyRescuersEl.innerHTML = 
+                        '<div class="no-rescuers">Unable to load rescue team data. <a href="/rescue" style="color: #007bff;">Go to Rescue Portal</a></div>';
+                });
+        }
+
+        function displayNearbyRescuers(rescuers) {
+            const container = document.getElementById('nearbyRescuers');
+            const countEl = document.getElementById('rescuerCount');
+            
+            // Store all rescuers globally
+            allRescuers = rescuers;
+            displayedRescuersCount = initialDisplayCount;
+            
+            if (rescuers.length === 0) {
+                container.innerHTML = `
+                    <div class="no-rescuers">
+                        No nearby rescue team members found. 
+                        <br><br>
+                        <a href="/rescue" style="color: #007bff; font-weight: bold; text-decoration: none; padding: 10px 20px; background: rgba(0,123,255,0.1); border-radius: 20px; display: inline-block; margin-top: 10px;">Register as a rescue team member</a>
+                    </div>`;
+                countEl.style.display = 'none';
+                return;
+            }
+
+            // Update count with enhanced styling
+            countEl.textContent = rescuers.length;
+            countEl.style.display = 'inline';
+
+            // Display initial rescuers
+            updateRescuersDisplay();
+        }
+
+        function updateRescuersDisplay() {
+            const container = document.getElementById('nearbyRescuers');
+            
+            // Get rescuers to display (up to displayedRescuersCount)
+            const rescuersToShow = allRescuers.slice(0, displayedRescuersCount);
+            
+            // Create the HTML for displayed rescuers
+            const rescuersHTML = rescuersToShow.map((rescuer, index) => `
+                <div class="rescuer-card ${index >= initialDisplayCount ? 'newly-loaded' : ''}">
+                    <div class="rescuer-info">
+                        <h4>
+                            👤 ${rescuer.name}
+                            <span class="specialization-badge">${getSpecializationIcon(rescuer.specialization)} ${formatSpecialization(rescuer.specialization)}</span>
+                        </h4>
+                        <div class="rescuer-details">
+                            <span class="distance-badge">📍 ${rescuer.distance} km away</span>
+                            <strong>🆔 Dept:</strong> ${rescuer.deptId} | 
+                            <strong>📞 Phone:</strong> ${rescuer.phone}
+                            ${rescuer.email ? ` | <strong>📧 Email:</strong> ${rescuer.email}` : ''}
+                        </div>
+                    </div>
+                    <a href="tel:${rescuer.phone}" class="call-btn" title="Call ${rescuer.name}">
+                        📞 Call Now
+                    </a>
+                </div>
+            `).join('');
+
+            // Create action buttons HTML
+            let actionButtonsHTML = '';
+            
+            if (allRescuers.length > displayedRescuersCount) {
+                // Show "View More" button if there are more rescuers to display
+                const remainingCount = allRescuers.length - displayedRescuersCount;
+                actionButtonsHTML = `
+                    <div class="rescuer-actions">
+                        <button class="view-more-btn" onclick="loadMoreRescuers()" title="Load ${loadMoreCount} more rescue members">
+                            🔍 View More (${remainingCount} more rescue members)
+                        </button>
+                        <div class="view-all-link">
+                            <a href="/rescue">🏥 View all ${allRescuers.length} rescue members in portal →</a>
+                        </div>
+                    </div>`;
+            } else if (allRescuers.length > initialDisplayCount) {
+                // Show "View Less" and portal link if showing more than initial
+                actionButtonsHTML = `
+                    <div class="rescuer-actions">
+                        <button class="view-less-btn" onclick="showLessRescuers()" title="Show only the closest rescue members">
+                            ⬆️ View Less (Show top ${initialDisplayCount})
+                        </button>
+                        <div class="view-all-link">
+                            <a href="/rescue">🏥 Manage all rescue members in portal →</a>
+                        </div>
+                    </div>`;
+            } else if (allRescuers.length > 0) {
+                // Just show portal link
+                actionButtonsHTML = `
+                    <div class="view-all-link" style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #e9ecef;">
+                        <a href="/rescue">🏥 Manage all rescue members in portal →</a>
+                    </div>`;
+            }
+
+            // Update the container with smooth transition
+            const existingCards = container.querySelectorAll('.rescuer-card');
+            container.innerHTML = rescuersHTML + actionButtonsHTML;
+            
+            // Add loading animation to newly loaded cards
+            setTimeout(() => {
+                const newCards = container.querySelectorAll('.rescuer-card.newly-loaded');
+                newCards.forEach(card => {
+                    card.classList.remove('newly-loaded');
+                });
+            }, 600);
+        }
+
+        function loadMoreRescuers() {
+            const previousCount = displayedRescuersCount;
+            displayedRescuersCount = Math.min(displayedRescuersCount + loadMoreCount, allRescuers.length);
+            
+            // Add loading state to button
+            const viewMoreBtn = document.querySelector('.view-more-btn');
+            if (viewMoreBtn) {
+                viewMoreBtn.innerHTML = '⏳ Loading more rescue members...';
+                viewMoreBtn.disabled = true;
+                viewMoreBtn.classList.add('loading');
+            }
+            
+            // Simulate loading delay for better UX and animation
+            setTimeout(() => {
+                updateRescuersDisplay();
+                
+                // Smooth scroll to the newly loaded rescuers with offset for header
+                const rescuerCards = document.querySelectorAll('.rescuer-card');
+                if (rescuerCards.length > previousCount) {
+                    const targetCard = rescuerCards[previousCount];
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetCard.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({ 
+                        top: targetPosition, 
+                        behavior: 'smooth' 
+                    });
+                }
+
+                // Show success notification if supported
+                if ('Notification' in window && Notification.permission === 'granted') {
+                    new Notification('Rescue Members Loaded', {
+                        body: `Loaded ${displayedRescuersCount - previousCount} more rescue team members`,
+                        icon: '🚑'
+                    });
+                }
+            }, 800);
+        }
+
+        function showLessRescuers() {
+            displayedRescuersCount = initialDisplayCount;
+            updateRescuersDisplay();
+            
+            // Smooth scroll back to the top of the rescuers section
+            const rescuersSection = document.querySelector('.nearby-rescuers');
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = rescuersSection.offsetTop - headerHeight - 10;
+            
+            window.scrollTo({ 
+                top: targetPosition, 
+                behavior: 'smooth' 
+            });
+        }
+
+        function getSpecializationIcon(specialization) {
+            const icons = {
+                'medical': '🏥',
+                'fire': '🚒',
+                'water': '🌊',
+                'mountain': '⛰️',
+                'disaster': '🌪️',
+                'general': '🚑'
+            };
+            return icons[specialization] || '🚑';
+        }
+
+        function formatSpecialization(specialization) {
+            if (!specialization) return 'General';
+            return specialization.charAt(0).toUpperCase() + specialization.slice(1);
+        }
+
+        function sendQuickEmergencyAlert() {
+            if (confirm('🚨 This will send an EMERGENCY ALERT to all nearby rescue team members!\n\nAre you sure you want to proceed?')) {
+                const alertBtn = document.querySelector('.emergency-alert-btn');
+                const originalText = alertBtn.innerHTML;
+                alertBtn.innerHTML = '⏳ Sending Alert...';
+                alertBtn.disabled = true;
+
+                fetch('/api/rescue/emergency', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        emergency_type: 'general',
+                        source: 'dashboard_quick_alert'
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.nearby_rescue_members && data.nearby_rescue_members.length > 0) {
+                        const count = data.nearby_rescue_members.length;
+                        alert(`✅ Emergency alert sent successfully!\n\n${count} nearby rescue team members have been notified.\n\nYou can also call them directly from the list below.`);
+                        // Refresh the nearby rescuers list
+                        loadNearbyRescuers();
+                    } else {
+                        alert('⚠️ Emergency alert sent, but no nearby rescue team members were found.\n\nPlease call emergency services:\n🚑 Ambulance: 108\n👮 Police: 100\n🚒 Fire: 101');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error sending emergency alert:', error);
+                    alert('❌ Failed to send emergency alert.\n\nPlease call emergency services immediately:\n🚑 Ambulance: 108\n👮 Police: 100\n🚒 Fire: 101');
+                })
+                .finally(() => {
+                    alertBtn.innerHTML = originalText;
+                    alertBtn.disabled = false;
+                });
+            }
+        }
+
+        // Auto-refresh nearby rescuers every 5 minutes
+        setInterval(loadNearbyRescuers, 5 * 60 * 1000);
+
+        // [REST OF YOUR EXISTING WEATHER JAVASCRIPT CODE CONTINUES HERE...]
+        
         function verifyLocationAccess() {
             return new Promise((resolve, reject) => {
                 if (navigator.geolocation) {
@@ -789,8 +1515,7 @@
             `).join('');
         }
 
-        // ===== FIXED EVENT LISTENERS =====
-        // Wait for DOM to be fully loaded before setting up event listeners
+        // ===== EVENT LISTENERS =====
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', setupEventListeners);
         } else {
@@ -819,19 +1544,6 @@
                 });
             }
 
-            // News Modal - keeping original functionality
-            const newsBtnEl = document.getElementById('newsBtn');
-            if (newsBtnEl) {
-                newsBtnEl.addEventListener('click', () => {
-                    const modal = document.getElementById('newsModal');
-                    modal.style.display = 'block';
-
-                    if (userLocation) {
-                        document.getElementById('newsCity').placeholder = "Current Location (enter city name)";
-                    }
-                });
-            }
-
             // Close Modal
             const closeEl = document.querySelector('.close');
             if (closeEl) {
@@ -846,14 +1558,11 @@
                 searchNewsBtnEl.addEventListener('click', fetchWeatherNews);
             }
 
-            // REFRESH BUTTON - FIXED
+            // REFRESH BUTTON
             const refreshBtnEl = document.getElementById('refreshBtn');
             if (refreshBtnEl) {
-                console.log('Refresh button found, attaching listener');
                 refreshBtnEl.addEventListener('click', function(e) {
                     e.preventDefault();
-                    console.log('Refresh button clicked!');
-                    
                     showLoading(true, 'Refreshing data...');
                     
                     // Clear existing data
@@ -875,23 +1584,17 @@
                         location.reload();
                     }, 300);
                 });
-            } else {
-                console.error('Refresh button not found!');
             }
 
-            // SIGN OUT BUTTON - FIXED
+            // SIGN OUT BUTTON
             const signOutBtnEl = document.getElementById('signOutBtn');
             if (signOutBtnEl) {
-                console.log('Sign out button found, attaching listener');
                 signOutBtnEl.addEventListener('click', function(e) {
                     e.preventDefault();
-                    console.log('Sign out button clicked!');
-                    
                     showLoading(true, 'Signing out...');
                     
                     if (typeof firebase !== 'undefined' && firebase.auth && firebase.auth().currentUser) {
                         firebase.auth().signOut().then(() => {
-                            console.log('Firebase sign out successful');
                             window.location.href = '/';
                         }).catch((error) => {
                             console.error('Sign out error:', error);
@@ -899,14 +1602,11 @@
                             showLoading(false);
                         });
                     } else {
-                        console.log('No Firebase auth, redirecting to home');
                         setTimeout(() => {
                             window.location.href = '/';
                         }, 300);
                     }
                 });
-            } else {
-                console.error('Sign out button not found!');
             }
 
             // Close modal when clicking outside
