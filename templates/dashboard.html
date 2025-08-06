@@ -13,6 +13,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="/static/firebase-config.js"></script>
     <style>
+        /* Existing styles remain the same... */
         /* News Modal Styles */
         .modal {
             display: none;
@@ -155,7 +156,106 @@
             background-color: #bdc3c7;
         }
 
-        /* RESCUE TEAM STYLES */
+        /* SURAKSHA AI BUTTON STYLES */
+        .suraksha-ai-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .suraksha-ai-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .suraksha-ai-btn:hover::before {
+            left: 100%;
+        }
+
+        .suraksha-ai-btn:hover {
+            background: linear-gradient(135deg, #5a6fd8, #6a4c93);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* FLOATING AI BUTTON */
+        .floating-ai-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: aiPulse 3s infinite;
+        }
+
+        .floating-ai-btn:hover {
+            background: linear-gradient(135deg, #5a6fd8, #6a4c93);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            animation: none;
+        }
+
+        .floating-ai-btn .ai-icon {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .floating-ai-btn .ai-text {
+            position: absolute;
+            right: 70px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .floating-ai-btn:hover .ai-text {
+            opacity: 1;
+            visibility: visible;
+            right: 75px;
+        }
+
+        @keyframes aiPulse {
+            0%, 100% {
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4), 0 0 0 0 rgba(102, 126, 234, 0.7);
+            }
+            70% {
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4), 0 0 0 10px rgba(102, 126, 234, 0);
+            }
+        }
+
+        /* RESCUE TEAM STYLES - Keep all existing rescue styles */
         .rescue-widget {
             background: linear-gradient(135deg, #ff6b6b, #ee5a24);
             color: white;
@@ -596,6 +696,27 @@
                 align-items: flex-start;
                 gap: 10px;
             }
+
+            /* Mobile responsive for AI button */
+            .floating-ai-btn {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .floating-ai-btn .ai-icon {
+                font-size: 20px;
+            }
+
+            .floating-ai-btn .ai-text {
+                font-size: 11px;
+                right: 60px;
+            }
+
+            .floating-ai-btn:hover .ai-text {
+                right: 65px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -630,6 +751,12 @@
             <button id="signOutBtn" class="sign-out-btn">Sign Out</button>
         </div>
     </div>
+
+    <!-- FLOATING AI BUTTON (Alternative Option) -->
+    <a href="https://surakshaai-2g70.onrender.com/" target="_blank" class="floating-ai-btn" title="Suraksha AI Assistant - Get instant help and answers">
+        <div class="ai-icon">🤖</div>
+        <div class="ai-text">Suraksha AI</div>
+    </a>
 
     <div class="container">
         <!-- Emergency Rescue Widget -->
@@ -698,6 +825,7 @@
     </div>
 
     <script>
+        // All your existing JavaScript code remains exactly the same...
         // Global variables
         let fullWeatherData = [];
         let filteredWeatherData = [];
@@ -976,7 +1104,7 @@
         // Auto-refresh nearby rescuers every 5 minutes
         setInterval(loadNearbyRescuers, 5 * 60 * 1000);
 
-        // [REST OF YOUR EXISTING WEATHER JAVASCRIPT CODE CONTINUES HERE...]
+        // [REST OF YOUR EXISTING WEATHER JAVASCRIPT CODE - KEEP ALL THE REST AS IS...]
         
         function verifyLocationAccess() {
             return new Promise((resolve, reject) => {
