@@ -279,7 +279,7 @@ class RescueTeamPortal {
         membersList.innerHTML = membersToRender.map(member => {
             let distanceText = '';
             if (member.distance !== undefined) {
-                distanceText = `<div class="detail-item"><strong>Distance:</strong> <span class="distance">${member.distance} km away</span></div>`;
+                distanceText = `<div class="detail-item"><strong>Distance:</strong> <span class="distance">${member.distance} m away</span></div>`;
             }
 
             const specializationDisplay = member.specialization.charAt(0).toUpperCase() + member.specialization.slice(1);
