@@ -5,90 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Rescue Team Registration</title>
     <link rel="stylesheet" href="/static/rescue.css">
+    <!-- Add Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🚨 Emergency Rescue Team Portal</h1>
-            <p>Connect with nearby rescue team members</p>
-            <!-- Add navigation back to dashboard -->
-            <div style="margin-top: 15px;">
-                <a href="/dashboard" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">
-                    ← Back to Dashboard
-                </a>
-            </div>
-        </header>
+    <div class="page-wrapper">
+        <div class="container">
+            <header>
+                <div class="header-content">
+                    <div class="header-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h1><i class="fas fa-ambulance"></i> Emergency Rescue Team Portal</h1>
+                    <p>Connect with nearby rescue team members and save lives together</p>
+                    
+                    <!-- Enhanced navigation back to dashboard -->
+                    <div class="header-navigation">
+                        <a href="/dashboard" class="back-to-dashboard">
+                            <i class="fas fa-arrow-left"></i>
+                            <span>Back to Dashboard</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Header decoration -->
+                <div class="header-decoration">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                </div>
+            </header>
 
-        <!-- Registration Form -->
-        <div class="registration-section" id="registrationSection">
-            <h2>Register as Rescue Team Member</h2>
-            <form id="registrationForm">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
+            <!-- Registration Form -->
+            <div class="registration-section" id="registrationSection">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h2>Register as Rescue Team Member</h2>
+                    <p class="section-subtitle">Join our emergency response network and help save lives</p>
                 </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="deptId">Department ID *</label>
-                    <input type="text" id="deptId" name="deptId" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="specialization">Specialization</label>
-                    <select id="specialization" name="specialization">
-                        <option value="">Select Specialization</option>
-                        <option value="medical">Medical Emergency</option>
-                        <option value="fire">Fire Rescue</option>
-                        <option value="water">Water Rescue</option>
-                        <option value="mountain">Mountain Rescue</option>
-                        <option value="disaster">Disaster Relief</option>
-                        <option value="general">General Rescue</option>
-                    </select>
-                </div>
-                
-                <div class="location-group">
-                    <button type="button" id="getLocationBtn" class="location-btn">
-                        📍 Get Current Location
+
+                <form id="registrationForm" class="enhanced-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i>
+                                Full Name *
+                            </label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i>
+                                Phone Number *
+                            </label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email Address *
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="deptId">
+                                <i class="fas fa-id-badge"></i>
+                                Rescuer ID *
+                            </label>
+                            <input type="text" id="deptId" name="deptId" placeholder="RESC-001" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="specialization">
+                            <i class="fas fa-stethoscope"></i>
+                            Specialization
+                        </label>
+                        <select id="specialization" name="specialization">
+                            <option value="">Select your specialization</option>
+                            <option value="medical"><i class="fas fa-heartbeat"></i> Medical Emergency</option>
+                            <option value="fire"><i class="fas fa-fire-extinguisher"></i> Fire Rescue</option>
+                            <option value="water"><i class="fas fa-swimmer"></i> Water Rescue</option>
+                            <option value="mountain"><i class="fas fa-mountain"></i> Mountain Rescue</option>
+                            <option value="disaster"><i class="fas fa-exclamation-triangle"></i> Disaster Relief</option>
+                            <option value="general"><i class="fas fa-hands-helping"></i> General Rescue</option>
+                        </select>
+                    </div>
+                    
+                    <div class="location-group">
+                        <div class="location-content">
+                            <div class="location-header">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h3>Location Information</h3>
+                            </div>
+                            <p>We need your location to connect you with nearby emergencies</p>
+                            <button type="button" id="getLocationBtn" class="location-btn">
+                                <i class="fas fa-crosshairs"></i>
+                                <span>Get Current Location</span>
+                            </button>
+                        </div>
+                        <div id="locationStatus" class="location-status"></div>
+                    </div>
+                    
+                    <button type="submit" class="register-btn">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Register as Rescue Member</span>
                     </button>
-                    <div id="locationStatus" class="location-status"></div>
-                </div>
-                
-                <button type="submit" class="register-btn">Register as Rescue Member</button>
-            </form>
-        </div>
-
-        <!-- Toggle Button -->
-        <div class="toggle-section">
-            <button id="toggleViewBtn" class="toggle-btn">View Rescue Team Members</button>
-        </div>
-
-        <!-- Rescue Members List -->
-        <div class="members-section" id="membersSection" style="display: none;">
-            <h2>Registered Rescue Team Members</h2>
-            <div class="search-filter">
-                <input type="text" id="searchInput" placeholder="Search by name or specialization...">
-                <select id="filterSpecialization">
-                    <option value="">All Specializations</option>
-                    <option value="medical">Medical Emergency</option>
-                    <option value="fire">Fire Rescue</option>
-                    <option value="water">Water Rescue</option>
-                    <option value="mountain">Mountain Rescue</option>
-                    <option value="disaster">Disaster Relief</option>
-                    <option value="general">General Rescue</option>
-                </select>
+                </form>
             </div>
-            <div id="membersList" class="members-list">
-                <!-- Members will be populated here -->
+
+            <!-- Toggle Button -->
+            <div class="toggle-section">
+                <div class="toggle-content">
+                    <h3>Already registered?</h3>
+                    <p>View and connect with other rescue team members in your area</p>
+                    <button id="toggleViewBtn" class="toggle-btn">
+                        <i class="fas fa-users"></i>
+                        <span>View Rescue Team Members</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Rescue Members List -->
+            <div class="members-section" id="membersSection" style="display: none;">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h2>Registered Rescue Team Members</h2>
+                    <p class="section-subtitle">Connect with verified rescue professionals in your area</p>
+                </div>
+
+                <div class="search-filter">
+                    <div class="search-group">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search by name or specialization...">
+                    </div>
+                    <div class="filter-group">
+                        <i class="fas fa-filter"></i>
+                        <select id="filterSpecialization">
+                            <option value="">All Specializations</option>
+                            <option value="medical">Medical Emergency</option>
+                            <option value="fire">Fire Rescue</option>
+                            <option value="water">Water Rescue</option>
+                            <option value="mountain">Mountain Rescue</option>
+                            <option value="disaster">Disaster Relief</option>
+                            <option value="general">General Rescue</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="membersList" class="members-list">
+                    <!-- Members will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading overlay -->
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p>Processing your request...</p>
             </div>
         </div>
     </div>

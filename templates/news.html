@@ -5,150 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suraksha - Weather News</title>
     <link rel="stylesheet" href="/static/styles.css">
-    <style>
-        .header {
-            background-color: white;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #3498db;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            background-color: #ecf0f1;
-            font-size: 14px;
-        }
-
-        .nav-links a:hover {
-            background-color: #bdc3c7;
-        }
-    </style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="header">
-        <h1>🌤️ Suraksha - Weather News</h1>
-        <div class="nav-links">
-            <a href="/dashboard">📊 Dashboard</a>
-            <a href="/">Sign Out</a>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1>Weather News Search</h1>
-        <p class="subtitle">Get the latest weather news for any city around the world</p>
-        
-        <form method="POST" class="search-container">
-            <input type="text" name="city" placeholder="Enter city name (e.g., London, New York, Tokyo)" 
-                   value="{{ city }}" required>
-            <button type="submit">Search News</button>
-        </form>
-
-        {% if error_message %}
-        <div class="error-message">{{ error_message }}</div>
-        {% endif %}
-
-        {% if headlines %}
-        <div class="results-header">
-            <h2>Weather News for {{ city }}</h2>
-            <p>{{ headlines|length }} articles found</p>
-        </div>
-
-        <div class="news-container">
-            {% for article in headlines %}
-            <div class="news-card">
-                <div class="news-source">
-                    <span>{{ article.source }}</span>
-                    <span>{{ article.publishedAt[:10] }}</span>
+    <div class="page-wrapper">
+        <!-- Enhanced Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-cloud-sun header-icon"></i>
+                    <h1>Suraksha Weather News</h1>
                 </div>
-                <h3><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h3>
-                <p class="news-description">{{ article.description }}</p>
-                <a href="{{ article.url }}" target="_blank" class="read-more">Read more →</a>
+                <nav class="nav-links">
+                    <a href="/dashboard" class="nav-btn dashboard-btn">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="/" class="nav-btn signout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Sign Out</span>
+                    </a>
+                </nav>
             </div>
-            {% endfor %}
-        </div>
-        {% endif %}
+        </header>
 
-        {% if weather %}
-        <!-- <div class="weather-summary">
-            <h2>Today's Weather Summary</h2>
-            <div class="weather-cards">
-                {% for data in weather[:6] %}
-                <div class="weather-card">
-                    <div class="weather-time">{{ data.date[11:16] if data.date|length > 10 else data.hour }}:00</div>
-                    <div class="weather-temp">{{ "%.1f"|format(data.temperature_2m) }}°C</div>
-                    <div class="weather-details">
-                        <div>Humidity: {{ "%.0f"|format(data.relative_humidity_2m) }}%</div>
-                        <div>Wind: {{ "%.1f"|format(data.wind_speed_10m) }} m/s</div>
-                        {% if data.precipitation > 0 %}
-                        <div>Rain: {{ "%.1f"|format(data.precipitation) }}mm</div>
-                        {% endif %}
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <i class="fas fa-newspaper"></i>
+                            Weather News Search
+                        </h1>
+                        <p class="hero-subtitle">Get the latest weather news for any city around the world</p>
                     </div>
+                </section>
+                
+                <!-- Search Section -->
+                <section class="search-section">
+                    <form method="POST" class="search-container">
+                        <div class="search-input-wrapper">
+                            <i class="fas fa-map-marker-alt search-icon"></i>
+                            <input type="text" name="city" placeholder="Enter city name (e.g., London, New York, Tokyo)" 
+                                   value="{{ city }}" required>
+                        </div>
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i>
+                            <span>Search News</span>
+                        </button>
+                    </form>
+                </section>
+
+                <!-- Error Message -->
+                {% if error_message %}
+                <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>{{ error_message }}</span>
                 </div>
-                {% endfor %}
+                {% endif %}
+
+                <!-- Results Section -->
+                {% if headlines %}
+                <section class="results-section">
+                    <div class="results-header">
+                        <h2>
+                            <i class="fas fa-location-dot"></i>
+                            Weather News for {{ city }}
+                        </h2>
+                        <div class="results-count">
+                            <i class="fas fa-newspaper"></i>
+                            <span>{{ headlines|length }} articles found</span>
+                        </div>
+                    </div>
+
+                    <div class="news-container">
+                        {% for article in headlines %}
+                        <article class="news-card">
+                            <div class="news-header">
+                                <div class="news-source">
+                                    <i class="fas fa-globe"></i>
+                                    <span>{{ article.source }}</span>
+                                </div>
+                                <div class="news-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>{{ article.publishedAt[:10] }}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="news-content">
+                                <h3 class="news-title">
+                                    <a href="{{ article.url }}" target="_blank" rel="noopener">
+                                        {{ article.title }}
+                                    </a>
+                                </h3>
+                                <p class="news-description">{{ article.description }}</p>
+                            </div>
+                            
+                            <div class="news-footer">
+                                <a href="{{ article.url }}" target="_blank" rel="noopener" class="read-more">
+                                    <span>Read Full Article</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </section>
+                {% endif %}
+
+                <!-- Weather Summary (if needed) -->
+                {% if weather %}
+                <section class="weather-summary">
+                    <h2 class="weather-title">
+                        <i class="fas fa-thermometer-half"></i>
+                        Today's Weather Summary
+                    </h2>
+                    <div class="weather-cards">
+                        {% for data in weather[:6] %}
+                        <div class="weather-card">
+                            <div class="weather-time">
+                                <i class="fas fa-clock"></i>
+                                {{ data.date[11:16] if data.date|length > 10 else data.hour }}:00
+                            </div>
+                            <div class="weather-temp">{{ "%.1f"|format(data.temperature_2m) }}°C</div>
+                            <div class="weather-details">
+                                <div class="weather-item">
+                                    <i class="fas fa-tint"></i>
+                                    Humidity: {{ "%.0f"|format(data.relative_humidity_2m) }}%
+                                </div>
+                                <div class="weather-item">
+                                    <i class="fas fa-wind"></i>
+                                    Wind: {{ "%.1f"|format(data.wind_speed_10m) }} m/s
+                                </div>
+                                {% if data.precipitation > 0 %}
+                                <div class="weather-item">
+                                    <i class="fas fa-cloud-rain"></i>
+                                    Rain: {{ "%.1f"|format(data.precipitation) }}mm
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
+                {% endif %}
             </div>
-        </div> -->
-        {% endif %}
+        </main>
+
+        <!-- Enhanced Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Suraksha Weather Dashboard. Data provided by Open-Meteo and NewsAPI.</p>
+                </div>
+                
+            </div>
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Suraksha Weather Dashboard. Data provided by Open-Meteo and NewsAPI.</p>
-    </footer>
+    <!-- Loading overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Searching for weather news...</p>
+        </div>
+    </div>
 
-    <style>
-        .weather-summary {
-            margin-top: 3rem;
-            padding: 2rem;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .weather-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .weather-card {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .weather-time {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .weather-temp {
-            font-size: 1.5rem;
-            color: #3498db;
-            margin-bottom: 0.5rem;
-        }
-
-        .weather-details {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-        }
-
-        .weather-details div {
-            margin-bottom: 0.25rem;
-        }
-    </style>
+    <script>
+        // Add loading state when form is submitted
+        document.querySelector('.search-container').addEventListener('submit', function() {
+            document.getElementById('loadingOverlay').style.display = 'flex';
+        });
+    </script>
 </body>
 </html>

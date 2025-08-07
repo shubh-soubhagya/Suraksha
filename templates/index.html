@@ -1,32 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
-    <title>Suraksha - Login</title>
-    <!-- CSS reference using Flask's url_for -->
+    <title>Suraksha - Disaster Management Login</title>
+    <!-- CSS reference -->
     <link rel="stylesheet" href="/static/index.css">
-    <!-- Add Firebase SDKs -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <!-- Firebase config reference -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <!-- Firebase config -->
     <script src="/static/firebase-config.js"></script>
 </head>
 
 <body>
-    <div class="login-container">
-        <h1>🌤️ Suraksha</h1>
-        <p>Weather Dashboard & News</p>
-        <p>Please sign in to continue</p>
-        <button id="googleSignIn" class="google-btn">
-            <span id="buttonText">Sign in with Google</span>
-            <div id="spinner" class="spinner hidden"></div>
-        </button>
-        
-        <!-- Alternative access without authentication -->
-        
+    <!-- Background Elements -->
+    <div class="background-overlay"></div>
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="login-wrapper">
+        <div class="login-container">
+            <!-- Header Section -->
+            <div class="header-section">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h1><i class="fas fa-cloud-sun"></i> Suraksha</h1>
+                </div>
+                <div class="tagline">
+                    <p class="main-tagline">Disaster Management & Weather Intelligence</p>
+                    <p class="sub-tagline">Protecting communities through advanced weather monitoring</p>
+                </div>
+            </div>
+
+            <!-- Authentication Options -->
+            <div class="auth-options">
+                <div class="option-tabs">
+                    <button class="tab-btn active" data-tab="google">
+                        <i class="fab fa-google"></i>
+                        Quick Sign In
+                    </button>
+                    <button class="tab-btn" data-tab="details">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </button>
+                </div>
+
+                <!-- Google Sign In Tab -->
+                <div id="google-tab" class="tab-content active">
+                    <div class="google-signin-section">
+                        <p class="signin-text">Continue with your Google account for quick access</p>
+                        <button id="googleSignIn" class="google-btn">
+                            <i class="fab fa-google google-icon"></i>
+                            <span id="buttonText">Sign in with Google</span>
+                            <div id="spinner" class="spinner hidden"></div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Details Tab -->
+                <div id="details-tab" class="tab-content">
+                    <form id="userDetailsForm" class="user-details-form">
+                        <div class="form-group">
+                            <label for="fullName">
+                                <i class="fas fa-user"></i>
+                                Full Name *
+                            </label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phoneNumber">
+                                <i class="fas fa-phone"></i>
+                                Phone Number *
+                            </label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+91 9876543210" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email Address *
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="organization">
+                                <i class="fas fa-building"></i>
+                                Organization (Optional)
+                            </label>
+                            <input type="text" id="organization" name="organization" placeholder="Your organization name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="role">
+                                <i class="fas fa-briefcase"></i>
+                                Role/Department
+                            </label>
+                            <select id="role" name="role" required>
+                                <option value="">Select your role</option>
+                                <option value="emergency_manager">Emergency Manager</option>
+                                <option value="meteorologist">Meteorologist</option>
+                                <option value="first_responder">First Responder</option>
+                                <option value="government_official">Government Official</option>
+                                <option value="researcher">Researcher/Analyst</option>
+                                <option value="coordinator">Disaster Coordinator</option>
+                                <option value="volunteer">Volunteer</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" id="registerBtn" class="register-btn">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Create Account</span>
+                            <div id="registerSpinner" class="spinner hidden"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="additional-info">
+                <div class="feature-highlights">
+                    <div class="feature">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Real-time Weather Monitoring</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bell"></i>
+                        <span>Emergency Alerts</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-users"></i>
+                        <span>Team Coordination</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Side Info Panel -->
+        <div class="info-panel">
+            <div class="info-content">
+                <h3><i class="fas fa-shield-alt"></i> Suraksha Features</h3>
+                <div class="info-features">
+                    <div class="info-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Advanced Weather Tracking</h4>
+                            <p>Real-time meteorological data and forecasting</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Emergency Response</h4>
+                            <p>Coordinated disaster management and alerts</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Geographic Intelligence</h4>
+                            <p>Location-based risk assessment and planning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p id="loadingText">Processing your request...</p>
+        </div>
     </div>
 
     <script>
@@ -38,14 +210,40 @@
             }
 
             const auth = firebase.auth();
+            const db = firebase.firestore();
             const googleBtn = document.getElementById('googleSignIn');
             const buttonText = document.getElementById('buttonText');
             const spinner = document.getElementById('spinner');
+            const userDetailsForm = document.getElementById('userDetailsForm');
+            const registerBtn = document.getElementById('registerBtn');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const loadingText = document.getElementById('loadingText');
+
+            // Tab functionality
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const tabName = e.currentTarget.dataset.tab;
+                    switchTab(tabName);
+                });
+            });
+
+            function switchTab(tabName) {
+                // Update tab buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+
+                // Update tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(`${tabName}-tab`).classList.add('active');
+            }
 
             // Check if user is already logged in
             auth.onAuthStateChanged((user) => {
                 if (user) {
-                    // User is already logged in, redirect to dashboard
                     window.location.href = "/dashboard";
                 }
             });
@@ -54,59 +252,180 @@
             googleBtn.addEventListener('click', () => {
                 const provider = new firebase.auth.GoogleAuthProvider();
 
-                // Show loading state
+                showLoading('Signing in with Google...');
                 buttonText.textContent = 'Signing in...';
                 spinner.classList.remove('hidden');
                 googleBtn.disabled = true;
 
                 auth.signInWithPopup(provider)
                     .then((result) => {
-                        // Successful login, check permissions
-                        requestLocationAndNotifications();
+                        const user = result.user;
+                        
+                        // Save basic Google user info to Firestore
+                        return db.collection('users').doc(user.uid).set({
+                            uid: user.uid,
+                            email: user.email,
+                            displayName: user.displayName,
+                            photoURL: user.photoURL,
+                            provider: 'google',
+                            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                            lastLoginAt: firebase.firestore.FieldValue.serverTimestamp(),
+                            isActive: true
+                        }, { merge: true });
+                    })
+                    .then(() => {
+                        loadingText.textContent = 'Setting up your account...';
+                        return requestLocationAndNotifications();
                     })
                     .catch((error) => {
                         console.error('Error:', error);
-                        buttonText.textContent = 'Sign in with Google';
-                        spinner.classList.add('hidden');
-                        googleBtn.disabled = false;
+                        hideLoading();
+                        resetGoogleButton();
 
                         if (error.code === 'auth/popup-closed-by-user') {
-                            alert('Sign in was canceled. Please try again.');
+                            showNotification('Sign in was canceled. Please try again.', 'warning');
                         } else {
-                            alert(`Sign in failed: ${error.message}`);
+                            showNotification(`Sign in failed: ${error.message}`, 'error');
                         }
                     });
             });
 
-            function requestLocationAndNotifications() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(
-                        () => {
-                            // Location granted, request notifications
-                            requestNotificationPermission();
-                        },
-                        (error) => {
-                            // Location denied - still allow access but show warning
-                            console.warn('Location access denied:', error);
-                            requestNotificationPermission();
-                        },
-                        { enableHighAccuracy: true }
+            // User Details Form handler
+            userDetailsForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(e.target);
+                const userData = {
+                    fullName: formData.get('fullName'),
+                    phoneNumber: formData.get('phoneNumber'),
+                    email: formData.get('email'),
+                    organization: formData.get('organization') || null,
+                    role: formData.get('role'),
+                    provider: 'manual',
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    isActive: true
+                };
+
+                showLoading('Creating your account...');
+                
+                try {
+                    // Create user with email/password (you can modify this based on your auth method)
+                    const userCredential = await auth.createUserWithEmailAndPassword(
+                        userData.email, 
+                        generateRandomPassword() // You might want to implement proper password handling
                     );
-                } else {
-                    console.warn('Geolocation not supported');
-                    requestNotificationPermission();
+                    
+                    const user = userCredential.user;
+                    
+                    // Update user profile
+                    await user.updateProfile({
+                        displayName: userData.fullName
+                    });
+                    
+                    // Save to Firestore
+                    await db.collection('users').doc(user.uid).set({
+                        ...userData,
+                        uid: user.uid,
+                        lastLoginAt: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+                    
+                    loadingText.textContent = 'Setting up your dashboard...';
+                    await requestLocationAndNotifications();
+                    
+                } catch (error) {
+                    console.error('Registration error:', error);
+                    hideLoading();
+                    showNotification(`Registration failed: ${error.message}`, 'error');
                 }
+            });
+
+            function generateRandomPassword() {
+                // Generate a random password - in production, you might want a different approach
+                return Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8);
+            }
+
+            function showLoading(text) {
+                loadingText.textContent = text;
+                loadingOverlay.classList.remove('hidden');
+            }
+
+            function hideLoading() {
+                loadingOverlay.classList.add('hidden');
+            }
+
+            function resetGoogleButton() {
+                buttonText.textContent = 'Sign in with Google';
+                spinner.classList.add('hidden');
+                googleBtn.disabled = false;
+            }
+
+            function showNotification(message, type = 'info') {
+                // Create and show notification
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.innerHTML = `
+                    <i class="fas fa-${type === 'error' ? 'exclamation-circle' : type === 'warning' ? 'exclamation-triangle' : 'info-circle'}"></i>
+                    <span>${message}</span>
+                    <button class="close-notification">&times;</button>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Auto remove after 5 seconds
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 5000);
+                
+                // Close button functionality
+                notification.querySelector('.close-notification').addEventListener('click', () => {
+                    notification.parentNode.removeChild(notification);
+                });
+            }
+
+            function requestLocationAndNotifications() {
+                return new Promise((resolve) => {
+                    if (navigator.geolocation) {
+                        loadingText.textContent = 'Requesting location access...';
+                        navigator.geolocation.getCurrentPosition(
+                            (position) => {
+                                // Save location if needed
+                                console.log('Location granted:', position);
+                                requestNotificationPermission().then(resolve);
+                            },
+                            (error) => {
+                                console.warn('Location access denied:', error);
+                                requestNotificationPermission().then(resolve);
+                            },
+                            { enableHighAccuracy: true }
+                        );
+                    } else {
+                        console.warn('Geolocation not supported');
+                        requestNotificationPermission().then(resolve);
+                    }
+                });
             }
 
             function requestNotificationPermission() {
-                if ('Notification' in window) {
-                    Notification.requestPermission().finally(() => {
-                        // Redirect to dashboard
-                        window.location.href = "/dashboard";
-                    });
-                } else {
-                    window.location.href = "/dashboard";
-                }
+                return new Promise((resolve) => {
+                    if ('Notification' in window) {
+                        loadingText.textContent = 'Setting up notifications...';
+                        Notification.requestPermission().finally(() => {
+                            setTimeout(() => {
+                                hideLoading();
+                                window.location.href = "/dashboard";
+                                resolve();
+                            }, 1000);
+                        });
+                    } else {
+                        setTimeout(() => {
+                            hideLoading();
+                            window.location.href = "/dashboard";
+                            resolve();
+                        }, 1000);
+                    }
+                });
             }
         });
     </script>
