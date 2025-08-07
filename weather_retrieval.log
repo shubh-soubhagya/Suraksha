@@ -214,3 +214,26 @@
 2025-08-07 22:27:58,160 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\unicode_escape.py', reloading
 2025-08-07 22:27:58,199 - INFO - 127.0.0.1 - - [07/Aug/2025 22:27:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 2025-08-07 22:27:59,093 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-07 22:28:00,264 - WARNING -  * Debugger is active!
+2025-08-07 22:28:00,277 - INFO -  * Debugger PIN: 537-754-139
+2025-08-07 22:28:00,341 - INFO - Weather data is fresh.
+2025-08-07 22:28:00,349 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:00] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 22:28:00,373 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-07 22:28:00,381 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:00] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-07 22:28:00,892 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:00] "GET /api/weather HTTP/1.1" 200 -
+2025-08-07 22:28:01,310 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:01] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-07 22:28:02,145 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:02] "GET /rescue HTTP/1.1" 200 -
+2025-08-07 22:28:02,162 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:02] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-07 22:28:02,163 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:02] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-07 22:28:02,597 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:02] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-07 22:28:08,690 - INFO - Weather data is fresh.
+2025-08-07 22:28:08,722 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:08] "GET /news HTTP/1.1" 200 -
+2025-08-07 22:28:08,743 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:08] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-07 22:28:15,794 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:15] "GET /rescue HTTP/1.1" 200 -
+2025-08-07 22:28:15,824 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:15] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-07 22:28:15,828 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:15] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-07 22:28:16,344 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:16] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-07 22:28:20,945 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:20] "GET /rescue HTTP/1.1" 200 -
+2025-08-07 22:28:20,967 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:20] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-07 22:28:20,978 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:20] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-07 22:28:21,466 - INFO - 127.0.0.1 - - [07/Aug/2025 22:28:21] "GET /api/rescue/members HTTP/1.1" 200 -
