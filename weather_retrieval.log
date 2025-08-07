@@ -1,0 +1,64 @@
+2025-08-08 04:11:33,372 - INFO - Created rescue data file: rescue_members.json
+2025-08-08 04:11:33,393 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.26:5000
+2025-08-08 04:11:33,393 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-08 04:11:33,399 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-08 04:11:34,446 - WARNING -  * Debugger is active!
+2025-08-08 04:11:34,455 - INFO -  * Debugger PIN: 537-754-139
+2025-08-08 04:11:37,401 - INFO - 127.0.0.1 - - [08/Aug/2025 04:11:37] "GET / HTTP/1.1" 200 -
+2025-08-08 04:11:37,497 - INFO - 127.0.0.1 - - [08/Aug/2025 04:11:37] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-08 04:11:37,510 - INFO - 127.0.0.1 - - [08/Aug/2025 04:11:37] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 04:11:37,570 - INFO - 127.0.0.1 - - [08/Aug/2025 04:11:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-08 04:12:02,716 - INFO - Fetching new weather data...
+2025-08-08 04:12:02,801 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\app.py', reloading
+2025-08-08 04:12:03,242 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-08 04:12:04,243 - WARNING -  * Debugger is active!
+2025-08-08 04:12:04,255 - INFO -  * Debugger PIN: 537-754-139
+2025-08-08 04:12:04,316 - INFO - Fetching new weather data...
+2025-08-08 04:12:05,106 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\session.py', reloading
+2025-08-08 04:12:05,107 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\openmeteo_requests\\Client.py', reloading
+2025-08-08 04:12:05,458 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-08 04:12:06,425 - WARNING -  * Debugger is active!
+2025-08-08 04:12:06,434 - INFO -  * Debugger PIN: 537-754-139
+2025-08-08 04:12:10,082 - INFO - Fetching new weather data...
+2025-08-08 04:12:11,341 - INFO - Weather data updated.
+2025-08-08 04:12:11,348 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:11] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 04:12:11,385 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 04:12:11,394 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:11] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 04:12:15,461 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:15] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 04:12:15,876 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:15] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 04:12:19,072 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:19] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 04:12:19,088 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:19] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 04:12:19,094 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:19] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 04:12:19,550 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:19] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 04:12:20,454 - INFO - Weather data is fresh.
+2025-08-08 04:12:20,455 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:20] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 04:12:20,471 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 04:12:20,478 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:20] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 04:12:20,867 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:20] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 04:12:21,266 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:21] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 04:12:33,415 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:33] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 04:12:33,435 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:33] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 04:12:33,440 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:33] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 04:12:33,896 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:33] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 04:12:52,415 - INFO - New rescue member registered: Shubhankar Tiwary
+2025-08-08 04:12:52,416 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:52] "[35m[1mPOST /api/rescue/register HTTP/1.1[0m" 201 -
+2025-08-08 04:12:52,886 - INFO - 127.0.0.1 - - [08/Aug/2025 04:12:52] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 04:13:19,365 - INFO - Weather data is fresh.
+2025-08-08 04:13:19,366 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:19] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 04:13:19,387 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 04:13:19,396 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:19] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 04:13:20,051 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:20] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 04:13:20,492 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:20] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 04:13:24,171 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:24] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 04:13:24,191 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:24] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 04:13:24,193 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:24] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 04:13:24,622 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:24] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 04:13:34,133 - INFO - Weather data is fresh.
+2025-08-08 04:13:34,134 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:34] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 04:13:34,159 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 04:13:34,172 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:34] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 04:13:34,565 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:34] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 04:13:35,008 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:35] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
