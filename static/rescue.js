@@ -120,8 +120,8 @@ class RescueTeamPortal {
         const form = document.getElementById('registrationForm');
         const formData = new FormData(form);
         
-        // Validate required fields
-        const requiredFields = ['name', 'phone', 'email', 'deptId'];
+        // Validate required fields (email is optional)
+        const requiredFields = ['name', 'phone', 'deptId'];
         for (let field of requiredFields) {
             if (!formData.get(field).trim()) {
                 this.showError(`Please fill in the ${field} field.`);
@@ -135,11 +135,11 @@ class RescueTeamPortal {
             return;
         }
 
-        // Create new member object
+        // Create member data object
         const memberData = {
             name: formData.get('name').trim(),
             phone: formData.get('phone').trim(),
-            email: formData.get('email').trim(),
+            email: formData.get('email').trim() || '', // Optional email
             deptId: formData.get('deptId').trim(),
             specialization: formData.get('specialization') || 'general',
             location: this.currentLocation
@@ -242,12 +242,12 @@ class RescueTeamPortal {
         if (membersSection.style.display === 'none') {
             membersSection.style.display = 'block';
             registrationSection.style.display = 'none';
-            toggleBtn.textContent = 'Back to Registration';
+            toggleBtn.innerHTML = '<i class="fas fa-arrow-left"></i> Back to Registration';
             this.renderMembers();
         } else {
             membersSection.style.display = 'none';
             registrationSection.style.display = 'block';
-            toggleBtn.textContent = 'View Rescue Team Members';
+            toggleBtn.innerHTML = '<i class="fas fa-users"></i> View Rescue Team Members';
         }
     }
 
@@ -283,16 +283,21 @@ class RescueTeamPortal {
             }
 
             const specializationDisplay = member.specialization.charAt(0).toUpperCase() + member.specialization.slice(1);
+            
+            // Show email only if provided
+            const emailDisplay = member.email ? `<div class="detail-item"><strong>Email:</strong> ${member.email}</div>` : '';
 
             return `
                 <div class="member-card">
                     <div class="member-header">
-                        <h3 class="member-name">${member.name}</h3>
-                        <span class="dept-id">ID: ${member.deptId}</span>
+                        <div class="member-info">
+                            <h3 class="member-name">${member.name}</h3>
+                            <span class="dept-id">ID: ${member.deptId}</span>
+                        </div>
                     </div>
                     <div class="member-details">
                         <div class="detail-item"><strong>Phone:</strong> ${member.phone}</div>
-                        <div class="detail-item"><strong>Email:</strong> ${member.email}</div>
+                        ${emailDisplay}
                         ${distanceText}
                         <div class="specialization-tag">${specializationDisplay} Specialist</div>
                     </div>
@@ -309,9 +314,9 @@ class RescueTeamPortal {
         const toggleBtn = document.getElementById('toggleViewBtn');
         
         if (count > 0) {
-            toggleBtn.textContent = `View Rescue Team Members (${count})`;
+            toggleBtn.innerHTML = `<i class="fas fa-users"></i> View Rescue Team Members (${count})`;
         } else {
-            toggleBtn.textContent = 'View Rescue Team Members';
+            toggleBtn.innerHTML = '<i class="fas fa-users"></i> View Rescue Team Members';
         }
     }
 }

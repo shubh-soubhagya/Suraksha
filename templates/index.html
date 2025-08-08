@@ -48,91 +48,14 @@
                 </div>
             </div>
 
-            <!-- Authentication Options -->
-            <div class="auth-options">
-                <div class="option-tabs">
-                    <button class="tab-btn active" data-tab="google">
-                        <i class="fab fa-google"></i>
-                        Quick Sign In
-                    </button>
-                    <button class="tab-btn" data-tab="details">
-                        <i class="fas fa-user-plus"></i>
-                        Register
-                    </button>
-                </div>
-
-                <!-- Google Sign In Tab -->
-                <div id="google-tab" class="tab-content active">
-                    <div class="google-signin-section">
-                        <p class="signin-text">Continue with your Google account for quick access</p>
-                        <button id="googleSignIn" class="google-btn">
-                            <i class="fab fa-google google-icon"></i>
-                            <span id="buttonText">Sign in with Google</span>
-                            <div id="spinner" class="spinner hidden"></div>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- User Details Tab -->
-                <div id="details-tab" class="tab-content">
-                    <form id="userDetailsForm" class="user-details-form">
-                        <div class="form-group">
-                            <label for="fullName">
-                                <i class="fas fa-user"></i>
-                                Full Name *
-                            </label>
-                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phoneNumber">
-                                <i class="fas fa-phone"></i>
-                                Phone Number *
-                            </label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+91 9876543210" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">
-                                <i class="fas fa-envelope"></i>
-                                Email Address *
-                            </label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="organization">
-                                <i class="fas fa-building"></i>
-                                Organization (Optional)
-                            </label>
-                            <input type="text" id="organization" name="organization" placeholder="Your organization name">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="role">
-                                <i class="fas fa-briefcase"></i>
-                                Role/Department
-                            </label>
-                            <select id="role" name="role" required>
-                                <option value="">Select your role</option>
-                                <option value="emergency_manager">Emergency Manager</option>
-                                <option value="meteorologist">Meteorologist</option>
-                                <option value="first_responder">First Responder</option>
-                                <option value="government_official">Government Official</option>
-                                <option value="researcher">Researcher/Analyst</option>
-                                <option value="coordinator">Disaster Coordinator</option>
-                                <option value="volunteer">Volunteer</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" id="registerBtn" class="register-btn">
-                            <i class="fas fa-user-plus"></i>
-                            <span>Create Account</span>
-                            <div id="registerSpinner" class="spinner hidden"></div>
-                        </button>
-                    </form>
-                </div>
+            <!-- Google Sign In Section -->
+            <div class="google-signin-section">
+                <p class="signin-text">Continue with your Google account for quick access</p>
+                <button id="googleSignIn" class="google-btn">
+                    <i class="fab fa-google google-icon"></i>
+                    <span id="buttonText">Sign in with Google</span>
+                    <div id="spinner" class="spinner hidden"></div>
+                </button>
             </div>
 
             <!-- Additional Info -->
@@ -214,32 +137,8 @@
             const googleBtn = document.getElementById('googleSignIn');
             const buttonText = document.getElementById('buttonText');
             const spinner = document.getElementById('spinner');
-            const userDetailsForm = document.getElementById('userDetailsForm');
-            const registerBtn = document.getElementById('registerBtn');
             const loadingOverlay = document.getElementById('loadingOverlay');
             const loadingText = document.getElementById('loadingText');
-
-            // Tab functionality
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const tabName = e.currentTarget.dataset.tab;
-                    switchTab(tabName);
-                });
-            });
-
-            function switchTab(tabName) {
-                // Update tab buttons
-                document.querySelectorAll('.tab-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
-
-                // Update tab content
-                document.querySelectorAll('.tab-content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                document.getElementById(`${tabName}-tab`).classList.add('active');
-            }
 
             // Check if user is already logged in
             auth.onAuthStateChanged((user) => {
@@ -289,60 +188,6 @@
                         }
                     });
             });
-
-            // User Details Form handler
-            userDetailsForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                const formData = new FormData(e.target);
-                const userData = {
-                    fullName: formData.get('fullName'),
-                    phoneNumber: formData.get('phoneNumber'),
-                    email: formData.get('email'),
-                    organization: formData.get('organization') || null,
-                    role: formData.get('role'),
-                    provider: 'manual',
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                    isActive: true
-                };
-
-                showLoading('Creating your account...');
-                
-                try {
-                    // Create user with email/password (you can modify this based on your auth method)
-                    const userCredential = await auth.createUserWithEmailAndPassword(
-                        userData.email, 
-                        generateRandomPassword() // You might want to implement proper password handling
-                    );
-                    
-                    const user = userCredential.user;
-                    
-                    // Update user profile
-                    await user.updateProfile({
-                        displayName: userData.fullName
-                    });
-                    
-                    // Save to Firestore
-                    await db.collection('users').doc(user.uid).set({
-                        ...userData,
-                        uid: user.uid,
-                        lastLoginAt: firebase.firestore.FieldValue.serverTimestamp()
-                    });
-                    
-                    loadingText.textContent = 'Setting up your dashboard...';
-                    await requestLocationAndNotifications();
-                    
-                } catch (error) {
-                    console.error('Registration error:', error);
-                    hideLoading();
-                    showNotification(`Registration failed: ${error.message}`, 'error');
-                }
-            });
-
-            function generateRandomPassword() {
-                // Generate a random password - in production, you might want a different approach
-                return Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8);
-            }
 
             function showLoading(text) {
                 loadingText.textContent = text;

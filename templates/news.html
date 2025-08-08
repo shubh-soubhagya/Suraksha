@@ -117,43 +117,6 @@
                     </div>
                 </section>
                 {% endif %}
-
-                <!-- Weather Summary (if needed) -->
-                {% if weather %}
-                <section class="weather-summary">
-                    <h2 class="weather-title">
-                        <i class="fas fa-thermometer-half"></i>
-                        Today's Weather Summary
-                    </h2>
-                    <div class="weather-cards">
-                        {% for data in weather[:6] %}
-                        <div class="weather-card">
-                            <div class="weather-time">
-                                <i class="fas fa-clock"></i>
-                                {{ data.date[11:16] if data.date|length > 10 else data.hour }}:00
-                            </div>
-                            <div class="weather-temp">{{ "%.1f"|format(data.temperature_2m) }}°C</div>
-                            <div class="weather-details">
-                                <div class="weather-item">
-                                    <i class="fas fa-tint"></i>
-                                    Humidity: {{ "%.0f"|format(data.relative_humidity_2m) }}%
-                                </div>
-                                <div class="weather-item">
-                                    <i class="fas fa-wind"></i>
-                                    Wind: {{ "%.1f"|format(data.wind_speed_10m) }} m/s
-                                </div>
-                                {% if data.precipitation > 0 %}
-                                <div class="weather-item">
-                                    <i class="fas fa-cloud-rain"></i>
-                                    Rain: {{ "%.1f"|format(data.precipitation) }}mm
-                                </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </section>
-                {% endif %}
             </div>
         </main>
 
@@ -163,7 +126,6 @@
                 <div class="footer-text">
                     <p>&copy; 2024 Suraksha Weather Dashboard. Data provided by Open-Meteo and NewsAPI.</p>
                 </div>
-                
             </div>
         </footer>
     </div>

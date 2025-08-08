@@ -4,13 +4,13 @@
     "name": "Shubhankar Tiwary",
     "phone": "+919852593456",
     "email": "shubhankarvishal@gmail.com",
-    "deptId": "RESC-002",
-    "specialization": "medical",
+    "deptId": "0123456789",
+    "specialization": "fire",
     "location": {
       "latitude": 25.6016384,
       "longitude": 85.0722816,
       "accuracy": 1858.1823579818104
     },
-    "registeredAt": "2025-08-08T04:12:52.414534"
+    "registeredAt": "2025-08-08T12:24:03.356551"
   }
 ]

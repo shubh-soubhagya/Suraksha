@@ -62,3 +62,337 @@
 2025-08-08 04:13:34,172 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:34] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
 2025-08-08 04:13:34,565 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:34] "GET /api/weather HTTP/1.1" 200 -
 2025-08-08 04:13:35,008 - INFO - 127.0.0.1 - - [08/Aug/2025 04:13:35] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 11:34:51,885 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.26:5000
+2025-08-08 11:34:51,886 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-08 11:34:52,090 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-08 11:34:53,372 - WARNING -  * Debugger is active!
+2025-08-08 11:34:53,409 - INFO -  * Debugger PIN: 537-754-139
+2025-08-08 11:34:58,926 - INFO - 127.0.0.1 - - [08/Aug/2025 11:34:58] "GET / HTTP/1.1" 200 -
+2025-08-08 11:34:59,010 - INFO - 127.0.0.1 - - [08/Aug/2025 11:34:59] "GET /static/index.css HTTP/1.1" 200 -
+2025-08-08 11:34:59,815 - INFO - 127.0.0.1 - - [08/Aug/2025 11:34:59] "GET /static/firebase-config.js HTTP/1.1" 200 -
+2025-08-08 11:35:00,408 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-08 11:35:01,867 - INFO - Fetching new weather data...
+2025-08-08 11:35:01,971 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\urllib3\\connection.py', reloading
+2025-08-08 11:35:01,986 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\urllib3\\connectionpool.py', reloading
+2025-08-08 11:35:01,997 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\app.py', reloading
+2025-08-08 11:35:02,009 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\debug\\__init__.py', reloading
+2025-08-08 11:35:02,020 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\serving.py', reloading
+2025-08-08 11:35:02,163 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-08 11:35:04,028 - WARNING -  * Debugger is active!
+2025-08-08 11:35:04,038 - INFO -  * Debugger PIN: 537-754-139
+2025-08-08 11:35:04,089 - INFO - Fetching new weather data...
+2025-08-08 11:35:05,106 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\session.py', reloading
+2025-08-08 11:35:05,122 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\openmeteo_requests\\Client.py', reloading
+2025-08-08 11:35:05,264 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-08 11:35:06,880 - WARNING -  * Debugger is active!
+2025-08-08 11:35:06,895 - INFO -  * Debugger PIN: 537-754-139
+2025-08-08 11:35:10,270 - INFO - Fetching new weather data...
+2025-08-08 11:35:11,955 - INFO - Weather data updated.
+2025-08-08 11:35:12,044 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:12] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 11:35:24,196 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:24] "GET / HTTP/1.1" 200 -
+2025-08-08 11:35:24,297 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:24] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-08 11:35:24,332 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:24] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:35:24,406 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-08 11:35:25,380 - INFO - Weather data is fresh.
+2025-08-08 11:35:25,380 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:25] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 11:35:25,708 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:25] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-08 11:35:25,724 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:25] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:35:53,437 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:53] "GET / HTTP/1.1" 200 -
+2025-08-08 11:35:53,549 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:53] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-08 11:35:53,566 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:53] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:35:53,644 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-08 11:35:54,454 - INFO - Weather data is fresh.
+2025-08-08 11:35:54,454 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:54] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 11:35:54,483 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 11:35:54,488 - INFO - 127.0.0.1 - - [08/Aug/2025 11:35:54] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:36:04,838 - INFO - 127.0.0.1 - - [08/Aug/2025 11:36:04] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 11:36:05,238 - INFO - 127.0.0.1 - - [08/Aug/2025 11:36:05] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 11:36:25,296 - INFO - 127.0.0.1 - - [08/Aug/2025 11:36:25] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 11:36:25,298 - INFO - 127.0.0.1 - - [08/Aug/2025 11:36:25] "GET / HTTP/1.1" 200 -
+2025-08-08 11:36:25,507 - INFO - 127.0.0.1 - - [08/Aug/2025 11:36:25] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-08 11:36:25,520 - INFO - 127.0.0.1 - - [08/Aug/2025 11:36:25] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:36:25,768 - INFO - 127.0.0.1 - - [08/Aug/2025 11:36:25] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 11:38:52,038 - INFO - 127.0.0.1 - - [08/Aug/2025 11:38:52] "GET / HTTP/1.1" 200 -
+2025-08-08 11:38:52,087 - INFO - 127.0.0.1 - - [08/Aug/2025 11:38:52] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-08 11:38:52,110 - INFO - 127.0.0.1 - - [08/Aug/2025 11:38:52] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:38:57,531 - INFO - 127.0.0.1 - - [08/Aug/2025 11:38:57] "GET / HTTP/1.1" 200 -
+2025-08-08 11:38:57,555 - INFO - 127.0.0.1 - - [08/Aug/2025 11:38:57] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-08 11:38:57,584 - INFO - 127.0.0.1 - - [08/Aug/2025 11:38:57] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:39:10,648 - INFO - Weather data is fresh.
+2025-08-08 11:39:10,651 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:10] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 11:39:10,735 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 11:39:10,743 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:10] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:39:11,339 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:11] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 11:39:11,907 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:11] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 11:39:13,115 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:13] "GET / HTTP/1.1" 200 -
+2025-08-08 11:39:13,295 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:13] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 11:39:13,299 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:13] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-08 11:39:13,333 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:13] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:39:13,961 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:13] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 11:39:35,303 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\__init__.py', reloading
+2025-08-08 11:39:35,357 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\sansio\\app.py', reloading
+2025-08-08 11:39:35,377 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-08-08 11:39:35,400 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\templating.py', reloading
+2025-08-08 11:39:35,417 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\jinja2\\__init__.py', reloading
+2025-08-08 11:39:35,432 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\jinja2\\environment.py', reloading
+2025-08-08 11:39:35,479 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\globals.py', reloading
+2025-08-08 11:39:35,491 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\wrappers.py', reloading
+2025-08-08 11:39:35,508 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2025-08-08 11:39:35,521 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2025-08-08 11:39:35,542 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-08-08 11:39:35,599 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\json\\__init__.py', reloading
+2025-08-08 11:39:35,615 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\wrappers\\response.py', reloading
+2025-08-08 11:39:35,652 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-08-08 11:39:35,677 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\helpers.py', reloading
+2025-08-08 11:39:35,806 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\__init__.py', reloading
+2025-08-08 11:39:35,821 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\backends\\__init__.py', reloading
+2025-08-08 11:39:35,852 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\cache_keys.py', reloading
+2025-08-08 11:39:35,872 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\models\\__init__.py', reloading
+2025-08-08 11:39:35,883 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\patcher.py', reloading
+2025-08-08 11:39:35,892 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\policy\\__init__.py', reloading
+2025-08-08 11:39:35,905 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\policy\\expiration.py', reloading
+2025-08-08 11:39:35,916 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\policy\\settings.py', reloading
+2025-08-08 11:39:35,929 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\serializers\\__init__.py', reloading
+2025-08-08 11:39:35,945 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\retry_requests\\__init__.py', reloading
+2025-08-08 11:39:35,983 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\openmeteo_requests\\__init__.py', reloading
+2025-08-08 11:39:36,166 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-08 11:39:37,342 - WARNING -  * Debugger is active!
+2025-08-08 11:39:37,351 - INFO -  * Debugger PIN: 537-754-139
+2025-08-08 11:39:45,992 - INFO - Weather data is fresh.
+2025-08-08 11:39:46,028 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:46] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 11:39:46,052 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 11:39:46,161 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:46] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:39:46,608 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:46] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 11:39:47,175 - INFO - 127.0.0.1 - - [08/Aug/2025 11:39:47] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 11:40:32,628 - INFO - Weather data is fresh.
+2025-08-08 11:40:32,827 - INFO - 127.0.0.1 - - [08/Aug/2025 11:40:32] "GET /news HTTP/1.1" 200 -
+2025-08-08 11:40:32,829 - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\unicode_escape.py', reloading
+2025-08-08 11:40:32,856 - INFO - 127.0.0.1 - - [08/Aug/2025 11:40:32] "GET /static/styles.css HTTP/1.1" 200 -
+2025-08-08 11:40:33,734 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-08 11:40:35,292 - WARNING -  * Debugger is active!
+2025-08-08 11:40:35,304 - INFO -  * Debugger PIN: 537-754-139
+2025-08-08 11:42:34,449 - INFO - Weather data is fresh.
+2025-08-08 11:42:34,575 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:34] "GET /news HTTP/1.1" 200 -
+2025-08-08 11:42:34,608 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:34] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-08 11:42:38,378 - INFO - Weather data is fresh.
+2025-08-08 11:42:38,553 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:38] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 11:42:38,616 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 11:42:38,665 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:38] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:42:39,366 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:39] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 11:42:40,454 - INFO - Weather data is fresh.
+2025-08-08 11:42:40,458 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:40] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 11:42:40,505 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 11:42:40,517 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:40] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:42:40,573 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:40] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 11:42:40,979 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:40] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 11:42:41,417 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:41] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 11:42:42,004 - INFO - Weather data is fresh.
+2025-08-08 11:42:42,006 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:42] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 11:42:42,036 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 11:42:42,046 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:42] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:42:42,502 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:42] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 11:42:42,935 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:42] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 11:42:45,343 - INFO - Weather data is fresh.
+2025-08-08 11:42:45,378 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:45] "GET /news HTTP/1.1" 200 -
+2025-08-08 11:42:45,433 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-08 11:42:48,705 - INFO - Weather data is fresh.
+2025-08-08 11:42:48,733 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:48] "POST /news HTTP/1.1" 200 -
+2025-08-08 11:42:48,765 - INFO - 127.0.0.1 - - [08/Aug/2025 11:42:48] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-08 11:43:04,471 - INFO - Weather data is fresh.
+2025-08-08 11:43:04,498 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:04] "POST /news HTTP/1.1" 200 -
+2025-08-08 11:43:04,520 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-08 11:43:23,575 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:23] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-08 11:43:23,634 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:23] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-08 11:43:26,748 - INFO - Weather data is fresh.
+2025-08-08 11:43:26,750 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:26] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 11:43:26,802 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:26] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-08 11:43:26,879 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 11:43:26,929 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:26] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 11:43:27,709 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:27] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 11:43:28,147 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:28] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 11:43:33,589 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:33] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 11:43:33,669 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:33] "GET /static/rescue.css HTTP/1.1" 200 -
+2025-08-08 11:43:33,787 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:33] "GET /static/rescue.js HTTP/1.1" 200 -
+2025-08-08 11:43:34,666 - INFO - 127.0.0.1 - - [08/Aug/2025 11:43:34] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 11:44:25,875 - INFO - 127.0.0.1 - - [08/Aug/2025 11:44:25] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 11:44:25,906 - INFO - 127.0.0.1 - - [08/Aug/2025 11:44:25] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 11:44:25,917 - INFO - 127.0.0.1 - - [08/Aug/2025 11:44:25] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 11:44:26,389 - INFO - 127.0.0.1 - - [08/Aug/2025 11:44:26] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 11:51:30,324 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\serving.py', reloading
+2025-08-08 11:51:30,334 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-08-08 11:51:30,335 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\sansio\\app.py', reloading
+2025-08-08 11:51:30,338 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\app.py', reloading
+2025-08-08 11:51:30,340 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\flask\\__init__.py', reloading
+2025-08-08 11:51:30,344 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\urllib3\\util\\ssl_.py', reloading
+2025-08-08 11:51:30,352 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\urllib3\\connection.py', reloading
+2025-08-08 11:51:30,355 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\urllib3\\connectionpool.py', reloading
+2025-08-08 11:51:30,366 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests\\adapters.py', reloading
+2025-08-08 11:51:30,366 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests\\sessions.py', reloading
+2025-08-08 11:51:30,368 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests\\api.py', reloading
+2025-08-08 11:51:30,368 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests\\__init__.py', reloading
+2025-08-08 11:51:30,421 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\requests_cache\\session.py', reloading
+2025-08-08 11:51:30,429 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\openmeteo_requests\\Client.py', reloading
+2025-08-08 11:51:30,430 - INFO -  * Detected change in 'C:\\Users\\Shubhankar Tiwary\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\site-packages\\werkzeug\\debug\\__init__.py', reloading
+2025-08-08 11:51:31,553 - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-08 11:51:50,188 - WARNING -  * Debugger is active!
+2025-08-08 11:51:50,228 - INFO -  * Debugger PIN: 537-754-139
+2025-08-08 12:00:18,876 - INFO - Weather data is fresh.
+2025-08-08 12:00:18,888 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:18] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:00:18,932 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:00:18,949 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:18] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:00:19,670 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:19] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:00:20,155 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:20] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:00:20,950 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:20] "GET / HTTP/1.1" 200 -
+2025-08-08 12:00:20,966 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:20] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:00:20,992 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:20] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
+2025-08-08 12:00:21,011 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:21] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:00:21,409 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:21] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:00:38,269 - INFO - Weather data is fresh.
+2025-08-08 12:00:38,272 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:38] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:00:38,420 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:00:38,430 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:38] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:00:38,842 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:38] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:00:39,271 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:39] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:00:43,209 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:43] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:00:43,254 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:43] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:00:43,266 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:43] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:00:44,549 - INFO - 127.0.0.1 - - [08/Aug/2025 12:00:44] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:05:29,742 - INFO - 127.0.0.1 - - [08/Aug/2025 12:05:29] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:05:29,764 - INFO - 127.0.0.1 - - [08/Aug/2025 12:05:29] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:05:29,839 - INFO - 127.0.0.1 - - [08/Aug/2025 12:05:29] "GET /static/rescue.js HTTP/1.1" 200 -
+2025-08-08 12:05:30,281 - INFO - 127.0.0.1 - - [08/Aug/2025 12:05:30] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:06:10,707 - ERROR - Error registering rescue member: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2025-08-08 12:06:10,708 - INFO - 127.0.0.1 - - [08/Aug/2025 12:06:10] "[35m[1mPOST /api/rescue/register HTTP/1.1[0m" 500 -
+2025-08-08 12:06:12,649 - ERROR - Error registering rescue member: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2025-08-08 12:06:12,650 - INFO - 127.0.0.1 - - [08/Aug/2025 12:06:12] "[35m[1mPOST /api/rescue/register HTTP/1.1[0m" 500 -
+2025-08-08 12:06:39,773 - ERROR - Error registering rescue member: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2025-08-08 12:06:39,775 - INFO - 127.0.0.1 - - [08/Aug/2025 12:06:39] "[35m[1mPOST /api/rescue/register HTTP/1.1[0m" 500 -
+2025-08-08 12:10:29,259 - INFO - 127.0.0.1 - - [08/Aug/2025 12:10:29] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:10:29,274 - INFO - 127.0.0.1 - - [08/Aug/2025 12:10:29] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:10:29,309 - INFO - 127.0.0.1 - - [08/Aug/2025 12:10:29] "GET /static/rescue.js HTTP/1.1" 200 -
+2025-08-08 12:10:29,817 - INFO - 127.0.0.1 - - [08/Aug/2025 12:10:29] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:14:13,472 - INFO - 127.0.0.1 - - [08/Aug/2025 12:14:13] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:14:13,537 - INFO - 127.0.0.1 - - [08/Aug/2025 12:14:13] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:14:13,712 - INFO - 127.0.0.1 - - [08/Aug/2025 12:14:13] "GET /static/rescue.js HTTP/1.1" 200 -
+2025-08-08 12:14:14,240 - INFO - 127.0.0.1 - - [08/Aug/2025 12:14:14] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:14:30,327 - INFO - 127.0.0.1 - - [08/Aug/2025 12:14:30] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:14:30,346 - INFO - 127.0.0.1 - - [08/Aug/2025 12:14:30] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:14:30,350 - INFO - 127.0.0.1 - - [08/Aug/2025 12:14:30] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:14:30,868 - INFO - 127.0.0.1 - - [08/Aug/2025 12:14:30] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:14:44,732 - INFO - 127.0.0.1 - - [08/Aug/2025 12:14:44] "[31m[1mPOST /api/rescue/register HTTP/1.1[0m" 400 -
+2025-08-08 12:15:02,735 - INFO - New rescue member registered: Shubhankar Tiwary
+2025-08-08 12:15:02,738 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:02] "[35m[1mPOST /api/rescue/register HTTP/1.1[0m" 201 -
+2025-08-08 12:15:03,253 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:03] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:15:15,648 - INFO - Weather data is fresh.
+2025-08-08 12:15:15,651 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:15] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:15:15,697 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:15:15,806 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:15] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:15:23,182 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:23] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:15:23,590 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:23] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:15:31,304 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:31] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:15:31,332 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:31] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:15:31,357 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:31] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:15:31,876 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:31] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:15:45,882 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:45] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:15:45,904 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:45] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:15:45,908 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:45] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:15:46,449 - INFO - 127.0.0.1 - - [08/Aug/2025 12:15:46] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:16:01,348 - INFO - Weather data is fresh.
+2025-08-08 12:16:01,350 - INFO - 127.0.0.1 - - [08/Aug/2025 12:16:01] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:16:01,374 - INFO - 127.0.0.1 - - [08/Aug/2025 12:16:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:16:01,401 - INFO - 127.0.0.1 - - [08/Aug/2025 12:16:01] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:16:02,372 - INFO - 127.0.0.1 - - [08/Aug/2025 12:16:02] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:16:02,782 - INFO - 127.0.0.1 - - [08/Aug/2025 12:16:02] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:18:45,453 - INFO - 127.0.0.1 - - [08/Aug/2025 12:18:45] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:18:45,475 - INFO - 127.0.0.1 - - [08/Aug/2025 12:18:45] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:18:45,479 - INFO - 127.0.0.1 - - [08/Aug/2025 12:18:45] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:18:46,003 - INFO - 127.0.0.1 - - [08/Aug/2025 12:18:46] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:18:58,714 - INFO - Weather data is fresh.
+2025-08-08 12:18:58,715 - INFO - 127.0.0.1 - - [08/Aug/2025 12:18:58] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:18:58,742 - INFO - 127.0.0.1 - - [08/Aug/2025 12:18:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:18:58,763 - INFO - 127.0.0.1 - - [08/Aug/2025 12:18:58] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:19:05,927 - INFO - 127.0.0.1 - - [08/Aug/2025 12:19:05] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:19:06,451 - INFO - 127.0.0.1 - - [08/Aug/2025 12:19:06] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:19:12,544 - INFO - Weather data is fresh.
+2025-08-08 12:19:12,550 - INFO - 127.0.0.1 - - [08/Aug/2025 12:19:12] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:19:12,582 - INFO - 127.0.0.1 - - [08/Aug/2025 12:19:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:19:12,593 - INFO - 127.0.0.1 - - [08/Aug/2025 12:19:12] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:19:13,034 - INFO - 127.0.0.1 - - [08/Aug/2025 12:19:13] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:19:13,523 - INFO - 127.0.0.1 - - [08/Aug/2025 12:19:13] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:20:23,138 - INFO - 127.0.0.1 - - [08/Aug/2025 12:20:23] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:20:23,160 - INFO - 127.0.0.1 - - [08/Aug/2025 12:20:23] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:20:23,166 - INFO - 127.0.0.1 - - [08/Aug/2025 12:20:23] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:20:23,764 - INFO - 127.0.0.1 - - [08/Aug/2025 12:20:23] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:20:48,430 - INFO - 127.0.0.1 - - [08/Aug/2025 12:20:48] "[31m[1mPOST /api/rescue/register HTTP/1.1[0m" 400 -
+2025-08-08 12:20:54,707 - INFO - New rescue member registered: Shubhankar Tiwary
+2025-08-08 12:20:54,707 - INFO - 127.0.0.1 - - [08/Aug/2025 12:20:54] "[35m[1mPOST /api/rescue/register HTTP/1.1[0m" 201 -
+2025-08-08 12:20:55,173 - INFO - 127.0.0.1 - - [08/Aug/2025 12:20:55] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:21:01,992 - INFO - Weather data is fresh.
+2025-08-08 12:21:01,994 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:01] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:21:02,022 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:21:02,034 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:02] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:21:02,643 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:02] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:21:03,046 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:03] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:21:20,738 - INFO - Weather data is fresh.
+2025-08-08 12:21:20,742 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:20] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:21:20,771 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:21:20,781 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:20] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:21:21,207 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:21] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:21:21,691 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:21] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:21:23,042 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:23] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:21:23,067 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:23] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:21:23,076 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:23] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:21:23,544 - INFO - 127.0.0.1 - - [08/Aug/2025 12:21:23] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:22:07,076 - INFO - 127.0.0.1 - - [08/Aug/2025 12:22:07] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:22:07,101 - INFO - 127.0.0.1 - - [08/Aug/2025 12:22:07] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:22:07,121 - INFO - 127.0.0.1 - - [08/Aug/2025 12:22:07] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:22:07,663 - INFO - 127.0.0.1 - - [08/Aug/2025 12:22:07] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:22:39,361 - INFO - 127.0.0.1 - - [08/Aug/2025 12:22:39] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:22:39,386 - INFO - 127.0.0.1 - - [08/Aug/2025 12:22:39] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:22:39,393 - INFO - 127.0.0.1 - - [08/Aug/2025 12:22:39] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:22:39,860 - INFO - 127.0.0.1 - - [08/Aug/2025 12:22:39] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:24:03,357 - INFO - New rescue member registered: Shubhankar Tiwary
+2025-08-08 12:24:03,359 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:03] "[35m[1mPOST /api/rescue/register HTTP/1.1[0m" 201 -
+2025-08-08 12:24:04,017 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:04] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:24:41,337 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:41] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:24:41,369 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:41] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:24:41,376 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:41] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:24:41,835 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:41] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:24:45,919 - INFO - Weather data is fresh.
+2025-08-08 12:24:45,927 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:45] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:24:45,963 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:24:45,987 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:45] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:24:46,895 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:46] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:24:47,413 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:47] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:24:58,324 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:58] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:24:58,347 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:58] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:24:58,498 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:58] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:24:59,294 - INFO - 127.0.0.1 - - [08/Aug/2025 12:24:59] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:25:36,604 - INFO - Weather data is fresh.
+2025-08-08 12:25:36,605 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:36] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:25:36,623 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:25:36,633 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:36] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:25:37,186 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:37] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:25:37,703 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:37] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:25:39,718 - INFO - Weather data is fresh.
+2025-08-08 12:25:39,740 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:39] "GET /news HTTP/1.1" 200 -
+2025-08-08 12:25:39,761 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-08-08 12:25:44,558 - INFO - Weather data is fresh.
+2025-08-08 12:25:44,560 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:44] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:25:44,587 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:25:44,601 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:44] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:25:45,077 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:45] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:25:45,532 - INFO - 127.0.0.1 - - [08/Aug/2025 12:25:45] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
+2025-08-08 12:26:49,613 - INFO - 127.0.0.1 - - [08/Aug/2025 12:26:49] "GET /rescue HTTP/1.1" 200 -
+2025-08-08 12:26:49,637 - INFO - 127.0.0.1 - - [08/Aug/2025 12:26:49] "[36mGET /static/rescue.css HTTP/1.1[0m" 304 -
+2025-08-08 12:26:49,640 - INFO - 127.0.0.1 - - [08/Aug/2025 12:26:49] "[36mGET /static/rescue.js HTTP/1.1[0m" 304 -
+2025-08-08 12:26:50,209 - INFO - 127.0.0.1 - - [08/Aug/2025 12:26:50] "GET /api/rescue/members HTTP/1.1" 200 -
+2025-08-08 12:26:54,740 - INFO - Weather data is fresh.
+2025-08-08 12:26:54,743 - INFO - 127.0.0.1 - - [08/Aug/2025 12:26:54] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 12:26:54,764 - INFO - 127.0.0.1 - - [08/Aug/2025 12:26:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-08-08 12:26:54,782 - INFO - 127.0.0.1 - - [08/Aug/2025 12:26:54] "[36mGET /static/firebase-config.js HTTP/1.1[0m" 304 -
+2025-08-08 12:26:55,531 - INFO - 127.0.0.1 - - [08/Aug/2025 12:26:55] "GET /api/weather HTTP/1.1" 200 -
+2025-08-08 12:26:56,045 - INFO - 127.0.0.1 - - [08/Aug/2025 12:26:56] "GET /api/rescue/members?max_distance=50 HTTP/1.1" 200 -
