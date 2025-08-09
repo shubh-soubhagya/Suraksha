@@ -9,12 +9,17 @@ from retry_requests import retry
 import openmeteo_requests
 import json
 import math
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Initialize Flask
 app = Flask(__name__)
 
 # -------------- CONFIGURATION ---------------
-NEWS_API_KEY = "74a63b127ba544d182c0f037bd5fb533"
+NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 WEATHER_CSV_FILE = "weather_hourly_current.csv"
 RESCUE_DATA_FILE = "rescue_members.json"
 
