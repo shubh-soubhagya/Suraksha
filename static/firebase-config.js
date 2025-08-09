@@ -1,5 +1,5 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyDk2WQYOW_KEoGv7oBEdFhI7nu-U35vTXE",
+  apiKey: "FIREBASE_API_KEY",
   authDomain: "suraksha-d8e67.firebaseapp.com",
   projectId: "suraksha-d8e67",
   storageBucket: "suraksha-d8e67.appspot.com",
